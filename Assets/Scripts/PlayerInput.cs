@@ -33,6 +33,7 @@ public class PlayerInput : MonoBehaviour
         {
             _gun.Aiming();
             _aimSprite.enabled = !_aimSprite.enabled;
+            AnimationManager.instance.ShowAimAnimation();
         }
         Rotate();
         Move();

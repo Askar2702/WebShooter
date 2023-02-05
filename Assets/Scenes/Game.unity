@@ -482,9 +482,9 @@ MonoBehaviour:
   recoilAmount_z_non: 0.35
   recoilAmount_x_non: -0.35
   recoilAmount_y_non: 1
-  recoilAmount_z_: 0
-  recoilAmount_x_: 0
-  recoilAmount_y_: 0
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
   _snappiness: 6
   _returnSpeed: 2
 --- !u!114 &774830937
