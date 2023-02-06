@@ -23,12 +23,7 @@ public class AnimationManager : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        print(_animator.GetInteger("PlayerState"));
-        print(_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
-    }
+ 
 
     public void ReloadGun()
     {
@@ -62,7 +57,6 @@ public class AnimationManager : MonoBehaviour
     {
         if (AnimationState == AnimationState.AimPos) return;
         AnimationState = AnimationState.AimPos;
-        print(AnimationState);
         _animator.SetInteger("PlayerState", (int)AnimationState);
     }
 

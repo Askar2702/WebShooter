@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 100
-  _force: 0
+  _force: 100
   _chanceHeadShot: 0
   _damage: 0
   _rb: {fileID: 4700268872501688967}

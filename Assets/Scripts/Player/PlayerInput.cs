@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private CharacterController _characterController;
+    [SerializeField] private float _angleX;
     [SerializeField] private float _idleSpeed = 3.0f;
     [SerializeField] private float _runSpeed = 5.0f;
     [SerializeField] private float _speedRotate = 1f;
@@ -44,7 +45,7 @@ public class PlayerInput : MonoBehaviour
     {
         _pitch -= _speedRotate * Input.GetAxis("Mouse Y");
         _yaw += _speedRotate * Input.GetAxis("Mouse X");
-        _pitch = Mathf.Clamp(_pitch, -45, 45);
+        _pitch = Mathf.Clamp(_pitch, -_angleX, _angleX);
         transform.eulerAngles = new Vector3(_pitch, _yaw, 0);
     }
 

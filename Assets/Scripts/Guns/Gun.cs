@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class Gun : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class Gun : MonoBehaviour
     [SerializeField] private PlayerBullet _playerBullet;
     [SerializeField] private Transform _spawnBulletPoint;
     [SerializeField] private float _interval;
+
+    [SerializeField] private float _damage;
+    [SerializeField] private TextMeshProUGUI _uiAmountDamage;
+    [SerializeField] private Transform _pointSpawnUIDamage;
 
     [SerializeField] private DestroyAfterTimeParticle _timeParticle;
     private Vector3 _direction;
@@ -75,13 +80,26 @@ public class Gun : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask)) {
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask))
+        {
             _direction = hit.point;
-            Instantiate(_timeParticle, hit.point + hit.normal * _floatInfrontOfWall, Quaternion.LookRotation(hit.normal));
+            if (hit.collider.gameObject.layer == 6)
+            {
+                Instantiate(_timeParticle, hit.point + hit.normal * _floatInfrontOfWall, Quaternion.LookRotation(hit.normal));
+            }
+            if (hit.transform.root.TryGetComponent(out Enemy enemy))
+            {
+                ShootEnemy(enemy, hit.transform.GetComponent<Rigidbody>());
+                var display = Instantiate(_uiAmountDamage, _pointSpawnUIDamage.position, Quaternion.identity);
+                display.transform.parent = _pointSpawnUIDamage;
+                display.text = enemy.GetAmountDamageDealt().ToString();
+                print(display);
+            }
         }
+        else _direction = Vector3.zero;
 
-        else _direction = ray.direction * 500;
-        _spawnBulletPoint.LookAt(_direction);
+        if (_direction != Vector3.zero)
+            _spawnBulletPoint.LookAt(_direction);
     }
 
     IEnumerator ResetReady()
@@ -103,5 +121,12 @@ public class Gun : MonoBehaviour
             isAiming = true;
         }
     }
-   
+
+    private void ShootEnemy(Enemy e, Rigidbody rb)
+    {
+        var enemy = e;
+        enemy.TakeDamage(_damage, rb.transform);
+        rb.AddForce(transform.forward * 100f, ForceMode.Impulse);
+    }
+
 }
