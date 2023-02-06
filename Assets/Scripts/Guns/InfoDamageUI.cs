@@ -8,8 +8,9 @@ public class InfoDamageUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<RectTransform>().DOAnchorPos(Vector2.up * 100f, 0.5f)
-            .SetLink(gameObject).OnComplete(()=> { Destroy(gameObject); });
+        var rect = GetComponent<RectTransform>();
+        rect.DOAnchorPos(new Vector2(rect.anchoredPosition.x, 150f), 0.5f)
+            .SetLink(gameObject).OnComplete(() => { Destroy(gameObject); });
     }
 
    

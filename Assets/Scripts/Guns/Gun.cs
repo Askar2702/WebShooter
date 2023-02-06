@@ -16,6 +16,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform _pointSpawnUIDamage;
 
     [SerializeField] private DestroyAfterTimeParticle _timeParticle;
+    [SerializeField] private ParticleSystem _hitWall;
     private Vector3 _direction;
     private Recoil _recoil;
     [SerializeField] private CameraRecoil _cameraRecoil;
@@ -86,11 +87,15 @@ public class Gun : MonoBehaviour
             if (hit.collider.gameObject.layer == 6)
             {
                 Instantiate(_timeParticle, hit.point + hit.normal * _floatInfrontOfWall, Quaternion.LookRotation(hit.normal));
+                var hitWall = Instantiate(_hitWall, hit.point , Quaternion.identity);
+                hitWall.transform.LookAt(transform.root.position);
             }
             if (hit.transform.root.TryGetComponent(out Enemy enemy))
             {
                 ShootEnemy(enemy, hit.transform.GetComponent<Rigidbody>());
-                var display = Instantiate(_uiAmountDamage, _pointSpawnUIDamage.position, Quaternion.identity);
+                var pos = new Vector2(Random.Range(_pointSpawnUIDamage.position.x - 100f, _pointSpawnUIDamage.position.x + 100),
+                    _pointSpawnUIDamage.position.y);
+                var display = Instantiate(_uiAmountDamage, pos, Quaternion.identity);
                 display.transform.parent = _pointSpawnUIDamage;
                 display.text = enemy.GetAmountDamageDealt().ToString();
                 print(display);
