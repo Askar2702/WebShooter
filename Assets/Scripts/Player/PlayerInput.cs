@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerInput : MonoBehaviour
@@ -18,7 +19,6 @@ public class PlayerInput : MonoBehaviour
     private Vector3 dir;
 
     [SerializeField] private Gun _gun;
-    [SerializeField] private Image _aimSprite;
 
     // Update is called once per frame
     private void Start()
@@ -33,11 +33,12 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             _gun.Aiming();
-            _aimSprite.enabled = !_aimSprite.enabled;
             AnimationManager.instance.ShowAimAnimation();
         }
         Rotate();
         Move();
+
+        if (transform.position.y < -10f) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 
@@ -63,6 +64,7 @@ public class PlayerInput : MonoBehaviour
         }
 
         dir.y -= _gravity * Time.deltaTime;
+        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0) dir = new Vector3(0f, dir.y, 0f);
         _characterController.Move(dir  * Time.deltaTime);
 
         AnimationManager.instance.ShowAnimationWalkOrRun(dir.magnitude, _currentSpeed, _runSpeed);

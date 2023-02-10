@@ -6,14 +6,12 @@ using TMPro;
 
 public class Gun : MonoBehaviour
 {
+    [SerializeField] private GunDamage _gunDamage;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private PlayerBullet _playerBullet;
     [SerializeField] private Transform _spawnBulletPoint;
     [SerializeField] private float _interval;
 
-    [SerializeField] private float _damage;
-    [SerializeField] private TextMeshProUGUI _uiAmountDamage;
-    [SerializeField] private Transform _pointSpawnUIDamage;
 
     [SerializeField] private DestroyAfterTimeParticle _timeParticle;
     [SerializeField] private ParticleSystem _hitWall;
@@ -40,13 +38,13 @@ public class Gun : MonoBehaviour
         _recoil = GetComponent<Recoil>();
         isReady = true;
         isAiming = false;
+        AnimationManager.instance.AnimationStateEvent.AddListener(CheckAnimation);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetMouseButton(0) && isReady)
         {
             AnimationManager.instance.ShowAimAnimation();
@@ -63,11 +61,10 @@ public class Gun : MonoBehaviour
 
     private void Fire()
     {
-        var b = Instantiate(_playerBullet, _spawnBulletPoint.position, _spawnBulletPoint.rotation);
+        Instantiate(_playerBullet, _spawnBulletPoint.position, _spawnBulletPoint.rotation);
 
         _muzzleFalshEffect.Play();
 
-        //  b.Init( ray.direction);
         _fireSound.Play();
         _recoil.RecoilFire(isAiming);
         _cameraRecoil.RecoilCamera(isAiming);
@@ -84,28 +81,20 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask))
         {
             _direction = hit.point;
-            if (hit.collider.gameObject.layer == 6)
-            {
-                Instantiate(_timeParticle, hit.point + hit.normal * _floatInfrontOfWall, Quaternion.LookRotation(hit.normal));
-                var hitWall = Instantiate(_hitWall, hit.point , Quaternion.identity);
-                hitWall.transform.LookAt(transform.root.position);
-            }
+            SpawnEffectHitWall(hit);
+            
             if (hit.transform.root.TryGetComponent(out Enemy enemy))
-            {
-                ShootEnemy(enemy, hit.transform.GetComponent<Rigidbody>());
-                var pos = new Vector2(Random.Range(_pointSpawnUIDamage.position.x - 100f, _pointSpawnUIDamage.position.x + 100),
-                    _pointSpawnUIDamage.position.y);
-                var display = Instantiate(_uiAmountDamage, pos, Quaternion.identity);
-                display.transform.parent = _pointSpawnUIDamage;
-                display.text = enemy.GetAmountDamageDealt().ToString();
-                print(display);
-            }
+                _gunDamage.ShootEnemy(enemy, hit.transform.GetComponent<Rigidbody>());
+            
         }
-        else _direction = Vector3.zero;
+        else 
+            _direction = Vector3.zero;
 
         if (_direction != Vector3.zero)
             _spawnBulletPoint.LookAt(_direction);
     }
+   
+
 
     IEnumerator ResetReady()
     {
@@ -117,21 +106,37 @@ public class Gun : MonoBehaviour
     {
         if (isAiming)
         {
-            transform.DOLocalMove(_startPos, 0.5f);
-            isAiming = false;
+            MoveAimPos(_startPos, false);
         }
         else 
         {
-            transform.DOLocalMove(_aimPos, 0.5f);
-            isAiming = true;
+            MoveAimPos(_aimPos, true);
         }
     }
 
-    private void ShootEnemy(Enemy e, Rigidbody rb)
+    private void CheckAnimation(AnimationState animationState)
     {
-        var enemy = e;
-        enemy.TakeDamage(_damage, rb.transform);
-        rb.AddForce(transform.forward * 100f, ForceMode.Impulse);
+        if (animationState == AnimationState.Reload || animationState == AnimationState.Run && isAiming)
+        {
+            MoveAimPos(_startPos, false);
+        }
+    }
+
+    private void MoveAimPos(Vector3 pos , bool isAim)
+    {
+        transform.DOLocalMove(pos, 0.5f);
+        isAiming = isAim;
+        UIManager.instance.ShowAimTarget(!isAim);
+    }
+
+    private void SpawnEffectHitWall(RaycastHit hit)
+    {
+        if (hit.collider.gameObject.layer == 6)
+        {
+            Instantiate(_timeParticle, hit.point + hit.normal * _floatInfrontOfWall, Quaternion.LookRotation(hit.normal));
+            var hitWall = Instantiate(_hitWall, hit.point, Quaternion.identity);
+            hitWall.transform.LookAt(transform.root.position);
+        }
     }
 
 }

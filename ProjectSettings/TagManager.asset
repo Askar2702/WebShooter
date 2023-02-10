@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - MinDamage
+  - BodyDamage
+  - HeadShot
   - LevelPart
   layers:
   - Default
@@ -16,7 +19,7 @@ TagManager:
   - Bullet
   - Player
   - Enemy
-  - 
+  - PlayerBomb
   - 
   - 
   - 

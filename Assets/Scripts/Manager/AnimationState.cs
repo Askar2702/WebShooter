@@ -9,5 +9,7 @@ public enum AnimationState
    Run,
    Reload,
    ChangeGun,
-   AimPos
+   AimPos,
+   StartGrenade,
+   BombThrow
 }
