@@ -31,13 +31,14 @@ public class AnimationManager : MonoBehaviour
 
     private void Update()
     {
-       // print(AnimationState);
+     //   print(_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name + "anim");
     }
 
     public void ReloadGun()
     {
         if (AnimationState == AnimationState.Reload) return;
         AnimationState = AnimationState.Reload;
+      //  SetfloatStatAanim(AnimationState);
         _animator.SetInteger("PlayerState", (int)AnimationState);
         StartCoroutine(EndCurrentanimAnsStartIdle(_reloadGunAnimation));
         AnimationStateEvent?.Invoke(AnimationState);
@@ -52,7 +53,7 @@ public class AnimationManager : MonoBehaviour
             else AnimationState = AnimationState.Idle;
 
             AnimationStateEvent?.Invoke(AnimationState);
-
+           // SetfloatStatAanim(AnimationState);
             if (_animator.GetInteger("PlayerState") == (int)AnimationState) return;
             _animator.SetInteger("PlayerState", (int)AnimationState);
         }
@@ -73,6 +74,7 @@ public class AnimationManager : MonoBehaviour
         if (AnimationState == AnimationState.AimPos) return;
         AnimationState = AnimationState.AimPos;
         AnimationStateEvent?.Invoke(AnimationState);
+      //  SetfloatStatAanim(AnimationState);
         _animator.SetInteger("PlayerState", (int)AnimationState);
     }
 
@@ -86,22 +88,36 @@ public class AnimationManager : MonoBehaviour
         yield return new WaitForSeconds(clip.averageDuration);
         AnimationState = AnimationState.Idle;
         AnimationStateEvent?.Invoke(AnimationState);
+       // SetfloatStatAanim(AnimationState);
         _animator.SetInteger("PlayerState", (int)AnimationState);
     }
 
     public void StartGrenade()
     {
         AnimationState = AnimationState.StartGrenade;
+       // SetfloatStatAanim(AnimationState);
         _animator.SetInteger("PlayerState", (int)AnimationState);
     }
 
     public void BombThrow()
     {
-        AnimationState = AnimationState.BombThrow;
-        _animator.SetInteger("PlayerState", (int)AnimationState);
-        StartCoroutine(EndCurrentanimAnsStartIdle(_GrenadeThrowAnimation));
+       // print(_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != _GrenadeThrowAnimation);
+        if (AnimationState == AnimationState.StartGrenade && _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name!=_GrenadeThrowAnimation)
+        {
+            AnimationState = AnimationState.BombThrow;
+          //  SetfloatStatAanim(AnimationState);
+            _animator.SetInteger("PlayerState", (int)AnimationState);
+        }
+      //  StartCoroutine(EndCurrentanimAnsStartIdle(_GrenadeThrowAnimation));
     }
 
+    public void EndBombThrow()
+    {
+        AnimationState = AnimationState.Idle;
+       // SetfloatStatAanim(AnimationState);
+        _animator.SetInteger("PlayerState", (int)AnimationState);
+    }
     
+   
 
 }

@@ -13,10 +13,11 @@ public class BombInit : MonoBehaviour
 
     void Update()
     {
+        print(AnimationManager.instance.AnimationState);
         if (AnimationManager.instance.AnimationState == AnimationState.BombThrow) return;
         if (Input.GetMouseButtonDown(0) && !_currentGrenade)
         {
-            AnimationManager.instance.StartGrenade();
+          //  AnimationManager.instance.StartGrenade();
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -26,14 +27,15 @@ public class BombInit : MonoBehaviour
 
     public void BombThrow()
     {
-        {
-            print("g2");
-            _currentGrenade = Instantiate(_grenade, _spawnPoint.position, Quaternion.identity);
-            var dirforward = transform.forward * _force;
-            var dirUp = transform.up;
-            print(_currentGrenade);
-            StartCoroutine(_currentGrenade.Init(dirforward + dirUp));
-            _currentGrenade = null;
-        }
+        _currentGrenade = Instantiate(_grenade, _spawnPoint.position, Quaternion.identity);
+        var dirforward = transform.forward * _force;
+        var dirUp = transform.up;
+        StartCoroutine(_currentGrenade.Init(dirforward + dirUp));
+        _currentGrenade = null;
+    }
+
+    public void EndBombThrow()
+    {
+        AnimationManager.instance.EndBombThrow();
     }
 }
