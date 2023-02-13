@@ -13,13 +13,13 @@ public class AnimationManager : MonoBehaviour
     private readonly string _reloadGunAnimation = "Character_Reload";
     private readonly string _idleAnimation = "Character_Idle";
     private readonly string _walkAnimation = "Character_Walk";
-    private readonly string _changeGunAnimation = "ChangeGun";
+    private readonly string _changeGunAnimation = "SwitchingWeapon";
     private readonly string _aimGunAnimation = "Player_AImpose";
     private readonly string _GrenadeThrowAnimation = "GrenadeThrow";
     private readonly string _HoldTheGnarataAnimation = "HoldTheGnarata";
 
-    private AnimationState _stateNext;
     public AnimationState AnimationState { get; private set; }
+    private AnimationState _currentState;
 
     public UnityEvent<AnimationState> AnimationStateEvent = new UnityEvent<AnimationState>();
 
@@ -29,10 +29,7 @@ public class AnimationManager : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-     //   print(_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name + "anim");
-    }
+  
 
     public void ReloadGun()
     {
@@ -92,7 +89,6 @@ public class AnimationManager : MonoBehaviour
 
     public void BombThrow()
     {
-       // print(_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != _GrenadeThrowAnimation);
         if (AnimationState == AnimationState.StartGrenade && _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name!=_GrenadeThrowAnimation)
         {
             AnimationState = AnimationState.BombThrow;
@@ -100,21 +96,30 @@ public class AnimationManager : MonoBehaviour
         }
     }
 
-    public void EndBombThrow()
+    public void ShowIdleAnim()
     {
         AnimationState = AnimationState.Idle;
         _animator.SetInteger("PlayerState", (int)AnimationState);
     }
     
-    public void SwitchingWeaponAnim( AnimationState state)
+    public void SwitchingWeaponAnim(System.Action callback , AnimationState state)
     {
-        _stateNext = state;
-        print(_stateNext);
-        if (AnimationState == AnimationState.ChangeGun) return;
+        _currentState = state;
+        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _changeGunAnimation) return;
         AnimationState = AnimationState.ChangeGun;
         _animator.SetInteger("PlayerState", (int)AnimationState);
-        //  _animator.Play(_changeGunAnimation);
-        StartCoroutine(ShowNextAnim(_changeGunAnimation));
+        StartCoroutine(FollowAnimationSwitchingWeapon(callback));
+    }
+
+
+    private IEnumerator FollowAnimationSwitchingWeapon(System.Action callback)
+    {
+        yield return new WaitUntil(() => _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _changeGunAnimation);
+        var clip = _animator.GetCurrentAnimatorClipInfo(0).FirstOrDefault(item => item.clip.name == _changeGunAnimation).clip;
+        yield return new WaitForSeconds(clip.length / 5);
+        AnimationState = _currentState;
+        _animator.SetInteger("PlayerState", (int)AnimationState);
+        callback?.Invoke();
     }
 
     private IEnumerator EndCurrentAnimAndStartIdle(string currentAnim)
@@ -126,20 +131,7 @@ public class AnimationManager : MonoBehaviour
         _animator.SetInteger("PlayerState", (int)AnimationState);
     }
 
-    private IEnumerator ShowNextAnim(string currentAnim )
-    {
-       // if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _changeGunAnimation) yield break;
-        yield return new WaitUntil(() => _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == currentAnim);
-        var clip = _animator.GetCurrentAnimatorClipInfo(0)[0].clip;
-        var duration = _stateNext == AnimationState.StartGrenade ? clip.length / 5 : clip.length;
-        yield return new WaitForSeconds(duration);
-        AnimationState = _stateNext;
-        _animator.SetInteger("PlayerState", (int)AnimationState);
-    }
+   
 
-
-    public float GetCurrentAnimationDuration()
-    {
-        return _animator.GetCurrentAnimatorClipInfo(0)[0].clip.averageDuration;
-    }
+  
 }

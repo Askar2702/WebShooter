@@ -6,20 +6,20 @@ public class WeaponSwitching : MonoBehaviour
 {
     public int _indexWeapon;
     private int _previousIndex;
-    [SerializeField] private WeaponCatalog _guns;
+    [SerializeField] private WeaponCatalog _weaponCatalog;
 
     private void Update()
     {
         _previousIndex = _indexWeapon;
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            if (_indexWeapon >= _guns.WeaponsCount - 1) _indexWeapon = 0;
+            if (_indexWeapon >= _weaponCatalog.WeaponsCount - 1) _indexWeapon = 0;
             else
                 _indexWeapon++;
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            if (_indexWeapon <= 0) _indexWeapon = _guns.WeaponsCount - 1;
+            if (_indexWeapon <= 0) _indexWeapon = _weaponCatalog.WeaponsCount - 1;
             else
                 _indexWeapon--;
         }
@@ -30,6 +30,6 @@ public class WeaponSwitching : MonoBehaviour
     }
     private void SelectWeapon()
     {
-        _guns.SelectWeapon(_indexWeapon);
+        _weaponCatalog.SelectWeapon(_indexWeapon);
     }
 }

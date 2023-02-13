@@ -29,17 +29,17 @@ public class WeaponCatalog : MonoBehaviour
     {
         int i = 0;
         foreach (var weapon in WeaponsCatalog)
-        { 
+        {
             if (indexWeapon != i && weapon != null)
             {
                 weapon.gameObject.SetActive(false);
             }
             if (indexWeapon == i && weapon != null)
             {
-                weapon.gameObject.SetActive(true);
+               // weapon.gameObject.SetActive(true);
                 CurrentWeapon = weapon;
             }
-            else if(indexWeapon == i && weapon == null)
+            else if (indexWeapon == i && weapon == null)
             {
                 CurrentWeapon = null;
             }
@@ -47,7 +47,10 @@ public class WeaponCatalog : MonoBehaviour
         }
         SwitchingWeaponShowAnim();
     }
-
+    private void ShowWeapon()
+    {
+        CurrentWeapon.gameObject.SetActive(true);
+    }
     private void SwitchingWeaponShowAnim()
     {
         if (CurrentWeapon == null) return;
@@ -56,7 +59,7 @@ public class WeaponCatalog : MonoBehaviour
        // if (CurrentWeapon.GetType() == typeof(TechnoWeapon)) state = AnimationState.Idle;
        // if (CurrentWeapon.GetType() == typeof(PistolWeapon)) state = AnimationState.Idle;
         else state = AnimationState.StartGrenade;
-        AnimationManager.instance.SwitchingWeaponAnim(state);
+        AnimationManager.instance.SwitchingWeaponAnim(ShowWeapon , state);
     }
 
 

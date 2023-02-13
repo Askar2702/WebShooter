@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2164188728136923861}
   - component: {fileID: 2164188728136923863}
   - component: {fileID: 2164188728136923862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2164188728136923880}
-  m_LocalRotation: {x: -0.00012202589, y: 0.0000785888, z: 0.000000857241, w: 1}
+  m_LocalRotation: {x: -0.0001220893, y: 0.00007855285, z: 0.000000009590462, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.014, y: 0.009, z: 0}
 --- !u!198 &2164188728136923863
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4761,7 +4761,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 414b4f5122cc5ae4c988493211cfcae5, type: 2}
+  - {fileID: 2100000, guid: 973383ee9c429ff43b9b993a6e52f9d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
