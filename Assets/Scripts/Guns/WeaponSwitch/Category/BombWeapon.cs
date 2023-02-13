@@ -4,13 +4,5 @@ using UnityEngine;
 
 public class BombWeapon : WeaponParent
 {
-    private void OnEnable()
-    {
-        AnimationManager.instance.StartGrenade();
-    }
-
-    private void OnDisable()
-    {
-        AnimationManager.instance.EndBombThrow();
-    }
+   
 }

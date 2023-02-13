@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
-public class BombInit : MonoBehaviour
+public class BombInit : WeaponParent
 {
     [SerializeField] private Bomb _grenade;
     [SerializeField] private Transform _spawnPoint;
@@ -13,15 +13,17 @@ public class BombInit : MonoBehaviour
 
     void Update()
     {
-        print(AnimationManager.instance.AnimationState);
-        if (AnimationManager.instance.AnimationState == AnimationState.BombThrow) return;
-        if (Input.GetMouseButtonDown(0) && !_currentGrenade)
+        // print(AnimationManager.instance.AnimationState);
+        if (WeaponCatalog.instance.CurrentWeapon
+            && WeaponCatalog.instance.CurrentWeapon.GetType() == typeof(BombWeapon)
+            && AnimationManager.instance.AnimationState == AnimationState.StartGrenade)
         {
-          //  AnimationManager.instance.StartGrenade();
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            AnimationManager.instance.BombThrow();
+
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                AnimationManager.instance.BombThrow();
+            }
         }
     }
 
@@ -36,6 +38,6 @@ public class BombInit : MonoBehaviour
 
     public void EndBombThrow()
     {
-        AnimationManager.instance.EndBombThrow();
+        AnimationManager.instance.StartGrenade();
     }
 }

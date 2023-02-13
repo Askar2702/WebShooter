@@ -4,8 +4,10 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 
-public class Gun : MonoBehaviour
+public class Gun : WeaponParent
 {
+    [SerializeField] private Transform _parent;
+
     [SerializeField] private GunDamage _gunDamage;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private PlayerBullet _playerBullet;
@@ -16,7 +18,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private DestroyAfterTimeParticle _timeParticle;
     [SerializeField] private ParticleSystem _hitWall;
     private Vector3 _direction;
-    private Recoil _recoil;
+    [SerializeField] private Recoil _recoil;
     [SerializeField] private CameraRecoil _cameraRecoil;
     private bool isReady;
     private float _floatInfrontOfWall = 0.1f;
@@ -35,7 +37,6 @@ public class Gun : MonoBehaviour
 
     private void Start()
     {
-        _recoil = GetComponent<Recoil>();
         isReady = true;
         isAiming = false;
         AnimationManager.instance.AnimationStateEvent.AddListener(CheckAnimation);
@@ -45,17 +46,25 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && isReady)
+        if(WeaponCatalog.instance.CurrentWeapon &&
+            WeaponCatalog.instance.CurrentWeapon.GetType() == typeof(BaseWeapon))
         {
-            AnimationManager.instance.ShowAimAnimation();
-            if (AnimationManager.instance.isAimAnimation())
-                Fire();
-        }
+            if (Input.GetMouseButton(0) && isReady)
+            {
+                AnimationManager.instance.ShowAimAnimation();
+                if (AnimationManager.instance.isAimAnimation())
+                    Fire();
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                Aiming();
+                AnimationManager.instance.ShowAimAnimation();
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                Cursor.lockState = CursorLockMode.Locked;
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-
+            }
         }
     }
 
@@ -102,7 +111,7 @@ public class Gun : MonoBehaviour
         isReady = true;
     }
 
-    public void Aiming()
+    private void Aiming()
     {
         if (isAiming)
         {
@@ -124,7 +133,7 @@ public class Gun : MonoBehaviour
 
     private void MoveAimPos(Vector3 pos , bool isAim)
     {
-        transform.DOLocalMove(pos, 0.5f);
+        _parent.DOLocalMove(pos, 0.5f);
         isAiming = isAim;
         UIManager.instance.ShowAimTarget(!isAim);
     }
@@ -139,4 +148,12 @@ public class Gun : MonoBehaviour
         }
     }
 
+
+   
+
+    private void OnDisable()
+    {
+        //Ended();
+        MoveAimPos(_startPos, false);
+    }
 }

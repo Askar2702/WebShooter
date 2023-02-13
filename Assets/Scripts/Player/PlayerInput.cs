@@ -18,7 +18,6 @@ public class PlayerInput : MonoBehaviour
     private float _pitch = 0f;
     private Vector3 dir;
 
-    [SerializeField] private Gun _gun;
 
     // Update is called once per frame
     private void Start()
@@ -30,11 +29,7 @@ public class PlayerInput : MonoBehaviour
     {
 
         if (Input.GetKeyDown(KeyCode.R)) AnimationManager.instance.ReloadGun();
-        if (Input.GetMouseButtonDown(1))
-        {
-            _gun.Aiming();
-            AnimationManager.instance.ShowAimAnimation();
-        }
+       
         Rotate();
         Move();
 
@@ -67,8 +62,7 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0) dir = new Vector3(0f, dir.y, 0f);
         _characterController.Move(dir  * Time.deltaTime);
 
-        AnimationManager.instance.ShowAnimationWalkOrRun(dir.magnitude, _currentSpeed, _runSpeed);
-        
+        AnimationManager.instance.ShowAnimationWalkOrRun(dir.magnitude, _currentSpeed, _idleSpeed);
     }
 
     private bool CheckGroud()

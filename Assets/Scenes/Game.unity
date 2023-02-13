@@ -2763,35 +2763,6 @@ MonoBehaviour:
   recoilAmount_y_: 0.05
   _snappiness: 6
   _returnSpeed: 2
---- !u!114 &774830937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774830934}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gunDamage: {fileID: 774830941}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 576
-  _playerBullet: {fileID: 2121610988282681107, guid: 2a59641fc84fc25439ec7ae0bffaa0da,
-    type: 3}
-  _spawnBulletPoint: {fileID: 2002853158}
-  _interval: 0.1
-  _timeParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _cameraRecoil: {fileID: 41052132}
-  _muzzleFalshEffect: {fileID: 2043065440}
-  _fireSound: {fileID: 774830939}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: 0, y: -1.44, z: -0.15}
 --- !u!82 &774830939
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2918,6 +2889,12 @@ MonoBehaviour:
     type: 3}
   _spawnPoint: {fileID: 1119779529}
   _force: 1000
+--- !u!4 &774830945 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 68c355a2eb01a7745a8a77095c158af4,
+    type: 3}
+  m_PrefabInstance: {fileID: 774830933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3804,7 +3781,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _gun
       value: 
-      objectReference: {fileID: 774830937}
+      objectReference: {fileID: 0}
     - target: {fileID: 2844531621167528664, guid: f021a90afa9cf27409da8669d6080627,
         type: 3}
       propertyPath: _angleX
@@ -4069,11 +4046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6adfa317146a1c4484d35cda04148a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponsCatalog:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  <CurrentWeapon>k__BackingField: {fileID: 0}
   _pistol: {fileID: 0}
   _baseWeapon: {fileID: 2079131601}
   _technoWeapon: {fileID: 0}
@@ -4430,6 +4403,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2079131602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079131600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 774830945}
+  _gunDamage: {fileID: 774830941}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 576
+  _playerBullet: {fileID: 2121610988282681107, guid: 2a59641fc84fc25439ec7ae0bffaa0da,
+    type: 3}
+  _spawnBulletPoint: {fileID: 2002853158}
+  _interval: 0.1
+  _timeParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _recoil: {fileID: 774830936}
+  _cameraRecoil: {fileID: 41052132}
+  _muzzleFalshEffect: {fileID: 2043065440}
+  _fireSound: {fileID: 774830939}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: 0, y: -1.44, z: -0.15}
 --- !u!1001 &2164188729861197495
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -24,8 +24,9 @@ public class WeaponSwitching : MonoBehaviour
                 _indexWeapon--;
         }
 
-        if (_previousIndex != _indexWeapon) SelectWeapon();
 
+
+        if (_previousIndex != _indexWeapon) SelectWeapon();
     }
     private void SelectWeapon()
     {
