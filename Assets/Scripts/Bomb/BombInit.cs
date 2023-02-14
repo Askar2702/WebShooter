@@ -19,7 +19,6 @@ public class BombInit : WeaponParent
             && AnimationManager.instance.AnimationState == AnimationState.StartGrenade)
         {
 
-
             if (Input.GetMouseButtonUp(0))
             {
                 AnimationManager.instance.BombThrow();
@@ -34,10 +33,21 @@ public class BombInit : WeaponParent
         var dirUp = transform.up;
         StartCoroutine(_currentGrenade.Init(dirforward + dirUp));
         _currentGrenade = null;
+        WeaponCatalog.instance.EnabledBomb(false);
     }
 
     public void EndBombThrow()
     {
         AnimationManager.instance.StartGrenade();
+        StartCoroutine(ShowBomb());
+    }
+
+    IEnumerator ShowBomb()
+    {
+        yield return new WaitForSeconds(0.2f);
+        if (WeaponCatalog.instance.CurrentWeapon
+           && WeaponCatalog.instance.CurrentWeapon.GetType() == typeof(BombWeapon)
+           && AnimationManager.instance.AnimationState == AnimationState.StartGrenade)
+            WeaponCatalog.instance.EnabledBomb(true);
     }
 }

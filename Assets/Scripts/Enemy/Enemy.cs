@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage, Transform transform)
+    public void TakeDamage(float damage)
     {
         _health.TakeDamege(damage);
         if (!_health.isAlive)

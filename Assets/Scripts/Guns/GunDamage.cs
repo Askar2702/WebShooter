@@ -25,7 +25,7 @@ public class GunDamage : MonoBehaviour
             damage *= 200f;
             color = Color.red;
         }
-        enemy.TakeDamage(damage, rb.transform);
+        enemy.TakeDamage(damage);
         rb.AddForce(transform.forward * _force, ForceMode.Impulse);
         UIManager.instance.ShowAmountDamage(enemy.GetAmountDamageDealt() , color);
         //print(rb.tag);

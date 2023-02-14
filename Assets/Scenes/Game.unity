@@ -4040,7 +4040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy: {fileID: 4857078147048124199, guid: 8e1d6bfe6b59d204c8d703c3c58fe28b, type: 3}
-  _count: 0
+  _count: 50
 --- !u!4 &1769744498
 Transform:
   m_ObjectHideFlags: 0

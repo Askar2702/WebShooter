@@ -62,5 +62,9 @@ public class WeaponCatalog : MonoBehaviour
         AnimationManager.instance.SwitchingWeaponAnim(ShowWeapon , state);
     }
 
+    public void EnabledBomb(bool activ)
+    {
+        _bomb.gameObject.SetActive(activ);
+    }
 
 }
