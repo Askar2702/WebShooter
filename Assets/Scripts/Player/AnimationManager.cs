@@ -105,7 +105,7 @@ public class AnimationManager : MonoBehaviour
     public void SwitchingWeaponAnim(System.Action callback , AnimationState state)
     {
         _currentState = state;
-        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _changeGunAnimation) return;
+      //  if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _changeGunAnimation) return;
         AnimationState = AnimationState.ChangeGun;
         _animator.SetInteger("PlayerState", (int)AnimationState);
         StartCoroutine(FollowAnimationSwitchingWeapon(callback));
