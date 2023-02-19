@@ -29,7 +29,6 @@ public class Bomb : MonoBehaviour
             _sphereCollider.radius += Time.deltaTime * 100f;
             _force -= _forceReducer;
             _force = _force <= 0 ? _minForce : _force;
-            print(_force);
             yield return null;
         }
       

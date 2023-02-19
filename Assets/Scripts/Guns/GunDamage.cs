@@ -8,6 +8,7 @@ public class GunDamage : MonoBehaviour
     [SerializeField] private float _force;
     public void ShootEnemy(Enemy e, Rigidbody rb)
     {
+        if (!e.IsAlive()) return;
         var enemy = e;
         var damage = _damage;
         var color = Color.white;

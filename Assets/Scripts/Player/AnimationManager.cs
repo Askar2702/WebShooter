@@ -17,6 +17,7 @@ public class AnimationManager : MonoBehaviour
     private readonly string _aimGunAnimation = "Player_AImpose";
     private readonly string _GrenadeThrowAnimation = "GrenadeThrow";
     private readonly string _HoldTheGnarataAnimation = "HoldTheGnarata";
+    private PlayerInput _playerInput;
 
     public AnimationState AnimationState { get; private set; }
     private AnimationState _currentState;
@@ -26,6 +27,7 @@ public class AnimationManager : MonoBehaviour
     private void Awake()
     {
         if (!instance) instance = this;
+        _playerInput = GetComponent<PlayerInput>();
     }
 
 
@@ -45,9 +47,13 @@ public class AnimationManager : MonoBehaviour
     {
         if (CheckBaseAnimation())
         {
-            if (directionMagnitude >= 0.5f)
+            if (directionMagnitude >= 0.5f && _playerInput.CheckGroud())
                 AnimationState = currentSpeed > idleSpeed ? AnimationState.Run : AnimationState.Walk;
-            else AnimationState = AnimationState.Idle;
+            else if (directionMagnitude >= 0.5f || !_playerInput.CheckGroud())
+            {
+                AnimationState = AnimationState.Idle;
+                directionMagnitude = 0.0f;
+            }
 
             AnimationStateEvent?.Invoke(AnimationState);
            // SetfloatStatAanim(AnimationState);

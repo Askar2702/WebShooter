@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Recoil : MonoBehaviour
 {
+    [SerializeField] private Transform _bodyParent;
     [SerializeField] private float recoilAmount_z_non = 0.5f;
     [SerializeField] private float recoilAmount_x_non = 0.5f;
     [SerializeField] private float recoilAmount_y_non = 0.5f;
@@ -25,7 +26,7 @@ public class Recoil : MonoBehaviour
     {
         _targetRotation = Vector3.Lerp(_targetRotation, Vector3.zero, _returnSpeed * Time.deltaTime);
         _currentRotation = Vector3.Slerp(_currentRotation, _targetRotation, _snappiness * Time.fixedDeltaTime);
-        transform.localRotation = Quaternion.Euler(_currentRotation);
+        _bodyParent.localRotation = Quaternion.Euler(_currentRotation);
     }
 
     public void RecoilFire( bool isAim)

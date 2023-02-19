@@ -153,7 +153,6 @@ public class Gun : WeaponParent
 
     private void OnDisable()
     {
-        //Ended();
         MoveAimPos(_startPos, false);
     }
 }

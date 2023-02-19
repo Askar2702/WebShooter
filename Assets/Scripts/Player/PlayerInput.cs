@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private float _angleX;
     [SerializeField] private float _idleSpeed = 3.0f;
     [SerializeField] private float _runSpeed = 5.0f;
-    [SerializeField] private float _speedRotate = 1f;
+    [SerializeField] private float _speedRotate;
     private float _currentSpeed;
     [SerializeField] private float _jumpSpeed;
     [SerializeField] private float _gravity;
@@ -65,7 +65,7 @@ public class PlayerInput : MonoBehaviour
         AnimationManager.instance.ShowAnimationWalkOrRun(dir.magnitude, _currentSpeed, _idleSpeed);
     }
 
-    private bool CheckGroud()
+    public bool CheckGroud()
     {
         return _characterController.isGrounded;
     }

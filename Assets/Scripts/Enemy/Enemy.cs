@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         _meshAgent = GetComponent<NavMeshAgent>();
-        _targetPos = MazeSpawner.instance.GetRandomPos();
+        _targetPos = PointsManager.instance.GetRandomPos();
         _rbs = GetComponentsInChildren<Rigidbody>();
         _health = GetComponent<Health>();
         DisableRb();
@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
         if (_meshAgent.enabled)
         {
             _meshAgent.SetDestination(_targetPos);
-            if (Vector3.Distance(transform.position, _targetPos) < 3f) _targetPos = MazeSpawner.instance.GetRandomPos();
+            if (Vector3.Distance(transform.position, _targetPos) < 3f) _targetPos = PointsManager.instance.GetRandomPos();
         }
     }
     private void DisableRb()
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _health.TakeDamege(damage);
-        if (!_health.isAlive)
+        if (!IsAlive())
         {
             _meshAgent.enabled = false;
             _animator.enabled = false;
@@ -49,6 +49,11 @@ public class Enemy : MonoBehaviour
 
             Destroy(gameObject, 3f);
         }
+    }
+
+    public bool IsAlive()
+    {
+        return _health.isAlive;
     }
 
     public float GetAmountDamageDealt()
