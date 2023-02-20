@@ -8,6 +8,7 @@ public class AnimationManager : MonoBehaviour
 {
     public static AnimationManager instance;
 
+    [SerializeField] private Gun _gun;
     [SerializeField] private Animator _animator;
     private readonly string _runAnimation = "Character_Run";
     private readonly string _reloadGunAnimation = "Character_Reload";
@@ -49,15 +50,15 @@ public class AnimationManager : MonoBehaviour
         {
             if (directionMagnitude >= 0.5f && _playerInput.CheckGroud())
                 AnimationState = currentSpeed > idleSpeed ? AnimationState.Run : AnimationState.Walk;
-            else if (directionMagnitude >= 0.5f || !_playerInput.CheckGroud())
+            else if ( directionMagnitude <= 0.5f && _playerInput.CheckGroud() || !_playerInput.CheckGroud())
             {
-                AnimationState = AnimationState.Idle;
+                AnimationState = _gun.isAiming ? AnimationState.AimPos : AnimationState.Idle;
+                 
                 directionMagnitude = 0.0f;
             }
 
             AnimationStateEvent?.Invoke(AnimationState);
-           // SetfloatStatAanim(AnimationState);
-          
+            // SetfloatStatAanim(AnimationState);
             _animator.SetInteger("PlayerState", (int)AnimationState);
             _animator.SetFloat("MaxSpeed", directionMagnitude);
         }

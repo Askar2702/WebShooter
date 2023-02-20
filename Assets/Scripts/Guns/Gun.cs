@@ -29,7 +29,7 @@ public class Gun : WeaponParent
 
     [SerializeField] private Vector3 _startPos;
     [SerializeField] private Vector3 _aimPos;
-    private bool isAiming;
+    public bool isAiming { get; private set; }
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
