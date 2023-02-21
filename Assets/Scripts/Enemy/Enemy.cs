@@ -12,9 +12,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Animator _animator;
     private Health _health;
     [SerializeField] private RifleEnemAnimation _enemyAnim;
-    private NavMeshPath _path;
-    private PlayerInput _player;
-    private bool isPlayerTarget;
+
+    private float _reactionDistance = 20f;
+    private float _minDistance = 10;
+    public Player Player { get; private set; }
+  
+    public bool isPlayerTarget { get; private set; }
 
     [SerializeField] private LayerMask _mask;
 
@@ -22,7 +25,7 @@ public class Enemy : MonoBehaviour
     private DirectionMove _directionMove = DirectionMove.Forward;
     private void Awake()
     {
-        _player = FindObjectOfType<PlayerInput>();
+        Player = FindObjectOfType<Player>();
     }
     void Start()
     {
@@ -45,13 +48,8 @@ public class Enemy : MonoBehaviour
                 _enemyAnim.ShowIdle();
             }
             else if (Vector3.Distance(transform.position, _targetPos) >= 0.5f) _enemyAnim.ShowWalkForward();
+            PlayerAnalysis();
         }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            _meshAgent.Move(-transform.forward * Time.deltaTime);
-        }
-       
-        PlayerAnalysis();
     }
     private void DisableRb()
     {
@@ -89,9 +87,9 @@ public class Enemy : MonoBehaviour
 
     private void PlayerAnalysis()
     {
-        if (DistancePlayer() < 10 && DistancePlayer() > 7)
+        if (DistancePlayer() < _reactionDistance && DistancePlayer() > _minDistance)
         {
-            transform.LookAt(_player.transform);
+            transform.LookAt(Player.transform);
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
            // _meshAgent.velocity = Vector3.zero;
 
@@ -100,9 +98,9 @@ public class Enemy : MonoBehaviour
             isPlayerTarget = true;
            
         }
-        else if (DistancePlayer() < 7)
+        else if (DistancePlayer() < _minDistance)
         {
-            transform.LookAt(_player.transform);
+            transform.LookAt(Player.transform);
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
             var backPos = -transform.forward * Time.fixedDeltaTime * 50f;
           
@@ -128,7 +126,7 @@ public class Enemy : MonoBehaviour
             _enemyAnim.ShowWalkRight();
             _meshAgent.velocity = rightPos;
             _directionMove = DirectionMove.Right;
-            print("right");
+           // print("right");
             return;
         }
         else if (MyCollisions(-transform.right) && _directionMove != DirectionMove.Right)
@@ -137,7 +135,7 @@ public class Enemy : MonoBehaviour
             _enemyAnim.ShowWalkLeft();
             _meshAgent.velocity = leftPos;
             _directionMove = DirectionMove.Left;
-            print("left");
+           // print("left");
             return;
         }
         else  if (!MyCollisions(-transform.right) && !MyCollisions(transform.right))
@@ -145,7 +143,7 @@ public class Enemy : MonoBehaviour
             _enemyAnim.ShowIdle();
             _directionMove = DirectionMove.Forward;
             _meshAgent.velocity = Vector3.zero;
-            print("idles");
+           // print("idles");
         }
         else
         {
@@ -156,7 +154,7 @@ public class Enemy : MonoBehaviour
 
     private float DistancePlayer()
     {
-        return Vector3.Distance(_player.transform.position, transform.position);
+        return Vector3.Distance(Player.transform.position, transform.position);
     }
     private bool MyCollisions(Vector3 direction)
     {

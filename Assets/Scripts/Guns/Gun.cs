@@ -70,7 +70,7 @@ public class Gun : WeaponParent
 
     private void Fire()
     {
-        Instantiate(_playerBullet, _spawnBulletPoint.position, _spawnBulletPoint.rotation);
+       // Instantiate(_playerBullet, _spawnBulletPoint.position, _spawnBulletPoint.rotation);
 
         _muzzleFalshEffect.Play();
 
