@@ -21,7 +21,7 @@ public class RifleEnemAnimation : MonoBehaviour
 
     public void ShowWalkBack()
     {
-        if (_animator.GetInteger("VectorY") == -1 && _animator.GetInteger("VectorX") == 0) return;
+       if (_animator.GetInteger("VectorY") == -1 && _animator.GetInteger("VectorX") == 0) return;
         _animator.SetInteger("VectorY", -1);
         _animator.SetInteger("VectorX", 0);
     }

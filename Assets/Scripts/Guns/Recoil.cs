@@ -22,7 +22,7 @@ public class Recoil : MonoBehaviour
    
 
    
-    void Update()
+    void FixedUpdate()
     {
         _targetRotation = Vector3.Lerp(_targetRotation, Vector3.zero, _returnSpeed * Time.deltaTime);
         _currentRotation = Vector3.Slerp(_currentRotation, _targetRotation, _snappiness * Time.fixedDeltaTime);

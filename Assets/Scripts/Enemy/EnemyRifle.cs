@@ -9,6 +9,7 @@ public class EnemyRifle : MonoBehaviour
     [SerializeField] private ParticleSystem _muzzleFalshEffect;
     [SerializeField] private AudioSource _fireSound;
     [SerializeField] private float _interval;
+    [SerializeField] private LayerMask _layerMask;
     private Enemy _enemy;
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class EnemyRifle : MonoBehaviour
     {
         while (_enemy.IsAlive()) 
         {
+
             if (_enemy.isPlayerTarget && isReady)
             {
                 Fire();
@@ -35,7 +37,13 @@ public class EnemyRifle : MonoBehaviour
     private void Fire()
     {
         _spawnBulletPoint.LookAt(_enemy.Player.transform);
-       
+        RaycastHit hit;
+        if (Physics.Raycast(_spawnBulletPoint.position, _spawnBulletPoint.forward, out hit, Mathf.Infinity, _layerMask))
+        {
+            if (hit.transform.gameObject.layer != 8)
+                return;
+        }
+        
         var bullet =  Instantiate(_bullet, _spawnBulletPoint.position, _spawnBulletPoint.rotation);
         bullet.Init(_spawnBulletPoint.forward);
 

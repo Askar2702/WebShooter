@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
             _meshAgent.SetDestination(_targetPos);
             if (Vector3.Distance(transform.position, _targetPos) < 0.5f && !isPlayerTarget)
             {
-                _targetPos = PointsManager.instance.GetRandomPos();
+                _targetPos = MazeSpawner.instance.GetRandomPos();
                 _enemyAnim.ShowIdle();
             }
             else if (Vector3.Distance(transform.position, _targetPos) >= 0.5f) _enemyAnim.ShowWalkForward();
@@ -111,8 +111,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                _enemyAnim.ShowIdle();
-                _meshAgent.velocity = Vector3.zero;
+                RigthOrLeftMove();
             }
         }
         else isPlayerTarget = false;
@@ -126,7 +125,6 @@ public class Enemy : MonoBehaviour
             _enemyAnim.ShowWalkRight();
             _meshAgent.velocity = rightPos;
             _directionMove = DirectionMove.Right;
-           // print("right");
             return;
         }
         else if (MyCollisions(-transform.right) && _directionMove != DirectionMove.Right)
@@ -135,7 +133,6 @@ public class Enemy : MonoBehaviour
             _enemyAnim.ShowWalkLeft();
             _meshAgent.velocity = leftPos;
             _directionMove = DirectionMove.Left;
-           // print("left");
             return;
         }
         else  if (!MyCollisions(-transform.right) && !MyCollisions(transform.right))
@@ -143,7 +140,6 @@ public class Enemy : MonoBehaviour
             _enemyAnim.ShowIdle();
             _directionMove = DirectionMove.Forward;
             _meshAgent.velocity = Vector3.zero;
-           // print("idles");
         }
         else
         {

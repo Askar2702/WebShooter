@@ -16,7 +16,7 @@ public class EnemySpawn : MonoBehaviour
         yield return new WaitForSeconds(1);
         for (int i = 0; i < _count; i++)
         {
-            var pos = PointsManager.instance.GetRandomPos();
+            var pos = MazeSpawner.instance.GetRandomPos();
             pos = new Vector3(Random.Range(pos.x - 5, pos.x + 5), pos.y, Random.Range(pos.z - 5, pos.z + 5));
             var e = Instantiate(_enemy, pos, Quaternion.identity);
         }

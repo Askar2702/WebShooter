@@ -22,7 +22,6 @@ public class BulletEnemy : MonoBehaviour
 
         if (other.gameObject.TryGetComponent(out Player player))
         {
-            print(other.gameObject.name);
             player.TakeDamage(_damage);
             Destroy(gameObject);
         }

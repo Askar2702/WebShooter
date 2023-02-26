@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
     [SerializeField] private float _healthCount;
+    [SerializeField] private GameObject _miniMap;
     public bool isAlive { get; private set; }
 
     private void Awake()
@@ -23,6 +24,7 @@ public class Health : MonoBehaviour
         {
             _healthCount = 0;
             isAlive = false;
+            _miniMap.SetActive(false);
         }
         _slider.value = _healthCount;
     }
