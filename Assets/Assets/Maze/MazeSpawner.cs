@@ -47,8 +47,8 @@ public class MazeSpawner : MonoBehaviour
     }
 
 
-    public Vector3 GetRandomPos()
+    public Transform GetRandomPos()
     {
-        return Cells[Random.Range(0, Cells.Count)].Floor.position;
+        return Cells[Random.Range(0, Cells.Count)].Floor.transform;
     }
 }

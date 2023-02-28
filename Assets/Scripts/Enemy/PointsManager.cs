@@ -14,4 +14,6 @@ public class PointsManager  : StaticInstance<PointsManager>
     {
         return _points[Random.Range(0, _points.Length)].position;
     }
+
+   
 }

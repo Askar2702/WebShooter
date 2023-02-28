@@ -4620,10 +4620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 5630445841217738854}
-  _enemyAnim: {fileID: 1565644052249167967}
-  _mask:
-    serializedVersion: 2
-    m_Bits: 577
+  isDamage: 0
 --- !u!114 &-3419095427194986486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4664,6 +4661,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab0b541ec5bf934fb5df64ad758419c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mask:
+    serializedVersion: 2
+    m_Bits: 64
   _bullet: {fileID: 4188678850489315428, guid: 2a59641fc84fc25439ec7ae0bffaa0da, type: 3}
   _spawnBulletPoint: {fileID: 3704622008566585296}
   _muzzleFalshEffect: {fileID: 4292896680620596547}
@@ -9031,18 +9031,18 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 0
+    limit: -20
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 20
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 0
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 0
@@ -11658,8 +11658,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.22718847, z: 0.30581573}
-  m_Center: {x: -0.0765391, y: -0.021827117, z: 0}
+  m_Size: {x: 0.16570376, y: 0.22718847, z: 0.30581573}
+  m_Center: {x: -0.08439094, y: -0.021827117, z: 0.000000005219204}
 --- !u!1 &5638730456332105543
 GameObject:
   m_ObjectHideFlags: 0
@@ -13593,18 +13593,18 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_LowTwistLimit:
-    limit: 0
+    limit: 9
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 135
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 100
+    limit: 70
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
@@ -15476,18 +15476,18 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_LowTwistLimit:
-    limit: -40
+    limit: 0
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 25
+    limit: 20
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 25
+    limit: 15
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
@@ -16917,18 +16917,18 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_LowTwistLimit:
-    limit: 0
+    limit: 9
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 135
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 100
+    limit: 70
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
@@ -17146,7 +17146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1125059144981683598
 Transform:
   m_ObjectHideFlags: 0
@@ -17367,22 +17367,22 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_LowTwistLimit:
-    limit: -20
+    limit: 96
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 100
+    limit: 96
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 45
+    limit: 25
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 0
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 0
@@ -18578,18 +18578,18 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 0
+    limit: -20
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 20
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 0
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 0
@@ -18771,7 +18771,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7273431875572235383
 Transform:
   m_ObjectHideFlags: 0
