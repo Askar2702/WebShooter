@@ -10,14 +10,13 @@ public class Gun : WeaponParent
 
     [SerializeField] private GunDamage _gunDamage;
     [SerializeField] private LayerMask _layerMask;
-    [SerializeField] private PlayerBullet _playerBullet;
-    [SerializeField] private Transform _spawnBulletPoint;
+   
     [SerializeField] private float _interval;
 
 
-    [SerializeField] private DestroyAfterTimeParticle _timeParticle;
+    [SerializeField] private DestroyAfterTimeParticle _holeWallParticle;
     [SerializeField] private ParticleSystem _hitWall;
-    private Vector3 _direction;
+   
     [SerializeField] private Recoil _recoil;
     [SerializeField] private CameraRecoil _cameraRecoil;
     private bool isReady;
@@ -70,8 +69,7 @@ public class Gun : WeaponParent
 
     private void Fire()
     {
-       // Instantiate(_playerBullet, _spawnBulletPoint.position, _spawnBulletPoint.rotation);
-
+       
         _muzzleFalshEffect.Play();
 
         _fireSound.Play();
@@ -89,18 +87,12 @@ public class Gun : WeaponParent
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask))
         {
-            _direction = hit.point;
             SpawnEffectHitWall(hit);
             
-            if (hit.transform.root.TryGetComponent(out Enemy enemy))
+            if (hit.transform.root.TryGetComponent(out Enemy enemy) && hit.transform.GetComponent<Rigidbody>())
                 _gunDamage.ShootEnemy(enemy, hit.transform.GetComponent<Rigidbody>());
             
         }
-        else 
-            _direction = Vector3.zero;
-
-        if (_direction != Vector3.zero)
-            _spawnBulletPoint.LookAt(_direction);
     }
    
 
@@ -140,11 +132,12 @@ public class Gun : WeaponParent
 
     private void SpawnEffectHitWall(RaycastHit hit)
     {
-        if (hit.collider.gameObject.layer == 6)
+        if (hit.collider.gameObject.layer != 9)
         {
-            Instantiate(_timeParticle, hit.point + hit.normal * _floatInfrontOfWall, Quaternion.LookRotation(hit.normal));
             var hitWall = Instantiate(_hitWall, hit.point, Quaternion.identity);
             hitWall.transform.LookAt(transform.root.position);
+            if(hit.collider.gameObject.layer == 6)
+                Instantiate(_holeWallParticle, hit.point + hit.normal * _floatInfrontOfWall, Quaternion.LookRotation(hit.normal));
         }
     }
 

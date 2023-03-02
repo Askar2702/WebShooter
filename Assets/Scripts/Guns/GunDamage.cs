@@ -27,8 +27,9 @@ public class GunDamage : MonoBehaviour
             color = Color.red;
         }
         enemy.TakeDamage(damage);
-        rb.AddForce(transform.forward * _force, ForceMode.Impulse);
+        var dir = (transform.forward
+            + new Vector3(Random.Range(-transform.right.x, transform.right.x), transform.right.y, transform.right.z)) * _force;
+        rb.AddForce(dir, ForceMode.Impulse);
         UIManager.instance.ShowAmountDamage(enemy.GetAmountDamageDealt() , color);
-        //print(rb.tag);
     }
 }

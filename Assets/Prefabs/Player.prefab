@@ -347,14 +347,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5623917426967069850}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.35, z: 0.3}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.45, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2844531621167528662}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!212 &3160478714217264080
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 31023ea2632398f45afd330074324c51, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2728,9 +2728,6 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 576
-  _playerBullet: {fileID: 2121610988282681107, guid: 2a59641fc84fc25439ec7ae0bffaa0da,
-    type: 3}
-  _spawnBulletPoint: {fileID: 2002853158}
   _interval: 0.1
   _timeParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}

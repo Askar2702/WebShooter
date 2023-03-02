@@ -10,8 +10,9 @@ public class Enemy : MonoBehaviour
     private Rigidbody[] _rbs;
     [SerializeField] private Animator _animator;
     private Health _health;
+    [HideInInspector]
     public bool isDamage;
-
+    [SerializeField] private bool isDrone;
   
     public Player Player { get; private set; }
   
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (isDrone) return;
         isDamage = true;
         _health.TakeDamege(damage);
         if (!IsAlive())
@@ -60,11 +62,13 @@ public class Enemy : MonoBehaviour
 
     public bool IsAlive()
     {
+        if (isDrone) return true;
         return _health.isAlive;
     }
 
     public float GetAmountDamageDealt()
     {
+        if (isDrone) return 0;
         return _health.GetAmountDamageDealt();
     }
 

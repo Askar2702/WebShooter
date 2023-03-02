@@ -21,7 +21,7 @@ public class EnemyRifle : MonoBehaviour
     [SerializeField] private AudioSource _fireSound;
     [SerializeField] private float _interval;
     [SerializeField] private LayerMask _layerMask;
-    private bool isPlayerTarget;
+    public bool isPlayerTarget { get; private set; }
     #endregion
     private Enemy _enemy;
     private RifleEnemAnimation EnemyAnim;
@@ -187,4 +187,9 @@ public class EnemyRifle : MonoBehaviour
         isReady = true;
     }
     #endregion
+
+    private void OnDisable()
+    {
+        EnemySpawn.instance.DeletelSelf(this);
+    }
 }
