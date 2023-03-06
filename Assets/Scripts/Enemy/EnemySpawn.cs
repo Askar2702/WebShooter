@@ -5,8 +5,7 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public static EnemySpawn instance { get; private set; }
-    [SerializeField] private Enemy _enemy;
-    [SerializeField] private int _count;
+   
     [SerializeField] private EnemySpawnList _spawnDataList;
     private List<EnemyRifle> _enemyRifles = new List<EnemyRifle>();
     private void Awake()

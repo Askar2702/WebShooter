@@ -4621,6 +4621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 5630445841217738854}
   isDamage: 0
+  isDrone: 0
 --- !u!114 &-3419095427194986486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15455,7 +15456,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.12
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!144 &8059705818410827697
 CharacterJoint:

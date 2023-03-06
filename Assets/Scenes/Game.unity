@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &139457279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 139457279, guid: f021a90afa9cf27409da8669d6080627,
+    type: 3}
+  m_PrefabInstance: {fileID: 1615159363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &270964840
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,19 +2286,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2079131602, guid: f021a90afa9cf27409da8669d6080627, type: 3}
-      propertyPath: _holeWallParticle
-      value: 
-      objectReference: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-        type: 3}
-    - target: {fileID: 2079131602, guid: f021a90afa9cf27409da8669d6080627, type: 3}
-      propertyPath: _layerMask.m_Bits
-      value: 4672
-      objectReference: {fileID: 0}
-    - target: {fileID: 2079131604, guid: f021a90afa9cf27409da8669d6080627, type: 3}
-      propertyPath: _force
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2844531621167528660, guid: f021a90afa9cf27409da8669d6080627,
         type: 3}
       propertyPath: m_Name
@@ -2351,11 +2350,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _speedRotate
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2844531621935463625, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 6135
       objectReference: {fileID: 0}
     - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
         type: 3}
@@ -2461,7 +2455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1769744497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,8 +2468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa0812071251c94d801dea6b084cb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 4857078147048124199, guid: e936ed5512758db42860876af0108f78, type: 3}
-  _count: 1
   _spawnDataList: {fileID: 11400000, guid: 98dba7476e32871439750af72407e717, type: 2}
 --- !u!4 &1769744498
 Transform:
@@ -2524,7 +2516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CurrentWeapon>k__BackingField: {fileID: 0}
   _pistol: {fileID: 0}
-  _baseWeapon: {fileID: 2079131601}
+  _baseWeapon: {fileID: 139457279}
   _technoWeapon: {fileID: 0}
   _bomb: {fileID: 726672746}
 --- !u!4 &1774551916
@@ -3104,15 +3096,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2079131601 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2079131601, guid: f021a90afa9cf27409da8669d6080627,
-    type: 3}
-  m_PrefabInstance: {fileID: 1615159363}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

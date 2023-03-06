@@ -29,6 +29,8 @@ public class Gun : WeaponParent
     [SerializeField] private Vector3 _startPos;
     [SerializeField] private Vector3 _aimPos;
     public bool isAiming { get; private set; }
+
+    private Camera _currentCam;
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -39,6 +41,7 @@ public class Gun : WeaponParent
         isReady = true;
         isAiming = false;
         AnimationManager.instance.AnimationStateEvent.AddListener(CheckAnimation);
+        _currentCam = Camera.main;
     }
 
 
@@ -54,7 +57,7 @@ public class Gun : WeaponParent
                 if (AnimationManager.instance.isAimAnimation())
                     Fire();
             }
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) && !AnimationManager.instance.CheckRun())
             {
                 Aiming();
                 AnimationManager.instance.ShowAimAnimation();
@@ -83,7 +86,7 @@ public class Gun : WeaponParent
 
     private void ComputeDirection()
     {
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        Ray ray = _currentCam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask))
         {

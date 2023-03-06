@@ -7,6 +7,7 @@ public class ShieldDroneEnemy : MonoBehaviour
 {
     [SerializeField] private Enemy _enemy;
     [SerializeField] private float _reactDistance;
+    [SerializeField] private float _reactDistancePlayer;
     private Vector3 _targetPos;
     private bool isProtected;
     void Start()
@@ -26,16 +27,21 @@ public class ShieldDroneEnemy : MonoBehaviour
                 print("walk");
             }
 
-            if (FindClosestRifle() && FindClosestRifle().isPlayerTarget 
-                && Vector3.Distance(FindClosestRifle().transform.position, transform.position) <= _reactDistance)
+            if (DistancePlayer() <= _reactDistancePlayer)
             {
                 transform.LookAt(_enemy.Player.transform);
                 transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-                _targetPos = FindClosestRifle().transform.position + (FindClosestRifle().transform.forward * 5);
-                Debug.DrawRay(transform.position, FindClosestRifle().transform.position, Color.green);
-                isProtected = true;
-                print("protected");
+
+                if (FindClosestRifle() && FindClosestRifle().isPlayerTarget
+               && Vector3.Distance(FindClosestRifle().transform.position, transform.position) <= _reactDistance)
+                {
+                    _targetPos = FindClosestRifle().transform.position + (FindClosestRifle().transform.forward * 5);
+                    Debug.DrawRay(transform.position, FindClosestRifle().transform.position, Color.green);
+                    isProtected = true;
+                    print("protected");
+                }
             }
+
             if (FindClosestRifle() && Vector3.Distance(FindClosestRifle().transform.position, transform.position) > _reactDistance)
             {
                 if (isProtected)
@@ -45,6 +51,8 @@ public class ShieldDroneEnemy : MonoBehaviour
                     print("Notprotected");
                 }
             }
+
+           
 
         }
 

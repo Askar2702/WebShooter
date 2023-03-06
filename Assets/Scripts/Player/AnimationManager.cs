@@ -32,13 +32,13 @@ public class AnimationManager : MonoBehaviour
     }
 
 
-  
+
 
     public void ReloadGun()
     {
         if (AnimationState == AnimationState.Reload) return;
         AnimationState = AnimationState.Reload;
-      //  SetfloatStatAanim(AnimationState);
+        //  SetfloatStatAanim(AnimationState);
         _animator.SetInteger("PlayerState", (int)AnimationState);
         StartCoroutine(EndCurrentAnimAndStartIdle(_reloadGunAnimation));
         AnimationStateEvent?.Invoke(AnimationState);
@@ -50,10 +50,10 @@ public class AnimationManager : MonoBehaviour
         {
             if (directionMagnitude >= 0.5f && _playerInput.CheckGroud())
                 AnimationState = currentSpeed > idleSpeed ? AnimationState.Run : AnimationState.Walk;
-            else if ( directionMagnitude <= 0.5f && _playerInput.CheckGroud() || !_playerInput.CheckGroud())
+            else if (directionMagnitude <= 0.5f && _playerInput.CheckGroud() || !_playerInput.CheckGroud())
             {
                 AnimationState = _gun.isAiming ? AnimationState.AimPos : AnimationState.Idle;
-                 
+
                 directionMagnitude = 0.0f;
             }
 
@@ -66,14 +66,17 @@ public class AnimationManager : MonoBehaviour
 
     private bool CheckBaseAnimation()
     {
-        return Input.GetMouseButton(0)==false
+        return Input.GetMouseButton(0) == false
             && AnimationState != AnimationState.Reload &&
             AnimationState != AnimationState.ChangeGun
             &&
             AnimationState != AnimationState.StartGrenade &&
             AnimationState != AnimationState.BombThrow;
     }
-
+    public bool CheckRun()
+    {
+        return _animator.GetFloat("MaxSpeed") > 0.5f;
+    }
     public void ShowAimAnimation()
     {
         if (AnimationState == AnimationState.AimPos) return;
@@ -86,7 +89,7 @@ public class AnimationManager : MonoBehaviour
     {
         return _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _aimGunAnimation;
     }
-   
+
 
     public void StartGrenade()
     {
@@ -96,7 +99,7 @@ public class AnimationManager : MonoBehaviour
 
     public void BombThrow()
     {
-        if (AnimationState == AnimationState.StartGrenade && _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name!=_GrenadeThrowAnimation)
+        if (AnimationState == AnimationState.StartGrenade && _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != _GrenadeThrowAnimation)
         {
             AnimationState = AnimationState.BombThrow;
             _animator.SetInteger("PlayerState", (int)AnimationState);
@@ -108,11 +111,11 @@ public class AnimationManager : MonoBehaviour
         AnimationState = AnimationState.Idle;
         _animator.SetInteger("PlayerState", (int)AnimationState);
     }
-    
-    public void SwitchingWeaponAnim(System.Action callback , AnimationState state)
+
+    public void SwitchingWeaponAnim(System.Action callback, AnimationState state)
     {
         _currentState = state;
-      //  if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _changeGunAnimation) return;
+        //  if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _changeGunAnimation) return;
         AnimationState = AnimationState.ChangeGun;
         _animator.SetInteger("PlayerState", (int)AnimationState);
         StartCoroutine(FollowAnimationSwitchingWeapon(callback));
@@ -138,7 +141,8 @@ public class AnimationManager : MonoBehaviour
         _animator.SetInteger("PlayerState", (int)AnimationState);
     }
 
-   
 
-  
+
+
+
 }
