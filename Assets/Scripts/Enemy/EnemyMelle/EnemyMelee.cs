@@ -17,7 +17,7 @@ public class EnemyMelee : MonoBehaviour
 
     private void Start()
     {
-        _target = MazeSpawner.instance.GetRandomPos();
+        _target = PointsManager.instance.GetRandomPos();
     }
 
     void Update()
@@ -41,10 +41,10 @@ public class EnemyMelee : MonoBehaviour
             else
             {
                 isPlayerTarget = false;
-                if (_target == _enemy.Player.transform) _target = MazeSpawner.instance.GetRandomPos();
+                if (_target == _enemy.Player.transform) _target = PointsManager.instance.GetRandomPos();
                 if (Vector3.Distance(transform.position, _target.position) < 0.5f && !isPlayerTarget)
                 {
-                    _target = MazeSpawner.instance.GetRandomPos();
+                    _target = PointsManager.instance.GetRandomPos();
                     _animator.SetInteger("AnimState", 0);
                 }
                 else _animator.SetInteger("AnimState", 1);

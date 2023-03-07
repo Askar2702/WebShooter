@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyLists:
   - Enemy: {fileID: 4857078147048124199, guid: 8e1d6bfe6b59d204c8d703c3c58fe28b, type: 3}
-    Count: 15
+    Count: 30
   - Enemy: {fileID: 4857078147048124199, guid: e936ed5512758db42860876af0108f78, type: 3}
-    Count: 25
+    Count: 50
   - Enemy: {fileID: 7674856949905481951, guid: f7db4889c7b6bfe45b5d08551f3c559d, type: 3}
     Count: 1

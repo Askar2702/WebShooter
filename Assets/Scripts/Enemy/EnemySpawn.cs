@@ -28,7 +28,7 @@ public class EnemySpawn : MonoBehaviour
         {
             for(int j = 0; j < _spawnDataList.EnemyLists[i].Count; j++)
             {
-                var pos = MazeSpawner.instance.GetRandomPos().position;
+                var pos = PointsManager.instance.GetRandomPos().position;
                 pos = new Vector3(Random.Range(pos.x - 5, pos.x + 5), pos.y, Random.Range(pos.z - 5, pos.z + 5));
                 var e = Instantiate(_spawnDataList.EnemyLists[i].Enemy, pos, Quaternion.identity);
                 if (e.GetComponent<EnemyRifle>()) _enemyRifles.Add(e.GetComponent<EnemyRifle>());

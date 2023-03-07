@@ -10,9 +10,9 @@ public class PointsManager  : StaticInstance<PointsManager>
     {
         if (!instance) instance = this;
     }
-    public Vector3 GetRandomPos()
+    public Transform GetRandomPos()
     {
-        return _points[Random.Range(0, _points.Length)].position;
+        return _points[Random.Range(0, _points.Length)];
     }
 
    

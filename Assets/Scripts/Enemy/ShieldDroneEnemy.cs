@@ -12,7 +12,7 @@ public class ShieldDroneEnemy : MonoBehaviour
     private bool isProtected;
     void Start()
     {
-        _targetPos = MazeSpawner.instance.GetRandomPos().position;
+        _targetPos = PointsManager.instance.GetRandomPos().position;
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class ShieldDroneEnemy : MonoBehaviour
             _enemy.MeshAgent.SetDestination(_targetPos);
             if (Vector3.Distance(transform.position, _targetPos) < 2.5f && !isProtected)
             {
-                _targetPos = MazeSpawner.instance.GetRandomPos().position;
+                _targetPos = PointsManager.instance.GetRandomPos().position;
                 print("walk");
             }
 
@@ -47,7 +47,7 @@ public class ShieldDroneEnemy : MonoBehaviour
                 if (isProtected)
                 {
                     isProtected = false;
-                    _targetPos = MazeSpawner.instance.GetRandomPos().position;
+                    _targetPos = PointsManager.instance.GetRandomPos().position;
                     print("Notprotected");
                 }
             }

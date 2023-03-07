@@ -28,6 +28,10 @@ public class Gun : WeaponParent
 
     [SerializeField] private Vector3 _startPos;
     [SerializeField] private Vector3 _aimPos;
+
+    [Space(30)]
+    [SerializeField] private Vector3 _gunPosAiming;
+    [SerializeField] private Vector3 _gunRotAiming;
     public bool isAiming { get; private set; }
 
     private Camera _currentCam;
@@ -59,8 +63,8 @@ public class Gun : WeaponParent
             }
             if (Input.GetMouseButtonDown(1) && !AnimationManager.instance.CheckRun())
             {
-                Aiming();
                 AnimationManager.instance.ShowAimAnimation();
+                Aiming();
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
@@ -115,6 +119,8 @@ public class Gun : WeaponParent
         else 
         {
             MoveAimPos(_aimPos, true);
+            transform.localPosition = _gunPosAiming;
+            transform.localEulerAngles = _gunRotAiming;
         }
     }
 

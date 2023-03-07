@@ -35,7 +35,7 @@ public class EnemyRifle : MonoBehaviour
     private void Start()
     {
         isReady = true;
-        _targetPos = MazeSpawner.instance.GetRandomPos().position;
+        _targetPos = PointsManager.instance.GetRandomPos().position;
         StartCoroutine(UpdateState());
     }
 
@@ -47,7 +47,7 @@ public class EnemyRifle : MonoBehaviour
             _enemy.MeshAgent.SetDestination(_targetPos);
             if (Vector3.Distance(transform.position, _targetPos) < 0.5f && !isPlayerTarget)
             {
-                _targetPos = MazeSpawner.instance.GetRandomPos().position;
+                _targetPos = PointsManager.instance.GetRandomPos().position;
                 EnemyAnim.ShowIdle();
             }
             else if (Vector3.Distance(transform.position, _targetPos) >= 0.5f) EnemyAnim.ShowWalkForward();

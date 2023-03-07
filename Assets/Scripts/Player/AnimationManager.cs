@@ -12,10 +12,10 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] private Animator _animator;
     private readonly string _runAnimation = "Character_Run";
     private readonly string _reloadGunAnimation = "Character_Reload";
-    private readonly string _idleAnimation = "Character_Idle";
-    private readonly string _walkAnimation = "Character_Walk";
+    private readonly string _idleAnimation = "IdleRifle";
+    private readonly string _walkAnimation = "WalkRifle";
     private readonly string _changeGunAnimation = "SwitchingWeapon";
-    private readonly string _aimGunAnimation = "Player_AImpose";
+    private readonly string _aimGunAnimation = "AimPosRifle";
     private readonly string _GrenadeThrowAnimation = "GrenadeThrow";
     private readonly string _HoldTheGnarataAnimation = "HoldTheGnarata";
     private PlayerInput _playerInput;
@@ -48,12 +48,18 @@ public class AnimationManager : MonoBehaviour
     {
         if (CheckBaseAnimation())
         {
-            if (directionMagnitude >= 0.5f && _playerInput.CheckGroud())
-                AnimationState = currentSpeed > idleSpeed ? AnimationState.Run : AnimationState.Walk;
-            else if (directionMagnitude <= 0.5f && _playerInput.CheckGroud() || !_playerInput.CheckGroud())
+            if (directionMagnitude >= 1f && _playerInput.CheckGroud())
+            {
+                if (currentSpeed > idleSpeed)
+                    AnimationState = AnimationState.Run;
+                else if (currentSpeed <= idleSpeed && !_gun.isAiming)
+                {
+                    AnimationState = AnimationState.Walk;
+                }
+            }
+            else if (directionMagnitude <= 1f && _playerInput.CheckGroud() || !_playerInput.CheckGroud())
             {
                 AnimationState = _gun.isAiming ? AnimationState.AimPos : AnimationState.Idle;
-
                 directionMagnitude = 0.0f;
             }
 
@@ -75,7 +81,7 @@ public class AnimationManager : MonoBehaviour
     }
     public bool CheckRun()
     {
-        return _animator.GetFloat("MaxSpeed") > 0.5f;
+        return AnimationState == AnimationState.Run;
     }
     public void ShowAimAnimation()
     {
