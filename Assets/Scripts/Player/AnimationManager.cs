@@ -32,7 +32,7 @@ public class AnimationManager : MonoBehaviour
     }
 
 
-
+  
 
     public void ReloadGun()
     {
@@ -83,6 +83,7 @@ public class AnimationManager : MonoBehaviour
     {
         return AnimationState == AnimationState.Run;
     }
+
     public void ShowAimAnimation()
     {
         if (AnimationState == AnimationState.AimPos) return;
