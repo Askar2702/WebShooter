@@ -48,7 +48,7 @@ public class AnimationManager : MonoBehaviour
     {
         if (CheckBaseAnimation())
         {
-            if (directionMagnitude >= 1f && _playerInput.CheckGroud())
+            if (directionMagnitude >= 1f && _playerInput.CheckGround())
             {
                 if (currentSpeed > idleSpeed)
                     AnimationState = AnimationState.Run;
@@ -57,7 +57,7 @@ public class AnimationManager : MonoBehaviour
                     AnimationState = AnimationState.Walk;
                 }
             }
-            else if (directionMagnitude <= 1f && _playerInput.CheckGroud() || !_playerInput.CheckGroud())
+            else if (directionMagnitude <= 1f && _playerInput.CheckGround() || !_playerInput.CheckGround())
             {
                 AnimationState = _gun.isAiming ? AnimationState.AimPos : AnimationState.Idle;
                 directionMagnitude = 0.0f;

@@ -61,10 +61,10 @@ public class Gun : WeaponParent
                 if (AnimationManager.instance.isAimAnimation())
                     Fire();
             }
-            if (Input.GetMouseButtonDown(1) && !AnimationManager.instance.CheckRun())
+            if (Input.GetMouseButtonDown(1))
             {
-                AnimationManager.instance.ShowAimAnimation();
                 Aiming();
+                AnimationManager.instance.ShowAimAnimation();
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
@@ -118,9 +118,10 @@ public class Gun : WeaponParent
         }
         else 
         {
-            MoveAimPos(_aimPos, true);
+           
             transform.localPosition = _gunPosAiming;
             transform.localEulerAngles = _gunRotAiming;
+            MoveAimPos(_aimPos, true);
         }
     }
 
@@ -134,7 +135,7 @@ public class Gun : WeaponParent
 
     private void MoveAimPos(Vector3 pos , bool isAim)
     {
-        _parent.DOLocalMove(pos, 0.5f);
+        _parent.DOLocalMove(pos, 0.05f);
         isAiming = isAim;
         UIManager.instance.ShowAimTarget(!isAim);
     }

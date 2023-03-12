@@ -19,7 +19,6 @@ public class PlayerInput : MonoBehaviour
     private Vector3 dir;
 
 
-    // Update is called once per frame
     private void Start()
     {
         _currentSpeed = _idleSpeed;
@@ -47,25 +46,61 @@ public class PlayerInput : MonoBehaviour
 
     private void Move()
     {
-        if (Input.GetKey(KeyCode.LeftShift)) _currentSpeed = _runSpeed;
-        else _currentSpeed = _idleSpeed;
-        if (CheckGroud())
+        Vector2 movementInput = GetMovementInput();
+
+        if (movementInput.y > 0)
         {
-            dir = new Vector3(Input.GetAxis("Horizontal") * _currentSpeed, dir.y, Input.GetAxis("Vertical") * _currentSpeed);
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                _currentSpeed = _runSpeed;
+            }
+        }
+        else if (movementInput.x != 0 || movementInput.y < 0 || movementInput == Vector2.zero)
+        {
+            _currentSpeed = _idleSpeed;
+        }
+
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        {
+            _currentSpeed = _idleSpeed;
+        }
+
+        if (CheckGround())
+        {
+            dir = new Vector3(movementInput.x * _currentSpeed, dir.y, movementInput.y * _currentSpeed);
             dir = transform.TransformDirection(dir);
-            if (Input.GetButtonDown("Jump")) dir.y = _jumpSpeed;
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                dir.y = _jumpSpeed;
+            }
             else
+            {
                 dir = new Vector3(dir.x, 0, dir.z);
+            }
         }
 
         dir.y -= _gravity * Time.deltaTime;
-        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0) dir = new Vector3(0f, dir.y, 0f);
-        _characterController.Move(dir  * Time.deltaTime);
+
+        if (movementInput == Vector2.zero)
+        {
+            dir = new Vector3(0f, dir.y, 0f);
+        }
+
+        _characterController.Move(dir * Time.deltaTime);
 
         AnimationManager.instance.ShowAnimationWalkOrRun(dir.magnitude, _currentSpeed, _idleSpeed);
     }
 
-    public bool CheckGroud()
+    private Vector2 GetMovementInput()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        return new Vector2(horizontal, vertical);
+    }
+
+    public bool CheckGround()
     {
         return _characterController.isGrounded;
     }
