@@ -59,7 +59,7 @@ public class AnimationManager : MonoBehaviour
             }
             else if (directionMagnitude <= 1f && _playerInput.CheckGround() || !_playerInput.CheckGround())
             {
-                AnimationState = _gun.isAiming ? AnimationState.AimPos : AnimationState.Idle;
+                AnimationState = AnimationState.AimPos;
                 directionMagnitude = 0.0f;
             }
 
