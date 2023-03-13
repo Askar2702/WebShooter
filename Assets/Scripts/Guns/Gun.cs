@@ -63,8 +63,8 @@ public class Gun : WeaponParent
             }
             if (Input.GetMouseButtonDown(1))
             {
-                Aiming();
                 AnimationManager.instance.ShowAimAnimation();
+                Aiming();
             }
             if (Input.GetKeyDown(KeyCode.L))
             {

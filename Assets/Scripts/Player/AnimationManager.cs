@@ -56,6 +56,9 @@ public class AnimationManager : MonoBehaviour
                 {
                     AnimationState = AnimationState.Walk;
                 }
+                _animator.SetInteger("PlayerState", (int)AnimationState);
+                _animator.SetFloat("MaxSpeed", directionMagnitude);
+                print(directionMagnitude);
             }
             else if (directionMagnitude <= 1f && _playerInput.CheckGround() || !_playerInput.CheckGround())
             {
@@ -64,9 +67,6 @@ public class AnimationManager : MonoBehaviour
             }
 
             AnimationStateEvent?.Invoke(AnimationState);
-            // SetfloatStatAanim(AnimationState);
-            _animator.SetInteger("PlayerState", (int)AnimationState);
-            _animator.SetFloat("MaxSpeed", directionMagnitude);
         }
     }
 
