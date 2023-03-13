@@ -59,7 +59,7 @@ public class AnimationManager : MonoBehaviour
             }
             else if (directionMagnitude <= 1f && _playerInput.CheckGround() || !_playerInput.CheckGround())
             {
-                AnimationState = AnimationState.AimPos;
+                ShowAimAnimation();
                 directionMagnitude = 0.0f;
             }
 
