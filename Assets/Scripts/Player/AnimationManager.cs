@@ -31,8 +31,11 @@ public class AnimationManager : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
     }
 
+    private void Start()
+    {
+        _gun = WeaponCatalog.instance.BaseWeapon.GetComponent<Gun>();
+    }
 
-  
 
     public void ReloadGun()
     {
@@ -58,12 +61,10 @@ public class AnimationManager : MonoBehaviour
                 }
                 _animator.SetInteger("PlayerState", (int)AnimationState);
                 _animator.SetFloat("MaxSpeed", directionMagnitude);
-                print(directionMagnitude);
             }
             else if (directionMagnitude <= 1f && _playerInput.CheckGround() || !_playerInput.CheckGround())
             {
                 ShowAimAnimation();
-                directionMagnitude = 0.0f;
             }
 
             AnimationStateEvent?.Invoke(AnimationState);
@@ -94,7 +95,7 @@ public class AnimationManager : MonoBehaviour
 
     public bool isAimAnimation()
     {
-        return _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _aimGunAnimation;
+        return _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _gun.AimingAnimationName.name;
     }
 
 

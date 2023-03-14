@@ -32,6 +32,16 @@ public class Gun : WeaponParent
     [Space(30)]
     [SerializeField] private Vector3 _gunPosAiming;
     [SerializeField] private Vector3 _gunRotAiming;
+
+  
+
+    
+    [field: SerializeField] public AnimationClip AimingAnimationName { get; private set; }
+
+    [Space(25)]
+    [SerializeField] private Camera _aimimgCamera;
+    [Range(1, 25)]
+    [SerializeField] private float _opticSize;
     public bool isAiming { get; private set; }
 
     private Camera _currentCam;
@@ -46,6 +56,7 @@ public class Gun : WeaponParent
         isAiming = false;
         AnimationManager.instance.AnimationStateEvent.AddListener(CheckAnimation);
         _currentCam = Camera.main;
+        _aimimgCamera.fieldOfView = _opticSize;
     }
 
 

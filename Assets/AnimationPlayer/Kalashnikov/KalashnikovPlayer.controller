@@ -76,7 +76,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e2f03b5bb9151b949bdc531dbc153083, type: 2}
+  m_Motion: {fileID: 7400000, guid: 34ce92b2560a0fa43b474239e28373e4, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -256,7 +256,7 @@ AnimatorStateMachine:
     m_Position: {x: 0, y: 790, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2728376546886148343}
-    m_Position: {x: 0, y: 870, z: 0}
+    m_Position: {x: 0, y: 850, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1760527395979386069}
     m_Position: {x: -800, y: 790, z: 0}
@@ -705,7 +705,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: eead370f307dce74186ec85f858c3160, type: 2}
+  m_Motion: {fileID: 7400000, guid: 97bf7cb22a7fd2f46a74334928ff726f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -842,7 +842,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: KalashnikovPlayer
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: PlayerState
@@ -1181,7 +1181,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dc89b10468306d04190807c07494e0a3, type: 2}
+  m_Motion: {fileID: 7400000, guid: c929c61ce412f554bace7d9272cee5d4, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1491,7 +1491,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fa79b504ff76303428ea997b9271c383, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7de31f3eb20dae84aac829f1e7fa61ed, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

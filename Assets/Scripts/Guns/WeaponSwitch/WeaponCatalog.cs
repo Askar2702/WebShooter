@@ -9,19 +9,19 @@ public class WeaponCatalog : MonoBehaviour
     private WeaponParent[] WeaponsCatalog = new WeaponParent[2];
    [field:SerializeField] public WeaponParent CurrentWeapon { get; private set; }
 
-    [SerializeField] private PistolWeapon _pistol;
-    [SerializeField] private BaseWeapon _baseWeapon;
-    [SerializeField] private TechnoWeapon _technoWeapon;
-    [SerializeField] private BombWeapon _bomb;
+    [field: SerializeField] public PistolWeapon Pistol { get; private set; }
+    [field: SerializeField] public BaseWeapon BaseWeapon { get; private set; }
+    [field: SerializeField] public TechnoWeapon TechnoWeapon { get; private set; }
+    [field: SerializeField] public BombWeapon Bomb { get; private set; }
 
     private void Awake()
     {
         if (!instance) instance = this;
-        CurrentWeapon = _baseWeapon;
+        CurrentWeapon = BaseWeapon;
       //  WeaponsCatalog[0] = _pistol;
-        WeaponsCatalog[0] = _baseWeapon;
+        WeaponsCatalog[0] = BaseWeapon;
        // WeaponsCatalog[2] = _technoWeapon;
-        WeaponsCatalog[1] = _bomb;
+        WeaponsCatalog[1] = Bomb;
         CurrentWeapon.gameObject.SetActive(true);
     }
 
@@ -64,7 +64,7 @@ public class WeaponCatalog : MonoBehaviour
 
     public void EnabledBomb(bool activ)
     {
-        _bomb.gameObject.SetActive(activ);
+        Bomb.gameObject.SetActive(activ);
     }
 
 }
