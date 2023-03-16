@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WalkKalashnikov
+  m_Name: RunCtar21
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -144.183, y: 219.34799, z: 265.816}
+        value: {x: -0.021, y: 21.71, z: 7.423}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -27,25 +27,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 2
-        value: {x: -144.183, y: 219.34799, z: 265.816}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -104.018, y: 216.82, z: 286.944}
+        time: 0.33333334
+        value: {x: -1.131, y: 23.157, z: 13.514}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -53,77 +36,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 2
-        value: {x: -104.018, y: 216.82, z: 286.944}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeft
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -1.964, y: 5.056, z: -8.031}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 1
-        value: {x: -5.568, y: 5.675, z: -11.53}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 2
-        value: {x: -1.964, y: 5.056, z: -8.031}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0, y: 0, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 1
-        value: {x: -0.094, y: 2.065, z: -0.493}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 2
-        value: {x: 0, y: 0, z: 0}
+        time: 0.6666667
+        value: {x: -0.021, y: 21.71, z: 7.423}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -134,13 +48,100 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -1.253, y: -174.383, z: 261.559}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6666667
+        value: {x: -1.253, y: -174.383, z: 261.559}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -108.443, y: 200.286, z: 291.711}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.33333334
+        value: {x: -126.162, y: 194.567, z: 290.704}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6666667
+        value: {x: -108.443, y: 200.286, z: 291.711}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeft
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -153.878, y: 222.76, z: 269.469}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6666667
+        value: {x: -153.878, y: 222.76, z: 269.469}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
   m_PositionCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: 0}
+        value: {x: -0.11771459, y: 0.06577866, z: -0.099411726}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -148,8 +149,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 1
-        value: {x: -0.010594977, y: -0.0041061463, z: -0.014996778}
+        time: 0.33333334
+        value: {x: -0.12867105, y: 0.11245187, z: -0.0772378}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -157,8 +158,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 2
-        value: {x: 0, y: 0, z: 0}
+        time: 0.6666667
+        value: {x: -0.11771459, y: 0.06577866, z: -0.099411726}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -174,7 +175,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.2955997, y: -0.41770035, z: -0.21840027}
+        value: {x: -0.261, y: -0.408, z: -0.002}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -182,8 +183,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 2
-        value: {x: -0.2955997, y: -0.41770035, z: -0.21840027}
+        time: 0.6666667
+        value: {x: -0.261, y: -0.408, z: -0.002}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -193,14 +194,14 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.5790007, y: -0.38210016, z: -0.061499476}
+        value: {x: -0.57240057, y: -0.38160282, z: -0.0035998821}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -208,8 +209,17 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 2
-        value: {x: -0.5790007, y: -0.38210016, z: -0.061499476}
+        time: 0.33333334
+        value: {x: -0.57240075, y: -0.38160282, z: -0.0036000013}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6666667
+        value: {x: -0.57240057, y: -0.38160282, z: -0.0035998821}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -219,14 +229,14 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
       1/iks/ikLeft
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.0039646975, y: 0.03243296, z: -0.00000032410026}
+        value: {x: -0.29560018, y: -0.41769996, z: -0.21840009}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -234,17 +244,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 1
-        value: {x: 0.0077512613, y: 0.03125212, z: -0.0048691453}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 2
-        value: {x: 0.0039646975, y: 0.03243296, z: -0.00000032410026}
+        time: 0.6666667
+        value: {x: -0.29560018, y: -0.41769996, z: -0.21840009}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -254,38 +255,10 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
   m_ScaleCurves: []
-  m_FloatCurves:
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Weight
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1
-    classID: 114
-    script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+  m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -302,20 +275,6 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 326152300
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 326152300
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
-      isPPtrCurve: 0
-    - serializedVersion: 2
       path: 1912876739
       attribute: 4
       script: {fileID: 0}
@@ -323,39 +282,46 @@ AnimationClip:
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 667058144
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 1032580308
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 667058144
+      path: 580027845
       attribute: 4
       script: {fileID: 0}
       typeID: 4
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1032580308
+      path: 485842723
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 580027845
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3804360506
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 485842723
       attribute: 4
       script: {fileID: 0}
       typeID: 4
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1181841679
-      attribute: 1257374345
-      script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
-      typeID: 114
-      customType: 0
+      path: 3804360506
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
       isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
@@ -363,7 +329,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2
+    m_StopTime: 0.6666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -384,7 +350,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: -0.11771459
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -392,8 +358,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: -0.010594977
+        time: 0.33333334
+        value: -0.12867105
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -401,8 +367,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: 0
+        time: 0.6666667
+        value: -0.11771459
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -421,7 +387,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 0.06577866
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -429,8 +395,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: -0.0041061463
+        time: 0.33333334
+        value: 0.11245187
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -438,8 +404,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: 0
+        time: 0.6666667
+        value: 0.06577866
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -458,7 +424,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: -0.099411726
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -466,8 +432,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: -0.014996778
+        time: 0.33333334
+        value: -0.0772378
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -475,8 +441,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: 0
+        time: 0.6666667
+        value: -0.099411726
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -495,7 +461,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: -0.021
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -503,8 +469,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: 1
+        time: 0.33333334
+        value: -1.131
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: -0.021
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -514,17 +489,16 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Weight
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1
-    classID: 114
-    script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+    attribute: localEulerAnglesRaw.x
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon
+    classID: 4
+    script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.2955997
+        value: 21.71
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -532,8 +506,82 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: -0.2955997
+        time: 0.33333334
+        value: 23.157
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 21.71
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 7.423
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.33333334
+        value: 13.514
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 7.423
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.261
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: -0.261
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -544,8 +592,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -553,7 +601,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.41770035
+        value: -0.408
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -561,8 +609,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: -0.41770035
+        time: 0.6666667
+        value: -0.408
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -573,8 +621,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -582,7 +630,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.21840027
+        value: -0.002
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -590,8 +638,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: -0.21840027
+        time: 0.6666667
+        value: -0.002
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -602,8 +650,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -611,7 +659,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -144.183
+        value: -1.253
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -619,8 +667,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: -144.183
+        time: 0.6666667
+        value: -1.253
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -631,8 +679,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -640,7 +688,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 219.34799
+        value: -174.383
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -648,8 +696,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: 219.34799
+        time: 0.6666667
+        value: -174.383
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -660,8 +708,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -669,7 +717,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 265.816
+        value: 261.559
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -677,8 +725,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: 265.816
+        time: 0.6666667
+        value: 261.559
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -689,8 +737,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -698,7 +746,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.5790007
+        value: -0.57240057
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -706,8 +754,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: -0.5790007
+        time: 0.33333334
+        value: -0.57240075
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: -0.57240057
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -718,7 +775,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
       1/iks/ikLeft
     classID: 4
     script: {fileID: 0}
@@ -727,7 +784,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.38210016
+        value: -0.38160282
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -735,8 +792,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: -0.38210016
+        time: 0.33333334
+        value: -0.38160282
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: -0.38160282
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -747,7 +813,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
       1/iks/ikLeft
     classID: 4
     script: {fileID: 0}
@@ -756,7 +822,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.061499476
+        value: -0.0035998821
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -764,8 +830,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: -0.061499476
+        time: 0.33333334
+        value: -0.0036000013
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: -0.0035998821
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -776,7 +851,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
       1/iks/ikLeft
     classID: 4
     script: {fileID: 0}
@@ -785,7 +860,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -104.018
+        value: -108.443
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -793,8 +868,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: -104.018
+        time: 0.33333334
+        value: -126.162
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: -108.443
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -805,7 +889,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
       1/iks/ikLeft
     classID: 4
     script: {fileID: 0}
@@ -814,7 +898,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 216.82
+        value: 200.286
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -822,8 +906,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: 216.82
+        time: 0.33333334
+        value: 194.567
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 200.286
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -834,7 +927,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
       1/iks/ikLeft
     classID: 4
     script: {fileID: 0}
@@ -843,7 +936,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 286.944
+        value: 291.711
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -851,8 +944,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
-        value: 286.944
+        time: 0.33333334
+        value: 290.704
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 291.711
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -863,7 +965,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
       1/iks/ikLeft
     classID: 4
     script: {fileID: 0}
@@ -872,7 +974,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.0039646975
+        value: -0.29560018
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -880,17 +982,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 0.0077512613
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: 0.0039646975
+        time: 0.6666667
+        value: -0.29560018
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -901,7 +994,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -909,7 +1003,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.03243296
+        value: -0.41769996
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -917,17 +1011,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 0.03125212
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: 0.03243296
+        time: 0.6666667
+        value: -0.41769996
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -938,7 +1023,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -946,7 +1032,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.00000032410026
+        value: -0.21840009
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -954,17 +1040,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: -0.0048691453
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: -0.00000032410026
+        time: 0.6666667
+        value: -0.21840009
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -975,7 +1052,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -983,7 +1061,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -1.964
+        value: -153.878
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -991,17 +1069,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: -5.568
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: -1.964
+        time: 0.6666667
+        value: -153.878
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1012,7 +1081,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1020,7 +1090,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 5.056
+        value: 222.76
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1028,17 +1098,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 5.675
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: 5.056
+        time: 0.6666667
+        value: 222.76
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1049,7 +1110,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1057,7 +1119,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -8.031
+        value: 269.469
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1065,17 +1127,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: -11.53
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: -8.031
+        time: 0.6666667
+        value: 269.469
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1086,118 +1139,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: -0.094
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 2.065
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: -0.493
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:
@@ -1208,102 +1151,6 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeftElbow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeft
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeft
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Assault57_prefab/Rig
-      1/iks/ikLeft
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
     path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon
     classID: 4
     script: {fileID: 0}
@@ -1323,8 +1170,107 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
+    attribute: m_LocalEulerAngles.x
     path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeftElbow
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/tarusk_prefab/Rig
+      1/iks/ikLeft
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
