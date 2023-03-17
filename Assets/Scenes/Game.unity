@@ -4137,18 +4137,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.003013342, y: 0.099999994, z: 0.030000003}
   m_Center: {x: -0.00849333, y: 7.0062756e-10, z: 0.01501583}
---- !u!114 &1467947682 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1467947682, guid: f021a90afa9cf27409da8669d6080627,
-    type: 3}
-  m_PrefabInstance: {fileID: 1615159363}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1469732176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6938015543878660930, guid: 017cfae56bd51bb4f9ea0b23f2a68d46,
@@ -6813,6 +6801,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1615159369, guid: f021a90afa9cf27409da8669d6080627, type: 3}
+      propertyPath: _opticSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 622432800515291887, guid: f021a90afa9cf27409da8669d6080627,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2844531621167528660, guid: f021a90afa9cf27409da8669d6080627,
         type: 3}
       propertyPath: m_Name
@@ -6885,6 +6882,18 @@ PrefabInstance:
       objectReference: {fileID: 695847267}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f021a90afa9cf27409da8669d6080627, type: 3}
+--- !u!114 &1615159366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1615159366, guid: f021a90afa9cf27409da8669d6080627,
+    type: 3}
+  m_PrefabInstance: {fileID: 1615159363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1672790606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7422151822734960208, guid: 017cfae56bd51bb4f9ea0b23f2a68d46,
@@ -7190,7 +7199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CurrentWeapon>k__BackingField: {fileID: 0}
   <Pistol>k__BackingField: {fileID: 0}
-  <BaseWeapon>k__BackingField: {fileID: 1467947682}
+  <BaseWeapon>k__BackingField: {fileID: 1615159366}
   <TechnoWeapon>k__BackingField: {fileID: 0}
   <Bomb>k__BackingField: {fileID: 726672746}
 --- !u!4 &1774551916
