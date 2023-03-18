@@ -151,22 +151,6 @@ AnimationClip:
       m_RotationOrder: 4
     path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Submachine5_prefab/Rig
       1/iks/ikRight
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -0.163, y: 0.02, z: 0.197}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Submachine5_prefab
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -200,13 +184,6 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 544874235
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 991217202
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -708,63 +685,6 @@ AnimationClip:
     attribute: localEulerAnglesRaw.z
     path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Submachine5_prefab/Rig
       1/iks/ikRight
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.163
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Submachine5_prefab
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.02
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Submachine5_prefab
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.197
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.z
-    path: MainCharacterSkillet/Hips/Spine/Spine1/Spine2/RightShoulder/Weapon/Submachine5_prefab
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:

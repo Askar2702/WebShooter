@@ -29,9 +29,7 @@ public class Gun : WeaponParent
     [SerializeField] private Vector3 _startPos;
     [SerializeField] private Vector3 _aimPos;
 
-    [Space(30)]
-    [SerializeField] private Vector3 _gunPosAiming;
-    [SerializeField] private Vector3 _gunRotAiming;
+   
 
   
 
@@ -48,6 +46,9 @@ public class Gun : WeaponParent
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        _gunDamage = GetComponent<GunDamage>();
+        _recoil = GetComponent<Recoil>();
+        _cameraRecoil = GetComponent<CameraRecoil>();
     }
 
     private void Start()
@@ -130,8 +131,6 @@ public class Gun : WeaponParent
         else 
         {
            
-            transform.localPosition = _gunPosAiming;
-            transform.localEulerAngles = _gunRotAiming;
             MoveAimPos(_aimPos, true);
         }
     }
@@ -148,7 +147,7 @@ public class Gun : WeaponParent
     {
         _parent.DOLocalMove(pos, 0.05f);
         isAiming = isAim;
-        UIManager.instance.ShowAimTarget(!isAim);
+      //  UIManager.instance.ShowAimTarget(!isAim);
     }
 
     private void SpawnEffectHitWall(RaycastHit hit)
