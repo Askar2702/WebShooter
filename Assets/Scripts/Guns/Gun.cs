@@ -8,7 +8,7 @@ public class Gun : WeaponParent
 {
     [SerializeField] private Transform _parent;
 
-    [SerializeField] private GunDamage _gunDamage;
+   private GunDamage _gunDamage;
     [SerializeField] private LayerMask _layerMask;
    
     [SerializeField] private float _interval;
@@ -17,8 +17,8 @@ public class Gun : WeaponParent
     [SerializeField] private DestroyAfterTimeParticle _holeWallParticle;
     [SerializeField] private ParticleSystem _hitWall;
    
-    [SerializeField] private Recoil _recoil;
-    [SerializeField] private CameraRecoil _cameraRecoil;
+    private Recoil _recoil;
+    private CameraRecoil _cameraRecoil;
     private bool isReady;
     private float _floatInfrontOfWall = 0.1f;
 
