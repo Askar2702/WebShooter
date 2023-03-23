@@ -6,7 +6,7 @@ public class WeaponCatalog : MonoBehaviour
 {
     public static WeaponCatalog instance;
     public int WeaponsCount => WeaponsCatalog.Length;
-    private WeaponParent[] WeaponsCatalog = new WeaponParent[2];
+    private WeaponParent[] WeaponsCatalog = new WeaponParent[3];
    [field:SerializeField] public WeaponParent CurrentWeapon { get; private set; }
 
     [field: SerializeField] public PistolWeapon Pistol { get; private set; }
@@ -17,27 +17,33 @@ public class WeaponCatalog : MonoBehaviour
     private void Awake()
     {
         if (!instance) instance = this;
-        CurrentWeapon = BaseWeapon;
-      //  WeaponsCatalog[0] = _pistol;
-        WeaponsCatalog[0] = BaseWeapon;
+        CurrentWeapon = Pistol;
+        CurrentWeapon.RigOn();
+        WeaponsCatalog[0] = Pistol;
+        WeaponsCatalog[1] = BaseWeapon;
        // WeaponsCatalog[2] = _technoWeapon;
-        WeaponsCatalog[1] = Bomb;
+        WeaponsCatalog[2] = Bomb;
         CurrentWeapon.gameObject.SetActive(true);
     }
-
+    private void Start()
+    {
+        AnimationManager.instance.SetGun(CurrentWeapon.GetComponent<Gun>());
+    }
     public void SelectWeapon(int indexWeapon)
     {
         int i = 0;
         foreach (var weapon in WeaponsCatalog)
         {
-            if (indexWeapon != i && weapon != null)
-            {
-                weapon.gameObject.SetActive(false);
-            }
+           
             if (indexWeapon == i && weapon != null)
             {
-               // weapon.gameObject.SetActive(true);
                 CurrentWeapon = weapon;
+                CurrentWeapon.RigOn();
+            }
+            if (indexWeapon != i && weapon != null)
+            {
+                weapon.RigOff();
+                weapon.gameObject.SetActive(false);
             }
             else if (indexWeapon == i && weapon == null)
             {
@@ -50,14 +56,21 @@ public class WeaponCatalog : MonoBehaviour
     private void ShowWeapon()
     {
         CurrentWeapon.gameObject.SetActive(true);
+        AnimationManager.instance.SetGun(CurrentWeapon.GetComponent<Gun>());
     }
     private void SwitchingWeaponShowAnim()
     {
         if (CurrentWeapon == null) return;
         AnimationState state;
-        if (CurrentWeapon.GetType() == typeof(BaseWeapon)) state = AnimationState.Idle;
-       // if (CurrentWeapon.GetType() == typeof(TechnoWeapon)) state = AnimationState.Idle;
-       // if (CurrentWeapon.GetType() == typeof(PistolWeapon)) state = AnimationState.Idle;
+        if (CurrentWeapon.GetType() == typeof(BaseWeapon))
+        { 
+            state = AnimationState.Idle;
+        }
+      
+        else if (CurrentWeapon.GetType() == typeof(PistolWeapon))
+        {
+            state = AnimationState.Idle;
+        }
         else state = AnimationState.StartGrenade;
         AnimationManager.instance.SwitchingWeaponAnim(ShowWeapon , state);
     }

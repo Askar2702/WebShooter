@@ -8,8 +8,6 @@ public class Gun : WeaponParent
 {
     [SerializeField] private Transform _parent;
 
-   private GunDamage _gunDamage;
-    [SerializeField] private LayerMask _layerMask;
    
     [SerializeField] private float _interval;
 
@@ -20,7 +18,8 @@ public class Gun : WeaponParent
     private Recoil _recoil;
     private CameraRecoil _cameraRecoil;
     private bool isReady;
-    private float _floatInfrontOfWall = 0.1f;
+    
+    private FireGun _fireGun;
 
 
     [SerializeField] private ParticleSystem _muzzleFalshEffect;
@@ -42,13 +41,14 @@ public class Gun : WeaponParent
     [SerializeField] private float _opticSize;
     public bool isAiming { get; private set; }
 
-    private Camera _currentCam;
+ 
+
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        _gunDamage = GetComponent<GunDamage>();
         _recoil = GetComponent<Recoil>();
         _cameraRecoil = GetComponent<CameraRecoil>();
+        _fireGun = GetComponent<FireGun>();
     }
 
     private void Start()
@@ -56,7 +56,6 @@ public class Gun : WeaponParent
         isReady = true;
         isAiming = false;
         AnimationManager.instance.AnimationStateEvent.AddListener(CheckAnimation);
-        _currentCam = Camera.main;
         _aimimgCamera.fieldOfView = _opticSize;
     }
 
@@ -64,55 +63,39 @@ public class Gun : WeaponParent
     // Update is called once per frame
     void Update()
     {
-        if(WeaponCatalog.instance.CurrentWeapon &&
-            WeaponCatalog.instance.CurrentWeapon.GetType() == typeof(BaseWeapon))
+        if (isReady)
         {
-            if (Input.GetMouseButton(0) && isReady)
-            {
-                AnimationManager.instance.ShowAimAnimation();
-                if (AnimationManager.instance.isAimAnimation())
-                    Fire();
-            }
-            if (Input.GetMouseButtonDown(1))
-            {
-                AnimationManager.instance.ShowAimAnimation();
-                Aiming();
-            }
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                Cursor.lockState = CursorLockMode.Locked;
+            Fire();
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            AnimationManager.instance.ShowAimAnimation();
+            Aiming();
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
 
-            }
         }
     }
 
     private void Fire()
     {
-       
-        _muzzleFalshEffect.Play();
-
-        _fireSound.Play();
-        _recoil.RecoilFire(isAiming);
-        _cameraRecoil.RecoilCamera(isAiming);
-        isReady = false;
-
-        ComputeDirection();
-        StartCoroutine(ResetReady());
+        _fireGun.Fire(ShowEffectFire);
     }
 
-    private void ComputeDirection()
+    private void ShowEffectFire()
     {
-        Ray ray = _currentCam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask))
         {
-            SpawnEffectHitWall(hit);
-            
-            if (hit.transform.root.TryGetComponent(out Enemy enemy) && hit.transform.GetComponent<Rigidbody>())
-                _gunDamage.ShootEnemy(enemy, hit.transform.GetComponent<Rigidbody>());
-            
+            _muzzleFalshEffect.Play();
+            _fireSound.Play();
+            _recoil.RecoilFire(isAiming);
+            _cameraRecoil.RecoilCamera(isAiming);
+            isReady = false;
+            StartCoroutine(ResetReady());
         }
     }
+
    
 
 
@@ -147,19 +130,10 @@ public class Gun : WeaponParent
     {
         _parent.DOLocalMove(pos, 0.05f);
         isAiming = isAim;
-      //  UIManager.instance.ShowAimTarget(!isAim);
+        UIManager.instance.ShowAimTarget(!isAim);
     }
 
-    private void SpawnEffectHitWall(RaycastHit hit)
-    {
-        if (hit.collider.gameObject.layer != 9)
-        {
-            var hitWall = Instantiate(_hitWall, hit.point, Quaternion.identity);
-            hitWall.transform.LookAt(transform.root.position);
-            if(hit.collider.gameObject.layer == 6)
-                Instantiate(_holeWallParticle, hit.point + hit.normal * _floatInfrontOfWall, Quaternion.LookRotation(hit.normal));
-        }
-    }
+ 
 
 
    

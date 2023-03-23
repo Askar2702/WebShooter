@@ -31,9 +31,9 @@ public class AnimationManager : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
     }
 
-    private void Start()
+    public void SetGun(Gun gun)
     {
-        _gun = WeaponCatalog.instance.BaseWeapon.GetComponent<Gun>();
+        _gun = gun;
     }
 
 
