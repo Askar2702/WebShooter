@@ -8,6 +8,7 @@ TagManager:
   - BodyDamage
   - HeadShot
   - LevelPart
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Map
   - EnemyShield
   - Weapon
-  - 
+  - Ground
   - 
   - 
   - 

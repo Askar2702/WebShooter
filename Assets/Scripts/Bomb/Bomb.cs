@@ -32,7 +32,7 @@ public class Bomb : MonoBehaviour
             yield return null;
         }
       
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

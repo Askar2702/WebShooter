@@ -28,7 +28,7 @@ public class Gun : WeaponParent
     [SerializeField] private Vector3 _startPos;
     [SerializeField] private Vector3 _aimPos;
 
-   
+    private SniperFire _sniperFire;
 
   
 
@@ -49,6 +49,7 @@ public class Gun : WeaponParent
         _recoil = GetComponent<Recoil>();
         _cameraRecoil = GetComponent<CameraRecoil>();
         _fireGun = GetComponent<FireGun>();
+        _sniperFire = GetComponent<SniperFire>();
     }
 
     private void Start()
@@ -110,11 +111,13 @@ public class Gun : WeaponParent
         if (isAiming)
         {
             MoveAimPos(_startPos, false);
+            AimingChungeSpeed(false);
         }
         else 
         {
            
             MoveAimPos(_aimPos, true);
+            AimingChungeSpeed(true);
         }
     }
 
@@ -123,6 +126,7 @@ public class Gun : WeaponParent
         if (animationState == AnimationState.Reload || animationState == AnimationState.Run && isAiming)
         {
             MoveAimPos(_startPos, false);
+            AimingChungeSpeed(false);
         }
     }
 
@@ -131,12 +135,22 @@ public class Gun : WeaponParent
         _parent.DOLocalMove(pos, 0.05f);
         isAiming = isAim;
         UIManager.instance.ShowAimTarget(!isAim);
+        AimingChungeSpeed(false);
+
     }
 
  
+    private void AimingChungeSpeed(bool isAim)
+    {
+        if (_sniperFire != null)
+        {
+           Player.instance.playerInput.AimingChungeSpeed(isAim);
+        }
+    }
 
 
-   
+
+
 
     private void OnDisable()
     {

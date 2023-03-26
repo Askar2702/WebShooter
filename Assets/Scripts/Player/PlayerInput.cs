@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private float _idleSpeed = 3.0f;
     [SerializeField] private float _runSpeed = 5.0f;
     [SerializeField] private float _speedRotate;
+    public float _speedCurrentRotate;
     private float _currentSpeed;
     [SerializeField] private float _jumpSpeed;
     [SerializeField] private float _gravity;
@@ -22,6 +23,7 @@ public class PlayerInput : MonoBehaviour
     private void Start()
     {
         _currentSpeed = _idleSpeed;
+        _speedCurrentRotate = _speedRotate;
         Cursor.visible = false;
     }
     void Update()
@@ -38,8 +40,8 @@ public class PlayerInput : MonoBehaviour
 
     private void Rotate()
     {
-        _pitch -= _speedRotate * Input.GetAxis("Mouse Y");
-        _yaw += _speedRotate * Input.GetAxis("Mouse X");
+        _pitch -= _speedCurrentRotate * Input.GetAxis("Mouse Y");
+        _yaw += _speedCurrentRotate * Input.GetAxis("Mouse X");
         _pitch = Mathf.Clamp(_pitch, -_angleX, _angleX);
         transform.eulerAngles = new Vector3(_pitch, _yaw, 0);
     }
@@ -101,5 +103,11 @@ public class PlayerInput : MonoBehaviour
     public bool CheckGround()
     {
         return _characterController.isGrounded;
+    }
+
+    public void AimingChungeSpeed(bool isAim)
+    {
+        if (isAim) _speedCurrentRotate /= 2;
+        else _speedCurrentRotate = _speedRotate;
     }
 }
