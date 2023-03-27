@@ -58,7 +58,7 @@ public class PlayerInput : MonoBehaviour
             }
         }
         if (!CheckGround() || movementInput.x != 0 || movementInput.y < 0 || movementInput == Vector2.zero
-            || Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            || Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.R))
         {
             _currentSpeed = _idleSpeed;
         }

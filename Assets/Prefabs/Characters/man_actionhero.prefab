@@ -4539,6 +4539,7 @@ GameObject:
   - component: {fileID: 1565644052249167967}
   - component: {fileID: 7625890249782143862}
   - component: {fileID: 1337905945705612282}
+  - component: {fileID: 998720711582765231}
   m_Layer: 9
   m_Name: man_actionhero
   m_TagString: Untagged
@@ -4769,6 +4770,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &998720711582765231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486436423611037536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a22908aea49b194595513682778a45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterJoints:
+  - {fileID: 8059705818918761742}
+  - {fileID: 8059705817213501483}
+  - {fileID: 8059705817905499419}
+  - {fileID: 8059705818240810796}
+  - {fileID: 8059705818746147768}
+  - {fileID: 8059705818410827697}
+  - {fileID: 8059705818265627476}
+  - {fileID: 8059705818243046315}
+  - {fileID: 8059705818397244025}
+  - {fileID: 8059705817203419117}
 --- !u!1 &2518232751689291509
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,10 +30,10 @@ public class Gun : WeaponParent
 
     private SniperFire _sniperFire;
 
-  
 
-    
+
     [field: SerializeField] public AnimationClip AimingAnimationName { get; private set; }
+    [field: SerializeField] public AnimationClip ReloadAnimationName { get; private set; }
 
     [Space(25)]
     [SerializeField] private Camera _aimimgCamera;
@@ -119,6 +119,7 @@ public class Gun : WeaponParent
             MoveAimPos(_aimPos, true);
             AimingChungeSpeed(true);
         }
+
     }
 
     private void CheckAnimation(AnimationState animationState)

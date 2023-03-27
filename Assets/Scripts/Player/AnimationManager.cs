@@ -11,7 +11,7 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] private Gun _gun;
     [SerializeField] private Animator _animator;
     private readonly string _runAnimation = "Character_Run";
-    private readonly string _reloadGunAnimation = "Character_Reload";
+    private readonly string _reloadGunAnimation = "ReloadGun";
     private readonly string _idleAnimation = "IdleRifle";
     private readonly string _walkAnimation = "WalkRifle";
     private readonly string _changeGunAnimation = "SwitchingWeapon";
@@ -43,7 +43,7 @@ public class AnimationManager : MonoBehaviour
         AnimationState = AnimationState.Reload;
         //  SetfloatStatAanim(AnimationState);
         _animator.SetInteger("PlayerState", (int)AnimationState);
-        StartCoroutine(EndCurrentAnimAndStartIdle(_reloadGunAnimation));
+        StartCoroutine(EndCurrentAnimAndStartIdle(_gun.ReloadAnimationName.name));
         AnimationStateEvent?.Invoke(AnimationState);
     }
 
@@ -132,7 +132,9 @@ public class AnimationManager : MonoBehaviour
 
     private IEnumerator FollowAnimationSwitchingWeapon(System.Action callback)
     {
+        ResolveSwitchWeaponAnimation.instance.ResetPosAndRotate();
         yield return new WaitUntil(() => _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _changeGunAnimation);
+      
         var clip = _animator.GetCurrentAnimatorClipInfo(0).FirstOrDefault(item => item.clip.name == _changeGunAnimation).clip;
         yield return new WaitForSeconds(clip.length / 5);
         AnimationState = _currentState;
@@ -143,10 +145,15 @@ public class AnimationManager : MonoBehaviour
     private IEnumerator EndCurrentAnimAndStartIdle(string currentAnim)
     {
         var clip = _animator.runtimeAnimatorController.animationClips.FirstOrDefault(item => item.name == currentAnim);
+     
+        yield return new WaitUntil(() => clip.name == _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+     
         yield return new WaitForSeconds(clip.averageDuration);
-        AnimationState = AnimationState.Idle;
+      
+        AnimationState = AnimationState.AimPos;
         AnimationStateEvent?.Invoke(AnimationState);
         _animator.SetInteger("PlayerState", (int)AnimationState);
+      
     }
 
 
