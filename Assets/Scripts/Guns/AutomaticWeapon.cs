@@ -21,7 +21,7 @@ public class AutomaticWeapon : FireGun
     }
     public override void Fire(Action callback)
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !AnimationManager.instance.isReloadAnimShow())
         {
             AnimationManager.instance.ShowAimAnimation();
             if (AnimationManager.instance.isAimAnimation())

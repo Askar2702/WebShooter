@@ -48,7 +48,7 @@ public class Grenade : MonoBehaviour
         {
             var dir = enemy.transform.position - transform.position;
             dir += Vector3.up;
-            enemy.TakeDamage(_damage);
+            enemy.TakeDamage(_damage , false);
             if (other.GetComponent<Rigidbody>())
                 other.GetComponent<Rigidbody>().AddForce(dir * _force, ForceMode.Impulse);
         }

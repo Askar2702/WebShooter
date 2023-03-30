@@ -80,6 +80,11 @@ public class AnimationManager : MonoBehaviour
             AnimationState != AnimationState.StartGrenade &&
             AnimationState != AnimationState.BombThrow;
     }
+
+    public bool isReloadAnimShow()
+    {
+        return _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == _gun.ReloadAnimationName.name;
+    }
     public bool CheckRun()
     {
         return AnimationState == AnimationState.Run;

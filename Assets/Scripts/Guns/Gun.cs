@@ -68,7 +68,7 @@ public class Gun : WeaponParent
         {
             Fire();
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !AnimationManager.instance.isReloadAnimShow())
         {
             AnimationManager.instance.ShowAimAnimation();
             Aiming();

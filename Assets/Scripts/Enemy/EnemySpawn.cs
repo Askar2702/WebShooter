@@ -47,4 +47,9 @@ public class EnemySpawn : MonoBehaviour
     {
         _enemyRifles.Remove(enemyRifle);
     }
+
+    public int CountEnemy()
+    {
+        return _spawnDataList.Count();
+    }
 }

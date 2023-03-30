@@ -19,6 +19,9 @@ public class PlayerInput : MonoBehaviour
     private float _pitch = 0f;
     private Vector3 dir;
 
+    [Space(30)]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _reloadClip;
 
     private void Start()
     {
@@ -29,7 +32,11 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.R)) AnimationManager.instance.ReloadGun();
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            AnimationManager.instance.ReloadGun();
+            _audioSource.PlayOneShot(_reloadClip);
+        }
        
         Rotate();
         Move();

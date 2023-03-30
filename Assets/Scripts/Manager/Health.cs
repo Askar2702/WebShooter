@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamege(float amount)
     {
+        if (!isAlive) return;
         _healthCount -= amount;
         if (_healthCount <= 0)
         {

@@ -45,9 +45,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage , bool isHeadShot)
     {
-        if (isDrone) return;
+        if (isDrone || !IsAlive()) return;
         isDamage = true;
         _health.TakeDamege(damage);
         if (!IsAlive())
@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
             _animator.enabled = false;
             foreach (var rb in _rbs) rb.isKinematic = false;
 
+            ScoreManager.instance.AddScore(isHeadShot);
             Destroy(gameObject, 3f);
         }
     }

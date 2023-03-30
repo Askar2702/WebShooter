@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointsManager  : StaticInstance<PointsManager>
+public class PointsManager  : MonoBehaviour
 {
+    public static PointsManager instance;
     [SerializeField] private Transform[] _points;
 
     private void Awake()

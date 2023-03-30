@@ -21,7 +21,7 @@ public class ShotGun : FireGun
     }
     public override void Fire(Action callback)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !AnimationManager.instance.isReloadAnimShow())
         {
             AnimationManager.instance.ShowAimAnimation();
           //  if (AnimationManager.instance.isAimAnimation())
