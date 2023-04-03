@@ -37935,6 +37935,8 @@ MonoBehaviour:
   _speedCurrentRotate: 0
   _jumpSpeed: 15
   _gravity: 20
+  _audioSource: {fileID: 0}
+  _reloadClip: {fileID: 0}
 --- !u!114 &4644612743583374856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63035,104 +63037,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2320401}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1617299541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679678662241606434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseAnimator: {fileID: 5866666020733396615}
-  _animatorController: {fileID: 9100000, guid: 72f7ee3578b86a446a4fd3a95621f8ff, type: 2}
-  _rig: {fileID: 862167756}
-  _rigBuilder: {fileID: 1615159371}
---- !u!114 &1617299542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679678662241606434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463626}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
-  _snappiness: 6
-  _returnSpeed: 3
---- !u!114 &1617299543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679678662241606434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 543450652393012477}
-  _interval: 0.1
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _muzzleFalshEffect: {fileID: 7079899695969941466}
-  _fireSound: {fileID: 1789635168}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.0357, y: -1.46955, z: -0.25}
-  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 9a2cf7c166294dc4bb14402d71c9c756,
-    type: 2}
-  _aimimgCamera: {fileID: 1333171303}
-  _opticSize: 20
---- !u!114 &1617299544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679678662241606434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bodyParent: {fileID: 543450652393012477}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.001
-  recoilAmount_x_: -0.01
-  recoilAmount_y_: 0.05
-  _snappiness: 6
-  _returnSpeed: 4
---- !u!114 &1617299545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679678662241606434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 25
-  _force: 10
 --- !u!82 &1789635168
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63229,6 +63133,105 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1617299541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679678662241606434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAnimator: {fileID: 5866666020733396615}
+  _animatorController: {fileID: 9100000, guid: 72f7ee3578b86a446a4fd3a95621f8ff, type: 2}
+  _rig: {fileID: 862167756}
+  _rigBuilder: {fileID: 1615159371}
+--- !u!114 &1617299542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679678662241606434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463626}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -2
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.5
+  recoilAmount_x_: -1
+  recoilAmount_y_: 0.5
+  _snappiness: 6
+  _returnSpeed: 3
+--- !u!114 &1617299543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679678662241606434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 543450652393012477}
+  _interval: 0.1
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _muzzleFalshEffect: {fileID: 7079899695969941466}
+  _fireSound: {fileID: 1789635168}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: -0.0357, y: -1.46955, z: -0.25}
+  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 9a2cf7c166294dc4bb14402d71c9c756,
+    type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  _aimimgCamera: {fileID: 1333171303}
+  _opticSize: 20
+--- !u!114 &1617299544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679678662241606434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParent: {fileID: 543450652393012477}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -0.35
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
+  _snappiness: 6
+  _returnSpeed: 4
+--- !u!114 &1617299545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679678662241606434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 25
+  _force: 10
 --- !u!114 &1789635169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63965,104 +63968,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 180331562}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1794819180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684161438284322646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 25
-  _force: 10
---- !u!114 &1794819181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684161438284322646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bodyParent: {fileID: 543450652393012477}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.001
-  recoilAmount_x_: -0.01
-  recoilAmount_y_: 0.05
-  _snappiness: 6
-  _returnSpeed: 4
---- !u!114 &1794819182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684161438284322646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 543450652393012477}
-  _interval: 0.1
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _muzzleFalshEffect: {fileID: 1634639290}
-  _fireSound: {fileID: 439130998}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.04025, y: -1.4295, z: -0.1}
-  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 7fbb54fb580b5e44e842e1b668f79bc2,
-    type: 2}
-  _aimimgCamera: {fileID: 1333171303}
-  _opticSize: 20
---- !u!114 &1794819183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684161438284322646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463626}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
-  _snappiness: 6
-  _returnSpeed: 3
---- !u!114 &1794819184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684161438284322646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseAnimator: {fileID: 5866666020733396615}
-  _animatorController: {fileID: 9100000, guid: e55385694a2cb3b42ade36edc67cafdd, type: 2}
-  _rig: {fileID: 558086371}
-  _rigBuilder: {fileID: 1615159371}
 --- !u!82 &439130998
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64179,6 +64084,105 @@ MonoBehaviour:
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+--- !u!114 &1794819180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684161438284322646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 25
+  _force: 10
+--- !u!114 &1794819181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684161438284322646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParent: {fileID: 543450652393012477}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -0.35
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
+  _snappiness: 6
+  _returnSpeed: 4
+--- !u!114 &1794819182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684161438284322646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 543450652393012477}
+  _interval: 0.1
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _muzzleFalshEffect: {fileID: 1634639290}
+  _fireSound: {fileID: 439130998}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: -0.04025, y: -1.4295, z: -0.1}
+  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 7fbb54fb580b5e44e842e1b668f79bc2,
+    type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  _aimimgCamera: {fileID: 1333171303}
+  _opticSize: 20
+--- !u!114 &1794819183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684161438284322646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463626}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -2
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.5
+  recoilAmount_x_: -1
+  recoilAmount_y_: 0.5
+  _snappiness: 6
+  _returnSpeed: 3
+--- !u!114 &1794819184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684161438284322646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAnimator: {fileID: 5866666020733396615}
+  _animatorController: {fileID: 9100000, guid: e55385694a2cb3b42ade36edc67cafdd, type: 2}
+  _rig: {fileID: 558086371}
+  _rigBuilder: {fileID: 1615159371}
 --- !u!4 &684161438284322647 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 684161438172492669, guid: 0adf61a16068ca64aa8126389fcf44dd,
@@ -64759,6 +64763,7 @@ MonoBehaviour:
   _aimPos: {x: -0.03625, y: -1.4179, z: -0.2}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 83ce99c3c0b637e4c8faec4ec417de5c,
     type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 10
 --- !u!114 &1601457218
@@ -65102,104 +65107,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1108336786}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1467947678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3803833171893260849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463626}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
-  _snappiness: 6
-  _returnSpeed: 3
---- !u!114 &1467947679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3803833171893260849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 543450652393012477}
-  _interval: 1
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _muzzleFalshEffect: {fileID: 717613836843935012}
-  _fireSound: {fileID: 1010675709}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.0435, y: -1.488, z: -0.12}
-  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 5c483c500626cb34797a6775fad9f978,
-    type: 2}
-  _aimimgCamera: {fileID: 1333171303}
-  _opticSize: 10
---- !u!114 &1467947680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3803833171893260849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bodyParent: {fileID: 543450652393012477}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.001
-  recoilAmount_x_: -0.01
-  recoilAmount_y_: 0.05
-  _snappiness: 6
-  _returnSpeed: 4
---- !u!114 &1467947681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3803833171893260849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1000
-  _force: 500
---- !u!114 &1467947682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3803833171893260849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseAnimator: {fileID: 5866666020733396615}
-  _animatorController: {fileID: 9100000, guid: 4f8cdd44afbea7542858b9202a49ab40, type: 2}
-  _rig: {fileID: 580587481}
-  _rigBuilder: {fileID: 1615159371}
 --- !u!82 &1010675709
 AudioSource:
   m_ObjectHideFlags: 0
@@ -65296,6 +65203,105 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1467947678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803833171893260849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463626}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -2
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.5
+  recoilAmount_x_: -1
+  recoilAmount_y_: 0.5
+  _snappiness: 6
+  _returnSpeed: 3
+--- !u!114 &1467947679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803833171893260849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 543450652393012477}
+  _interval: 1
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _muzzleFalshEffect: {fileID: 717613836843935012}
+  _fireSound: {fileID: 1010675709}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: -0.0435, y: -1.488, z: -0.12}
+  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 5c483c500626cb34797a6775fad9f978,
+    type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  _aimimgCamera: {fileID: 1333171303}
+  _opticSize: 10
+--- !u!114 &1467947680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803833171893260849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParent: {fileID: 543450652393012477}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -0.35
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
+  _snappiness: 6
+  _returnSpeed: 4
+--- !u!114 &1467947681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803833171893260849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1000
+  _force: 500
+--- !u!114 &1467947682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803833171893260849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAnimator: {fileID: 5866666020733396615}
+  _animatorController: {fileID: 9100000, guid: 4f8cdd44afbea7542858b9202a49ab40, type: 2}
+  _rig: {fileID: 580587481}
+  _rigBuilder: {fileID: 1615159371}
 --- !u!4 &8787855896519022222 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8787855897626506780, guid: 2c01091e5323b404aa06d106f50b9cc5,
@@ -65941,124 +65947,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1310851281}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &172469865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6341736658116086501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af8069fad94412f488e32cd0c9b20fe7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
---- !u!114 &778526869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6341736658116086501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 25
-  _force: 10
---- !u!114 &778526870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6341736658116086501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bodyParent: {fileID: 543450652393012477}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.001
-  recoilAmount_x_: -0.01
-  recoilAmount_y_: 0.05
-  _snappiness: 6
-  _returnSpeed: 4
---- !u!114 &778526871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6341736658116086501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 543450652393012477}
-  _interval: 0.1
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _muzzleFalshEffect: {fileID: 8602666191712311876}
-  _fireSound: {fileID: 839362110}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.03225, y: -1.4355, z: -0.16}
-  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 4e87de4123f1f6a4cb985fd796ae879f,
-    type: 2}
-  _aimimgCamera: {fileID: 1333171303}
-  _opticSize: 20
---- !u!114 &778526872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6341736658116086501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463626}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
-  _snappiness: 6
-  _returnSpeed: 3
---- !u!114 &778526873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6341736658116086501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseAnimator: {fileID: 5866666020733396615}
-  _animatorController: {fileID: 9100000, guid: e2e3ef31617abff43949d0fa48dd593f, type: 2}
-  _rig: {fileID: 516066499}
-  _rigBuilder: {fileID: 1615159371}
 --- !u!82 &839362110
 AudioSource:
   m_ObjectHideFlags: 0
@@ -66155,6 +66043,125 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &172469865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341736658116086501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8069fad94412f488e32cd0c9b20fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+--- !u!114 &778526869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341736658116086501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 25
+  _force: 10
+--- !u!114 &778526870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341736658116086501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParent: {fileID: 543450652393012477}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -0.35
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
+  _snappiness: 6
+  _returnSpeed: 4
+--- !u!114 &778526871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341736658116086501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 543450652393012477}
+  _interval: 0.1
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _muzzleFalshEffect: {fileID: 8602666191712311876}
+  _fireSound: {fileID: 839362110}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: -0.03225, y: -1.4355, z: -0.16}
+  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 4e87de4123f1f6a4cb985fd796ae879f,
+    type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  _aimimgCamera: {fileID: 1333171303}
+  _opticSize: 20
+--- !u!114 &778526872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341736658116086501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463626}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -2
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.5
+  recoilAmount_x_: -1
+  recoilAmount_y_: 0.5
+  _snappiness: 6
+  _returnSpeed: 3
+--- !u!114 &778526873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341736658116086501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAnimator: {fileID: 5866666020733396615}
+  _animatorController: {fileID: 9100000, guid: e2e3ef31617abff43949d0fa48dd593f, type: 2}
+  _rig: {fileID: 516066499}
+  _rigBuilder: {fileID: 1615159371}
 --- !u!114 &839362111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68781,104 +68788,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1438073651}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &697522015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5940644660288832189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseAnimator: {fileID: 5866666020733396615}
-  _animatorController: {fileID: 9100000, guid: b05d9c3ef994b074a822067e0a2d2e22, type: 2}
-  _rig: {fileID: 1328207597}
-  _rigBuilder: {fileID: 1615159371}
---- !u!114 &697522016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5940644660288832189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463626}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
-  _snappiness: 6
-  _returnSpeed: 3
---- !u!114 &697522017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5940644660288832189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 543450652393012477}
-  _interval: 1
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _muzzleFalshEffect: {fileID: 2144822291}
-  _fireSound: {fileID: 885739981}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.03185, y: -1.4168, z: -0.045}
-  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: e4195e62c5beb9b41b63a4d0c2aaf87c,
-    type: 2}
-  _aimimgCamera: {fileID: 1333171303}
-  _opticSize: 10
---- !u!114 &697522018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5940644660288832189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bodyParent: {fileID: 543450652393012477}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.001
-  recoilAmount_x_: -0.01
-  recoilAmount_y_: 0.05
-  _snappiness: 6
-  _returnSpeed: 4
---- !u!114 &697522019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5940644660288832189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1000
-  _force: 50
 --- !u!82 &885739981
 AudioSource:
   m_ObjectHideFlags: 0
@@ -68975,6 +68884,105 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &697522015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940644660288832189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAnimator: {fileID: 5866666020733396615}
+  _animatorController: {fileID: 9100000, guid: b05d9c3ef994b074a822067e0a2d2e22, type: 2}
+  _rig: {fileID: 1328207597}
+  _rigBuilder: {fileID: 1615159371}
+--- !u!114 &697522016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940644660288832189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463626}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -2
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.5
+  recoilAmount_x_: -1
+  recoilAmount_y_: 0.5
+  _snappiness: 6
+  _returnSpeed: 3
+--- !u!114 &697522017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940644660288832189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 543450652393012477}
+  _interval: 1
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _muzzleFalshEffect: {fileID: 2144822291}
+  _fireSound: {fileID: 885739981}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: -0.03185, y: -1.4168, z: -0.045}
+  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: e4195e62c5beb9b41b63a4d0c2aaf87c,
+    type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  _aimimgCamera: {fileID: 1333171303}
+  _opticSize: 10
+--- !u!114 &697522018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940644660288832189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParent: {fileID: 543450652393012477}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -0.35
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
+  _snappiness: 6
+  _returnSpeed: 4
+--- !u!114 &697522019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940644660288832189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1000
+  _force: 50
 --- !u!114 &885739993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69180,104 +69188,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1711596549}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1870846755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4165770523186912338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1000
-  _force: 350
---- !u!114 &1870846756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4165770523186912338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bodyParent: {fileID: 543450652393012477}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.001
-  recoilAmount_x_: -0.01
-  recoilAmount_y_: 0.05
-  _snappiness: 6
-  _returnSpeed: 4
---- !u!114 &1870846757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4165770523186912338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 543450652393012477}
-  _interval: 1
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _muzzleFalshEffect: {fileID: 1028681363}
-  _fireSound: {fileID: 609745485}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.0434, y: -1.4065, z: -0.03}
-  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 2307fa8ea2d7b394ca69319913f11924,
-    type: 2}
-  _aimimgCamera: {fileID: 1333171303}
-  _opticSize: 5
---- !u!114 &1870846758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4165770523186912338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463626}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
-  _snappiness: 6
-  _returnSpeed: 3
---- !u!114 &1870846759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4165770523186912338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseAnimator: {fileID: 5866666020733396615}
-  _animatorController: {fileID: 9100000, guid: 4b802f6636594164eb4acc4ff3f7c0a0, type: 2}
-  _rig: {fileID: 1163130603}
-  _rigBuilder: {fileID: 1615159371}
 --- !u!82 &609745485
 AudioSource:
   m_ObjectHideFlags: 0
@@ -69395,6 +69305,105 @@ MonoBehaviour:
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
   isAcross: 1
+--- !u!114 &1870846755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165770523186912338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1000
+  _force: 350
+--- !u!114 &1870846756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165770523186912338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParent: {fileID: 543450652393012477}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -0.35
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
+  _snappiness: 6
+  _returnSpeed: 4
+--- !u!114 &1870846757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165770523186912338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 543450652393012477}
+  _interval: 1
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _muzzleFalshEffect: {fileID: 1028681363}
+  _fireSound: {fileID: 609745485}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: -0.0434, y: -1.4065, z: -0.03}
+  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 2307fa8ea2d7b394ca69319913f11924,
+    type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  _aimimgCamera: {fileID: 1333171303}
+  _opticSize: 5
+--- !u!114 &1870846758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165770523186912338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463626}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -2
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.5
+  recoilAmount_x_: -1
+  recoilAmount_y_: 0.5
+  _snappiness: 6
+  _returnSpeed: 3
+--- !u!114 &1870846759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165770523186912338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAnimator: {fileID: 5866666020733396615}
+  _animatorController: {fileID: 9100000, guid: 4b802f6636594164eb4acc4ff3f7c0a0, type: 2}
+  _rig: {fileID: 1163130603}
+  _rigBuilder: {fileID: 1615159371}
 --- !u!4 &4165770523186912339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4165770523757623382, guid: ad7f6abb782c2e74e90c5ef36bdb6bd3,
@@ -69841,104 +69850,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1957032196}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &507966875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925908714679434123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463626}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
-  _snappiness: 6
-  _returnSpeed: 3
---- !u!114 &507966876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925908714679434123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 543450652393012477}
-  _interval: 0.15
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _muzzleFalshEffect: {fileID: 550186460538282560}
-  _fireSound: {fileID: 192404631}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.04215, y: -1.44455, z: -0.1}
-  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 97bf7cb22a7fd2f46a74334928ff726f,
-    type: 2}
-  _aimimgCamera: {fileID: 1333171303}
-  _opticSize: 15
---- !u!114 &507966877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925908714679434123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bodyParent: {fileID: 543450652393012477}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.001
-  recoilAmount_x_: -0.01
-  recoilAmount_y_: 0.05
-  _snappiness: 6
-  _returnSpeed: 4
---- !u!114 &507966878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925908714679434123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 25
-  _force: 10
---- !u!114 &507966879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925908714679434123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseAnimator: {fileID: 5866666020733396615}
-  _animatorController: {fileID: 9100000, guid: beb7c88bfd62c874c9f637da94846943, type: 2}
-  _rig: {fileID: 1593245238}
-  _rigBuilder: {fileID: 1615159371}
 --- !u!82 &192404631
 AudioSource:
   m_ObjectHideFlags: 0
@@ -70055,6 +69966,105 @@ MonoBehaviour:
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+--- !u!114 &507966875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925908714679434123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463626}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -2
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.5
+  recoilAmount_x_: -1
+  recoilAmount_y_: 0.5
+  _snappiness: 6
+  _returnSpeed: 3
+--- !u!114 &507966876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925908714679434123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 543450652393012477}
+  _interval: 0.15
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _muzzleFalshEffect: {fileID: 550186460538282560}
+  _fireSound: {fileID: 192404631}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: -0.04215, y: -1.44455, z: -0.1}
+  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 97bf7cb22a7fd2f46a74334928ff726f,
+    type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  _aimimgCamera: {fileID: 1333171303}
+  _opticSize: 15
+--- !u!114 &507966877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925908714679434123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParent: {fileID: 543450652393012477}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -0.35
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
+  _snappiness: 6
+  _returnSpeed: 4
+--- !u!114 &507966878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925908714679434123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 25
+  _force: 10
+--- !u!114 &507966879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925908714679434123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAnimator: {fileID: 5866666020733396615}
+  _animatorController: {fileID: 9100000, guid: beb7c88bfd62c874c9f637da94846943, type: 2}
+  _rig: {fileID: 1593245238}
+  _rigBuilder: {fileID: 1615159371}
 --- !u!4 &1732788501156730465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1732788503113230181, guid: 4cc482e6e01b5b7449631984e78eb89f,
@@ -70579,104 +70589,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2002079701}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &500190420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6759351514915845475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseAnimator: {fileID: 5866666020733396615}
-  _animatorController: {fileID: 9100000, guid: 7aa64011616500544b54562f29cc4b07, type: 2}
-  _rig: {fileID: 885110439}
-  _rigBuilder: {fileID: 1615159371}
---- !u!114 &500190421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6759351514915845475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 25
-  _force: 10
---- !u!114 &500190422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6759351514915845475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bodyParent: {fileID: 543450652393012477}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.001
-  recoilAmount_x_: -0.01
-  recoilAmount_y_: 0.05
-  _snappiness: 6
-  _returnSpeed: 4
---- !u!114 &500190423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6759351514915845475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 543450652393012477}
-  _interval: 0.1
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _muzzleFalshEffect: {fileID: 7876311677810034269}
-  _fireSound: {fileID: 850152994}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.04, y: -1.432, z: -0.25}
-  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: d47086f316d5af24bb022b7dad008157,
-    type: 2}
-  _aimimgCamera: {fileID: 1333171303}
-  _opticSize: 10
---- !u!114 &500190424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6759351514915845475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463626}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
-  _snappiness: 6
-  _returnSpeed: 3
 --- !u!82 &850152994
 AudioSource:
   m_ObjectHideFlags: 0
@@ -70773,6 +70685,105 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &500190420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759351514915845475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAnimator: {fileID: 5866666020733396615}
+  _animatorController: {fileID: 9100000, guid: 7aa64011616500544b54562f29cc4b07, type: 2}
+  _rig: {fileID: 885110439}
+  _rigBuilder: {fileID: 1615159371}
+--- !u!114 &500190421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759351514915845475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 25
+  _force: 10
+--- !u!114 &500190422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759351514915845475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParent: {fileID: 543450652393012477}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -0.35
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
+  _snappiness: 6
+  _returnSpeed: 4
+--- !u!114 &500190423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759351514915845475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 543450652393012477}
+  _interval: 0.1
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _muzzleFalshEffect: {fileID: 7876311677810034269}
+  _fireSound: {fileID: 850152994}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: -0.04, y: -1.432, z: -0.25}
+  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: d47086f316d5af24bb022b7dad008157,
+    type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  _aimimgCamera: {fileID: 1333171303}
+  _opticSize: 10
+--- !u!114 &500190424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759351514915845475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463626}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -2
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.5
+  recoilAmount_x_: -1
+  recoilAmount_y_: 0.5
+  _snappiness: 6
+  _returnSpeed: 3
 --- !u!114 &850152995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71055,6 +71066,7 @@ MonoBehaviour:
   _aimPos: {x: -0.0275, y: -1.397, z: -0.12}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: d459d7f6a35cd344ba96a8fea52507c9,
     type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 20
 --- !u!114 &1328579477
@@ -71289,104 +71301,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2821812491407373851}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &139457279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451117592721918669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseAnimator: {fileID: 5866666020733396615}
-  _animatorController: {fileID: 9100000, guid: 1a2a76613eee26144b60a49371a7d557, type: 2}
-  _rig: {fileID: 733129095}
-  _rigBuilder: {fileID: 1615159371}
---- !u!114 &586829716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451117592721918669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 25
-  _force: 50
---- !u!114 &586829717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451117592721918669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bodyParent: {fileID: 543450652393012477}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.001
-  recoilAmount_x_: -0.01
-  recoilAmount_y_: 0.05
-  _snappiness: 6
-  _returnSpeed: 4
---- !u!114 &586829718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451117592721918669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 543450652393012477}
-  _interval: 0.15
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _muzzleFalshEffect: {fileID: 3205074502365342870}
-  _fireSound: {fileID: 350897033}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.0492, y: -1.4327, z: -0.15}
-  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: eead370f307dce74186ec85f858c3160,
-    type: 2}
-  _aimimgCamera: {fileID: 1333171303}
-  _opticSize: 15
---- !u!114 &2086711940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451117592721918669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463626}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
-  _snappiness: 6
-  _returnSpeed: 3
 --- !u!82 &350897033
 AudioSource:
   m_ObjectHideFlags: 0
@@ -71483,6 +71397,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &139457279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451117592721918669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAnimator: {fileID: 5866666020733396615}
+  _animatorController: {fileID: 9100000, guid: 1a2a76613eee26144b60a49371a7d557, type: 2}
+  _rig: {fileID: 733129095}
+  _rigBuilder: {fileID: 1615159371}
 --- !u!114 &350897034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71503,6 +71433,89 @@ MonoBehaviour:
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+--- !u!114 &586829716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451117592721918669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 25
+  _force: 50
+--- !u!114 &586829717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451117592721918669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParent: {fileID: 543450652393012477}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -0.35
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
+  _snappiness: 6
+  _returnSpeed: 4
+--- !u!114 &586829718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451117592721918669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 543450652393012477}
+  _interval: 0.15
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _muzzleFalshEffect: {fileID: 3205074502365342870}
+  _fireSound: {fileID: 350897033}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: -0.0492, y: -1.4327, z: -0.15}
+  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: eead370f307dce74186ec85f858c3160,
+    type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  _aimimgCamera: {fileID: 1333171303}
+  _opticSize: 15
+--- !u!114 &2086711940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451117592721918669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463626}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -2
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.5
+  recoilAmount_x_: -1
+  recoilAmount_y_: 0.5
+  _snappiness: 6
+  _returnSpeed: 3
 --- !u!1 &5989868323169488579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8361317553137088728, guid: 77dc6672ee707d54fb653c4e5687ec59,
@@ -71938,104 +71951,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5872961520045809753}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1615159366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622432800515291887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseAnimator: {fileID: 5866666020733396615}
-  _animatorController: {fileID: 9100000, guid: 832f3174f84db1e4babaa0af2a9af6ba, type: 2}
-  _rig: {fileID: 1453871858}
-  _rigBuilder: {fileID: 1615159371}
---- !u!114 &1615159367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622432800515291887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 25
-  _force: 10
---- !u!114 &1615159368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622432800515291887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bodyParent: {fileID: 543450652393012477}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.001
-  recoilAmount_x_: -0.01
-  recoilAmount_y_: 0.05
-  _snappiness: 6
-  _returnSpeed: 4
---- !u!114 &1615159369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622432800515291887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 543450652393012477}
-  _interval: 0.1
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
-  _muzzleFalshEffect: {fileID: 7923525430754938776}
-  _fireSound: {fileID: 842019956}
-  _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.0389, y: -1.449, z: -0.2}
-  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 97a7d40996ccc604aa927559ff3caa05,
-    type: 2}
-  _aimimgCamera: {fileID: 1333171303}
-  _opticSize: 20
---- !u!114 &1615159370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622432800515291887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463626}
-  recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
-  recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
-  _snappiness: 6
-  _returnSpeed: 3
 --- !u!82 &842019956
 AudioSource:
   m_ObjectHideFlags: 0
@@ -72152,6 +72067,105 @@ MonoBehaviour:
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+--- !u!114 &1615159366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622432800515291887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAnimator: {fileID: 5866666020733396615}
+  _animatorController: {fileID: 9100000, guid: 832f3174f84db1e4babaa0af2a9af6ba, type: 2}
+  _rig: {fileID: 1453871858}
+  _rigBuilder: {fileID: 1615159371}
+--- !u!114 &1615159367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622432800515291887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b084274294b7e7545ac7602d71162d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 25
+  _force: 10
+--- !u!114 &1615159368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622432800515291887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6bf6bb2e232443b4d37ee5cf26385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParent: {fileID: 543450652393012477}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -0.35
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.001
+  recoilAmount_x_: -0.01
+  recoilAmount_y_: 0.05
+  _snappiness: 6
+  _returnSpeed: 4
+--- !u!114 &1615159369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622432800515291887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8343c918890d84081a32d5f7cf5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 543450652393012477}
+  _interval: 0.1
+  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
+    type: 3}
+  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
+    type: 3}
+  _muzzleFalshEffect: {fileID: 7923525430754938776}
+  _fireSound: {fileID: 842019956}
+  _startPos: {x: 0.07999992, y: -1.468, z: 0}
+  _aimPos: {x: -0.0389, y: -1.449, z: -0.2}
+  <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 97a7d40996ccc604aa927559ff3caa05,
+    type: 2}
+  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  _aimimgCamera: {fileID: 1333171303}
+  _opticSize: 20
+--- !u!114 &1615159370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622432800515291887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574c46bfb84b44747b732f9c491b2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463626}
+  recoilAmount_z_non: 0.35
+  recoilAmount_x_non: -2
+  recoilAmount_y_non: 1
+  recoilAmount_z_: 0.5
+  recoilAmount_x_: -1
+  recoilAmount_y_: 0.5
+  _snappiness: 6
+  _returnSpeed: 3
 --- !u!4 &2499905108771117254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8300557499604596895, guid: 786f74e78fc744741b6af641ba079d59,

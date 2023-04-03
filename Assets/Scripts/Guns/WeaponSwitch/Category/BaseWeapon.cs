@@ -14,6 +14,7 @@ public class BaseWeapon : WeaponParent
     public override void RigOn()
     {
         _baseAnimator.runtimeAnimatorController = _animatorController;
+        print(gameObject.name);
         RigLayer rigLayer = new RigLayer(_rig);
         _rig.weight = 1;
         _rigBuilder.layers.Add(rigLayer);

@@ -5,13 +5,15 @@ using UnityEngine;
 public class WeaponCatalog : MonoBehaviour
 {
     public static WeaponCatalog instance;
-    public int WeaponsCount => WeaponsCatalog.Length;
-    private WeaponParent[] WeaponsCatalog = new WeaponParent[3];
+    public int WeaponsCount => WeaponCurrentCatalog.Length;
+
+   [SerializeField] private WeaponParent[] weaponCatalogs;
+
+   [SerializeField] private WeaponParent[] WeaponCurrentCatalog;
    [field:SerializeField] public WeaponParent CurrentWeapon { get; private set; }
 
     [field: SerializeField] public PistolWeapon Pistol { get; private set; }
     [field: SerializeField] public BaseWeapon BaseWeapon { get; private set; }
-    [field: SerializeField] public TechnoWeapon TechnoWeapon { get; private set; }
     [field: SerializeField] public BombWeapon Bomb { get; private set; }
 
     private void Awake()
@@ -19,10 +21,7 @@ public class WeaponCatalog : MonoBehaviour
         if (!instance) instance = this;
         CurrentWeapon = Pistol;
         CurrentWeapon.RigOn();
-        WeaponsCatalog[0] = Pistol;
-        WeaponsCatalog[1] = BaseWeapon;
-       // WeaponsCatalog[2] = _technoWeapon;
-        WeaponsCatalog[2] = Bomb;
+        WeaponInit();
         CurrentWeapon.gameObject.SetActive(true);
     }
     private void Start()
@@ -32,7 +31,7 @@ public class WeaponCatalog : MonoBehaviour
     public void SelectWeapon(int indexWeapon)
     {
         int i = 0;
-        foreach (var weapon in WeaponsCatalog)
+        foreach (var weapon in WeaponCurrentCatalog)
         {
            
             if (indexWeapon == i && weapon != null)
@@ -80,4 +79,18 @@ public class WeaponCatalog : MonoBehaviour
         Bomb.gameObject.SetActive(activ);
     }
 
+    private void WeaponInit()
+    {
+        WeaponCurrentCatalog = new WeaponParent[WeaponHave.instance.GetWeapons().Count + 3];
+        WeaponCurrentCatalog[0] = Pistol;
+        WeaponCurrentCatalog[1] = BaseWeapon;
+        WeaponCurrentCatalog[2] = Bomb;
+        for (int i = 0; i < WeaponHave.instance.GetWeapons().Count; i++)
+        {
+            WeaponCurrentCatalog[3 + i] = weaponCatalogs[WeaponHave.instance.GetWeapons()[i].id];
+            print(WeaponCurrentCatalog[3 + i]);
+            print(3 + i);
+            print(WeaponCurrentCatalog.Length);
+        }
+    }
 }

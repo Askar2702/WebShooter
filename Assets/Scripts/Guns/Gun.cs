@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 
-public class Gun : WeaponParent
+public class Gun : MonoBehaviour
 {
     [SerializeField] private Transform _parent;
 
