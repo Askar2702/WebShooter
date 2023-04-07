@@ -52,12 +52,16 @@ public class Gun : MonoBehaviour
         _sniperFire = GetComponent<SniperFire>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         isReady = true;
         isAiming = false;
-        AnimationManager.instance.AnimationStateEvent.AddListener(CheckAnimation);
         _aimimgCamera.fieldOfView = _opticSize;
+    }
+    private void Start()
+    {
+        AnimationManager.instance.AnimationStateEvent.AddListener(CheckAnimation);
+       
     }
 
 
@@ -149,6 +153,7 @@ public class Gun : MonoBehaviour
         }
     }
 
+    
 
 
 

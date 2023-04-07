@@ -14,7 +14,8 @@ public class WeaponHave : MonoBehaviour
 
     public void AddWeapon(WeaponParent weapon)
     {
-        _weaponParents.Add(weapon);
+        if (!_weaponParents.Contains(weapon))
+            _weaponParents.Add(weapon);
     }
     public List<WeaponParent> GetWeapons()
     {

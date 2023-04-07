@@ -88,9 +88,6 @@ public class WeaponCatalog : MonoBehaviour
         for (int i = 0; i < WeaponHave.instance.GetWeapons().Count; i++)
         {
             WeaponCurrentCatalog[3 + i] = weaponCatalogs[WeaponHave.instance.GetWeapons()[i].id];
-            print(WeaponCurrentCatalog[3 + i]);
-            print(3 + i);
-            print(WeaponCurrentCatalog.Length);
         }
     }
 }
