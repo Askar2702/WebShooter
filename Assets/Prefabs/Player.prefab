@@ -10621,7 +10621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Effectors:
   - m_Transform: {fileID: 338385238}
     m_Style:
@@ -10726,7 +10726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Effectors:
   - m_Transform: {fileID: 199040665}
     m_Style:
@@ -17116,8 +17116,8 @@ Camera:
   m_GameObject: {fileID: 1333171299}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.29803923, g: 0.9019608, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -17183,6 +17183,37 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &1358934496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1358934497}
+  m_Layer: 13
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1358934497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358934496}
+  m_LocalRotation: {x: -0, y: 0.000000044703487, z: -0.000000014901163, w: 1}
+  m_LocalPosition: {x: 0.003, y: 0.037, z: 0.394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8787855896519022222}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1364281281
 GameObject:
   m_ObjectHideFlags: 0
@@ -37873,6 +37904,7 @@ GameObject:
   - component: {fileID: 4644612743583374856}
   - component: {fileID: 4546978685399444028}
   - component: {fileID: 1326598631}
+  - component: {fileID: 1326598641}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -37935,8 +37967,8 @@ MonoBehaviour:
   _speedCurrentRotate: 0
   _jumpSpeed: 15
   _gravity: 20
-  _audioSource: {fileID: 0}
-  _reloadClip: {fileID: 0}
+  _audioSource: {fileID: 774830939}
+  _reloadClip: {fileID: 8300000, guid: d85099fefd84d429788e09001413207b, type: 3}
 --- !u!114 &4644612743583374856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37982,6 +38014,25 @@ MonoBehaviour:
   AnimationStateEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1326598641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844531621167528660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd692c25460d214a95c6e68c8f42530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LeftShoulder: {fileID: 3926387941960737727}
+  _LeftArm: {fileID: 9023243514512422471}
+  _LeftForeArm: {fileID: 6505051331264303492}
+  _LeftHand: {fileID: 7591223753057781404}
+  _RightShoulder: {fileID: 2314418415214445608}
+  _RightArm: {fileID: 1413785427153997544}
+  _RightForeArm: {fileID: 8571844731733564087}
 --- !u!1 &2844531621935463623
 GameObject:
   m_ObjectHideFlags: 0
@@ -38028,8 +38079,8 @@ Camera:
   m_GameObject: {fileID: 2844531621935463623}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.5600569, g: 0.683204, b: 0.8679245, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.29803923, g: 0.9019608, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -52825,7 +52876,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8529259091727458404}
   - {fileID: 1732788501156730465}
   - {fileID: 6759351514915845474}
   - {fileID: 8787855896519022222}
@@ -52836,6 +52886,7 @@ Transform:
   - {fileID: 684161438284322647}
   - {fileID: 1173536712334723880}
   - {fileID: 4165770523186912339}
+  - {fileID: 8529259091727458404}
   - {fileID: 100332052888199268}
   m_Father: {fileID: 2314418415214445608}
   m_RootOrder: 1
@@ -62846,7 +62897,7 @@ PrefabInstance:
     - target: {fileID: 5679678662243627826, guid: e59fe41cdd642644d89924458332f3a2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5679678662243627826, guid: e59fe41cdd642644d89924458332f3a2,
         type: 3}
@@ -63145,6 +63196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 4
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 72f7ee3578b86a446a4fd3a95621f8ff, type: 2}
   _rig: {fileID: 862167756}
@@ -63194,7 +63246,8 @@ MonoBehaviour:
   _aimPos: {x: -0.0357, y: -1.46955, z: -0.25}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 9a2cf7c166294dc4bb14402d71c9c756,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: 05d15ea01d18f1a4093bbaf558182df4,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 20
 --- !u!114 &1617299544
@@ -63422,7 +63475,7 @@ PrefabInstance:
     - target: {fileID: 684161438172492669, guid: 0adf61a16068ca64aa8126389fcf44dd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 684161438172492669, guid: 0adf61a16068ca64aa8126389fcf44dd,
         type: 3}
@@ -64140,10 +64193,11 @@ MonoBehaviour:
   _muzzleFalshEffect: {fileID: 1634639290}
   _fireSound: {fileID: 439130998}
   _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.04025, y: -1.4295, z: -0.1}
+  _aimPos: {x: -0.04024, y: -1.42945, z: -0.1}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 7fbb54fb580b5e44e842e1b668f79bc2,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: d0840f11f4011c04d8dfda827b017882,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 20
 --- !u!114 &1794819183
@@ -64179,6 +64233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 7
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: e55385694a2cb3b42ade36edc67cafdd, type: 2}
   _rig: {fileID: 558086371}
@@ -64391,6 +64446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f50676022e972c4ab781bc9ab4cd41f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 0
 --- !u!1001 &1060187263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64763,7 +64819,8 @@ MonoBehaviour:
   _aimPos: {x: -0.03625, y: -1.4179, z: -0.2}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 83ce99c3c0b637e4c8faec4ec417de5c,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: 17a3e27b808e0844a99c9422adee1c31,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 10
 --- !u!114 &1601457218
@@ -64813,6 +64870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d9ddc4064451744bc9cdb9cfd4ba19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 0
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 8af7a033a48ca14448fd06a615dfd22f, type: 2}
   _rig: {fileID: 563170274}
@@ -64874,6 +64932,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091657143997622313, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1110500460951974234, guid: 2c01091e5323b404aa06d106f50b9cc5,
         type: 3}
@@ -64960,6 +65023,56 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0000034189454
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0011793663
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0008773905
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9996808
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0063598063
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00015554177
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.024449192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.729
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -2.802
+      objectReference: {fileID: 0}
     - target: {fileID: 7738848170976643553, guid: 2c01091e5323b404aa06d106f50b9cc5,
         type: 3}
       propertyPath: m_Layer
@@ -64969,6 +65082,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952523587852724647, guid: 2c01091e5323b404aa06d106f50b9cc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7971331367845223958, guid: 2c01091e5323b404aa06d106f50b9cc5,
         type: 3}
@@ -64993,7 +65111,7 @@ PrefabInstance:
     - target: {fileID: 8787855897626506780, guid: 2c01091e5323b404aa06d106f50b9cc5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8787855897626506780, guid: 2c01091e5323b404aa06d106f50b9cc5,
         type: 3}
@@ -65117,7 +65235,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2662cf7a83a7dca4d9b40806d70a49a0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -65248,7 +65366,8 @@ MonoBehaviour:
   _aimPos: {x: -0.0435, y: -1.488, z: -0.12}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 5c483c500626cb34797a6775fad9f978,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: 844590fb69f188849822246f472e353f,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 10
 --- !u!114 &1467947680
@@ -65298,10 +65417,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 2
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 4f8cdd44afbea7542858b9202a49ab40, type: 2}
   _rig: {fileID: 580587481}
   _rigBuilder: {fileID: 1615159371}
+--- !u!114 &1677791085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803833171893260849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7df5a160a30c7429c1571f941b3ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2844531621935463625}
+  _firePoint: {fileID: 1358934497}
+  _grenade: {fileID: 2447672062585516493, guid: 072731f78b12d4241af651dcfa4e5741,
+    type: 3}
+  _force: 25
+  _grenade_launcherDrum: {fileID: 7288823555876709856}
+--- !u!4 &7288823555876709856 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7288823554769421682, guid: 2c01091e5323b404aa06d106f50b9cc5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1108336786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8787855896519022222 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8787855897626506780, guid: 2c01091e5323b404aa06d106f50b9cc5,
@@ -65821,7 +65965,7 @@ PrefabInstance:
     - target: {fileID: 6341736656809691701, guid: 2ec604ea7d4cfb946b031c78977e73b6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6341736656809691701, guid: 2ec604ea7d4cfb946b031c78977e73b6,
         type: 3}
@@ -66122,7 +66266,8 @@ MonoBehaviour:
   _aimPos: {x: -0.03225, y: -1.4355, z: -0.16}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 4e87de4123f1f6a4cb985fd796ae879f,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: 57183b07e0d3e364fbf1766aea717b50,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 20
 --- !u!114 &778526872
@@ -66158,6 +66303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 5
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: e2e3ef31617abff43949d0fa48dd593f, type: 2}
   _rig: {fileID: 516066499}
@@ -66502,7 +66648,7 @@ PrefabInstance:
     - target: {fileID: -6908953622888751298, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11972932
+      value: 0.1197293
       objectReference: {fileID: 0}
     - target: {fileID: -6908953622888751298, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
@@ -67787,22 +67933,22 @@ PrefabInstance:
     - target: {fileID: 3150269901611617099, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8882717
+      value: 0.7691625
       objectReference: {fileID: 0}
     - target: {fileID: 3150269901611617099, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.38284928
+      value: -0.2258916
       objectReference: {fileID: 0}
     - target: {fileID: 3150269901611617099, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.09746012
+      value: -0.4415902
       objectReference: {fileID: 0}
     - target: {fileID: 3150269901611617099, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.23431039
+      value: -0.4029395
       objectReference: {fileID: 0}
     - target: {fileID: 3150269901611617099, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
@@ -68088,7 +68234,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8af7a033a48ca14448fd06a615dfd22f, type: 2}
+      objectReference: {fileID: 9100000, guid: 832f3174f84db1e4babaa0af2a9af6ba, type: 2}
     - target: {fileID: 5868470137460835772, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_Layer
@@ -68322,7 +68468,7 @@ PrefabInstance:
     - target: {fileID: 8571844733039788449, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22867587
+      value: 0.2286759
       objectReference: {fileID: 0}
     - target: {fileID: 8571844733039788449, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
@@ -68332,22 +68478,22 @@ PrefabInstance:
     - target: {fileID: 8571844733039788449, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.82777345
+      value: 0.75622994
       objectReference: {fileID: 0}
     - target: {fileID: 8571844733039788449, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04676168
+      value: -0.10623561
       objectReference: {fileID: 0}
     - target: {fileID: 8571844733039788449, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.48499662
+      value: 0.4346661
       objectReference: {fileID: 0}
     - target: {fileID: 8571844733039788449, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.27817774
+      value: 0.47738415
       objectReference: {fileID: 0}
     - target: {fileID: 8571844733039788449, guid: 68c355a2eb01a7745a8a77095c158af4,
         type: 3}
@@ -68516,6 +68662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec8579ee63a1764187b130fd7fd11ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 0
   _grenade: {fileID: 2709476395064354958, guid: 6b65508c4da28554ca39cda54f65fcef,
     type: 3}
   _spawnPoint: {fileID: 3150269900774297693}
@@ -68627,7 +68774,7 @@ PrefabInstance:
     - target: {fileID: 1173536713048328219, guid: 17eb81f5e4bc6d64d90344e9239f19fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1173536713048328219, guid: 17eb81f5e4bc6d64d90344e9239f19fc,
         type: 3}
@@ -68896,6 +69043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 8
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: b05d9c3ef994b074a822067e0a2d2e22, type: 2}
   _rig: {fileID: 1328207597}
@@ -68945,7 +69093,8 @@ MonoBehaviour:
   _aimPos: {x: -0.03185, y: -1.4168, z: -0.045}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: e4195e62c5beb9b41b63a4d0c2aaf87c,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: 4ac2ed416975bea4ab48584c70ed9a83,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 10
 --- !u!114 &697522018
@@ -69068,7 +69217,7 @@ PrefabInstance:
     - target: {fileID: 4165770523757623382, guid: ad7f6abb782c2e74e90c5ef36bdb6bd3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4165770523757623382, guid: ad7f6abb782c2e74e90c5ef36bdb6bd3,
         type: 3}
@@ -69364,7 +69513,8 @@ MonoBehaviour:
   _aimPos: {x: -0.0434, y: -1.4065, z: -0.03}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 2307fa8ea2d7b394ca69319913f11924,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: e633c0d618a9dc440b8a2794bad7379e,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 5
 --- !u!114 &1870846758
@@ -69400,6 +69550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 9
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 4b802f6636594164eb4acc4ff3f7c0a0, type: 2}
   _rig: {fileID: 1163130603}
@@ -69525,7 +69676,7 @@ PrefabInstance:
     - target: {fileID: 1732788503113230181, guid: 4cc482e6e01b5b7449631984e78eb89f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1732788503113230181, guid: 4cc482e6e01b5b7449631984e78eb89f,
         type: 3}
@@ -70011,7 +70162,8 @@ MonoBehaviour:
   _aimPos: {x: -0.04215, y: -1.44455, z: -0.1}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 97bf7cb22a7fd2f46a74334928ff726f,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: e7b6abe51e8503843b9c94662b276dc4,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 15
 --- !u!114 &507966877
@@ -70061,6 +70213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 0
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: beb7c88bfd62c874c9f637da94846943, type: 2}
   _rig: {fileID: 1593245238}
@@ -70402,7 +70555,7 @@ PrefabInstance:
     - target: {fileID: 6759351513494846135, guid: 7d3e4dc4837e80d4dbc1c2f7ce6384a8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6759351513494846135, guid: 7d3e4dc4837e80d4dbc1c2f7ce6384a8,
         type: 3}
@@ -70697,6 +70850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 1
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 7aa64011616500544b54562f29cc4b07, type: 2}
   _rig: {fileID: 885110439}
@@ -70757,10 +70911,11 @@ MonoBehaviour:
   _muzzleFalshEffect: {fileID: 7876311677810034269}
   _fireSound: {fileID: 850152994}
   _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.04, y: -1.432, z: -0.25}
+  _aimPos: {x: -0.04, y: -1.43225, z: -0.25}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: d47086f316d5af24bb022b7dad008157,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: b2afb5e9ee4f0b24ba324af0c0d2a239,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 10
 --- !u!114 &500190424
@@ -70824,7 +70979,7 @@ PrefabInstance:
     - target: {fileID: 5374785046538817083, guid: ddc022cd6b3fa454da1f48186f3e4356,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5374785046538817083, guid: ddc022cd6b3fa454da1f48186f3e4356,
         type: 3}
@@ -71017,6 +71172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 6
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 64131313e5735a0428beea7696b645b8, type: 2}
   _rig: {fileID: 578793477}
@@ -71066,7 +71222,8 @@ MonoBehaviour:
   _aimPos: {x: -0.0275, y: -1.397, z: -0.12}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: d459d7f6a35cd344ba96a8fea52507c9,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: 1f07112ed7f611642beca2855fc4abe7,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 20
 --- !u!114 &1328579477
@@ -71180,7 +71337,7 @@ PrefabInstance:
     - target: {fileID: 5870183138800899711, guid: 77dc6672ee707d54fb653c4e5687ec59,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5870183138800899711, guid: 77dc6672ee707d54fb653c4e5687ec59,
         type: 3}
@@ -71409,6 +71566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 10
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 1a2a76613eee26144b60a49371a7d557, type: 2}
   _rig: {fileID: 733129095}
@@ -71489,10 +71647,11 @@ MonoBehaviour:
   _muzzleFalshEffect: {fileID: 3205074502365342870}
   _fireSound: {fileID: 350897033}
   _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.0492, y: -1.4327, z: -0.15}
+  _aimPos: {x: -0.04925, y: -1.4329, z: -0.15}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: eead370f307dce74186ec85f858c3160,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: f745eaa95eec9eb4a8a2c5f77c445a3b,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 15
 --- !u!114 &2086711940
@@ -71871,7 +72030,7 @@ PrefabInstance:
     - target: {fileID: 8300557499604596895, guid: 786f74e78fc744741b6af641ba079d59,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8300557499604596895, guid: 786f74e78fc744741b6af641ba079d59,
         type: 3}
@@ -72079,6 +72238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddd53a94cf74a748b0d3ecf67e97dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <id>k__BackingField: 3
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 832f3174f84db1e4babaa0af2a9af6ba, type: 2}
   _rig: {fileID: 1453871858}
@@ -72139,10 +72299,11 @@ MonoBehaviour:
   _muzzleFalshEffect: {fileID: 7923525430754938776}
   _fireSound: {fileID: 842019956}
   _startPos: {x: 0.07999992, y: -1.468, z: 0}
-  _aimPos: {x: -0.0389, y: -1.449, z: -0.2}
+  _aimPos: {x: -0.03895, y: -1.448856, z: -0.2}
   <AimingAnimationName>k__BackingField: {fileID: 7400000, guid: 97a7d40996ccc604aa927559ff3caa05,
     type: 2}
-  <ReloadAnimationName>k__BackingField: {fileID: 0}
+  <ReloadAnimationName>k__BackingField: {fileID: 7400000, guid: f8de63c00cf8a9c428bc2cff895cb729,
+    type: 2}
   _aimimgCamera: {fileID: 1333171303}
   _opticSize: 20
 --- !u!114 &1615159370

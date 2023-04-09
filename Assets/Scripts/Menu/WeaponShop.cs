@@ -23,6 +23,10 @@ public class WeaponShop : MonoBehaviour
     [SerializeField] private GameObject _adsPanel;
     [SerializeField] private GameObject _inInventoryPanel;
 
+    [Space(25)]
+    [SerializeField] private GameObject _warningMessages;
+    private int _maxCount = 3;
+
     private void Awake()
     {
         if (!instance) instance = this;
@@ -34,7 +38,7 @@ public class WeaponShop : MonoBehaviour
         _weaponItems[_currentIndex + 1].transform.position = _RightPoint.position;
         ColorChange();
         CheckPurchase(_currentIndex);
-       // GP_Ads.ShowFullscreen();
+        _warningMessages.SetActive(false);
     }
     public void Left()
     {
@@ -111,5 +115,16 @@ public class WeaponShop : MonoBehaviour
             _adsPanel.SetActive(true);
             _inInventoryPanel.SetActive(false);
         }
+    }
+
+    public bool CheckInventorySize()
+    {
+
+        if (WeaponHave.instance.GetWeapons().Count >= _maxCount)
+        {
+            _warningMessages.SetActive(true);
+            return false;
+        }
+        else return true;
     }
 }

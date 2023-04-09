@@ -7,7 +7,6 @@ public class GameScoreAdsManager : MonoBehaviour
     public static GameScoreAdsManager instance;
     public bool isReady { get; private set; }
 
-    [SerializeField] private TextMeshProUGUI check;
 
 
 
@@ -24,7 +23,7 @@ public class GameScoreAdsManager : MonoBehaviour
     private void Start()
     {
         GP_Ads.ShowSticky();
-        //GP_Ads.ShowFullscreen();
+        GP_Ads.ShowFullscreen();
     }
     private void OnDisable()
     {
@@ -36,15 +35,14 @@ public class GameScoreAdsManager : MonoBehaviour
     {
         Debug.Log("Ready");
         isReady = true;
-        check.text = isReady.ToString();
     }
     public void ShowReward(string idOrTag)
     {
-        GP_Ads.ShowRewarded(idOrTag);
+        if (WeaponShop.instance.CheckInventorySize())
+            GP_Ads.ShowRewarded(idOrTag);
     }
     private void OnRewarded( string message)
     {
         WeaponShop.instance.BuyWeapon(int.Parse(message));
-
     }
 }

@@ -25,7 +25,9 @@ public class WeaponSwitching : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha1)) _indexWeapon = 0;
         if (Input.GetKeyDown(KeyCode.Alpha2)) _indexWeapon = 1;
-        if (Input.GetKeyDown(KeyCode.Alpha4)) _indexWeapon = 2;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) _indexWeapon = 2;
+        if (Input.GetKeyDown(KeyCode.Alpha4)) _indexWeapon = 3;
+        if (Input.GetKeyDown(KeyCode.Alpha5)) _indexWeapon = 4;
 
 
 

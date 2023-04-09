@@ -1,20 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class WeaponCatalog : MonoBehaviour
 {
     public static WeaponCatalog instance;
     public int WeaponsCount => WeaponCurrentCatalog.Length;
 
-   [SerializeField] private WeaponParent[] weaponCatalogs;
+    [SerializeField] private WeaponParent[] weaponCatalogs;
 
-   [SerializeField] private WeaponParent[] WeaponCurrentCatalog;
-   [field:SerializeField] public WeaponParent CurrentWeapon { get; private set; }
+    private WeaponParent[] WeaponCurrentCatalog;
+
+    [Space(30)]
+    [SerializeField] private WeaponParent[] WeaponCurrentCatalogIcons;
+    [field:SerializeField] public WeaponParent CurrentWeapon { get; private set; }
 
     [field: SerializeField] public PistolWeapon Pistol { get; private set; }
-    [field: SerializeField] public BaseWeapon BaseWeapon { get; private set; }
     [field: SerializeField] public BombWeapon Bomb { get; private set; }
+    private int _baseCountWeapons = 2;
 
     private void Awake()
     {
@@ -30,6 +34,7 @@ public class WeaponCatalog : MonoBehaviour
     }
     public void SelectWeapon(int indexWeapon)
     {
+        if (indexWeapon >= WeaponCurrentCatalog.Length) return;
         int i = 0;
         foreach (var weapon in WeaponCurrentCatalog)
         {
@@ -81,13 +86,14 @@ public class WeaponCatalog : MonoBehaviour
 
     private void WeaponInit()
     {
-        WeaponCurrentCatalog = new WeaponParent[WeaponHave.instance.GetWeapons().Count + 3];
+        WeaponCurrentCatalog = new WeaponParent[WeaponHave.instance.GetWeapons().Count + _baseCountWeapons];
         WeaponCurrentCatalog[0] = Pistol;
-        WeaponCurrentCatalog[1] = BaseWeapon;
-        WeaponCurrentCatalog[2] = Bomb;
+        WeaponCurrentCatalog[1] = Bomb;
+        var weapons = WeaponHave.instance.GetWeapons();
         for (int i = 0; i < WeaponHave.instance.GetWeapons().Count; i++)
         {
-            WeaponCurrentCatalog[3 + i] = weaponCatalogs[WeaponHave.instance.GetWeapons()[i].id];
+            WeaponCurrentCatalog[_baseCountWeapons + i] = weaponCatalogs[weapons[i].id];
+            WeaponCurrentCatalogIcons.FirstOrDefault(item => item.id == weapons[i].id).gameObject.SetActive(true);
         }
     }
 }
