@@ -11,15 +11,15 @@ public class GrenadeLauncherFire : FireGun
     [SerializeField] private Grenade _grenade;
     [SerializeField] private float _force;
     [SerializeField] private Transform _grenade_launcherDrum;
-    float y;
+    float angleY;
 
-    private void OnEnable()
+    private void Start()
     {
         _grenade_launcherDrum.localEulerAngles = Vector3.zero;
     }
     public override void Fire(Action callback)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && _countBulletsCurrent > 0)
         {
             var grenade = Instantiate(_grenade, _firePoint.position, _firePoint.rotation);
             grenade.Init(_camera.transform.forward * _force);
@@ -27,14 +27,15 @@ public class GrenadeLauncherFire : FireGun
 
             _grenade_launcherDrum.localEulerAngles = Vector3.zero;
             var rot = _grenade_launcherDrum.localEulerAngles;
-            y = rot.y + 60;
+            angleY = rot.y + 60;
+            base.Fire(callback);
         }
     }
 
     void Update()
     {
         _grenade_launcherDrum.localEulerAngles = Vector3.RotateTowards(_grenade_launcherDrum.localEulerAngles
-            , new Vector3(0, y, 0), 0f, 0.5f);
+            , new Vector3(0, angleY, 0), 0f, 3f);
 
     }
 

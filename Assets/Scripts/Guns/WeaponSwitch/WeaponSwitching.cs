@@ -7,6 +7,7 @@ public class WeaponSwitching : MonoBehaviour
     public int _indexWeapon;
     private int _previousIndex;
     [SerializeField] private WeaponCatalog _weaponCatalog;
+    [SerializeField] private AudioSource _audio;
 
     private void Update()
     {
@@ -36,5 +37,6 @@ public class WeaponSwitching : MonoBehaviour
     private void SelectWeapon()
     {
         _weaponCatalog.SelectWeapon(_indexWeapon);
+        _audio.Play();
     }
 }

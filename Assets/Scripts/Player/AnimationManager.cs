@@ -41,7 +41,6 @@ public class AnimationManager : MonoBehaviour
     {
         if (AnimationState == AnimationState.Reload) return;
         AnimationState = AnimationState.Reload;
-        //  SetfloatStatAanim(AnimationState);
         _animator.SetInteger("PlayerState", (int)AnimationState);
         StartCoroutine(EndCurrentAnimAndStartIdle(_gun.ReloadAnimationName.name));
         AnimationStateEvent?.Invoke(AnimationState);

@@ -37905,6 +37905,7 @@ GameObject:
   - component: {fileID: 4546978685399444028}
   - component: {fileID: 1326598631}
   - component: {fileID: 1326598641}
+  - component: {fileID: 529715973567623875}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -37968,7 +37969,8 @@ MonoBehaviour:
   _jumpSpeed: 15
   _gravity: 20
   _audioSource: {fileID: 774830939}
-  _reloadClip: {fileID: 8300000, guid: d85099fefd84d429788e09001413207b, type: 3}
+  _walkClip: {fileID: 8300000, guid: 3519e1b49b777a34d8674238d3c71350, type: 3}
+  _runClip: {fileID: 8300000, guid: 258857b6c358d0644a339892e0212203, type: 3}
 --- !u!114 &4644612743583374856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37997,6 +37999,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <playerInput>k__BackingField: {fileID: 2844531621167528664}
+  _audioSource: {fileID: 529715973567623875}
+  _reloadClip: {fileID: 8300000, guid: d85099fefd84d429788e09001413207b, type: 3}
+  Gun: {fileID: 0}
 --- !u!114 &1326598631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38033,6 +38038,102 @@ MonoBehaviour:
   _RightShoulder: {fileID: 2314418415214445608}
   _RightArm: {fileID: 1413785427153997544}
   _RightForeArm: {fileID: 8571844731733564087}
+--- !u!82 &529715973567623875
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844531621167528660}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2844531621935463623
 GameObject:
   m_ObjectHideFlags: 0
@@ -63197,6 +63298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 4
+  <FireGun>k__BackingField: {fileID: 1789635169}
+  <Gun>k__BackingField: {fileID: 1617299543}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 72f7ee3578b86a446a4fd3a95621f8ff, type: 2}
   _rig: {fileID: 862167756}
@@ -63297,6 +63400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8069fad94412f488e32cd0c9b20fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 30
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -64129,6 +64235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8069fad94412f488e32cd0c9b20fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 200
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -64234,6 +64343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 7
+  <FireGun>k__BackingField: {fileID: 439130999}
+  <Gun>k__BackingField: {fileID: 1794819182}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: e55385694a2cb3b42ade36edc67cafdd, type: 2}
   _rig: {fileID: 558086371}
@@ -64447,6 +64558,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 0
+  <FireGun>k__BackingField: {fileID: 0}
+  <Gun>k__BackingField: {fileID: 0}
 --- !u!1001 &1060187263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64766,6 +64879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d50fa0bd8af334b85113fd8e328db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 10
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -64871,6 +64987,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 0
+  <FireGun>k__BackingField: {fileID: 696806484}
+  <Gun>k__BackingField: {fileID: 1601457217}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 8af7a033a48ca14448fd06a615dfd22f, type: 2}
   _rig: {fileID: 563170274}
@@ -65418,6 +65536,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 2
+  <FireGun>k__BackingField: {fileID: 1677791085}
+  <Gun>k__BackingField: {fileID: 1467947679}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 4f8cdd44afbea7542858b9202a49ab40, type: 2}
   _rig: {fileID: 580587481}
@@ -65434,6 +65554,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c7df5a160a30c7429c1571f941b3ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 6
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _firePoint: {fileID: 1358934497}
   _grenade: {fileID: 2447672062585516493, guid: 072731f78b12d4241af651dcfa4e5741,
@@ -66199,6 +66322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8069fad94412f488e32cd0c9b20fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 30
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -66304,30 +66430,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 5
+  <FireGun>k__BackingField: {fileID: 172469865}
+  <Gun>k__BackingField: {fileID: 778526871}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: e2e3ef31617abff43949d0fa48dd593f, type: 2}
   _rig: {fileID: 516066499}
   _rigBuilder: {fileID: 1615159371}
---- !u!114 &839362111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6341736658116086501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af8069fad94412f488e32cd0c9b20fe7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
-  _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
-    type: 3}
-  _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
-    type: 3}
 --- !u!1001 &1315674902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68663,6 +68771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 0
+  <FireGun>k__BackingField: {fileID: 0}
+  <Gun>k__BackingField: {fileID: 0}
   _grenade: {fileID: 2709476395064354958, guid: 6b65508c4da28554ca39cda54f65fcef,
     type: 3}
   _spawnPoint: {fileID: 3150269900774297693}
@@ -68679,7 +68789,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RigLayers: []
+  m_RigLayers:
+  - m_Rig: {fileID: 0}
+    m_Active: 1
   m_Effectors: []
 --- !u!4 &1413785427153997544 stripped
 Transform:
@@ -69044,6 +69156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 8
+  <FireGun>k__BackingField: {fileID: 885739993}
+  <Gun>k__BackingField: {fileID: 697522017}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: b05d9c3ef994b074a822067e0a2d2e22, type: 2}
   _rig: {fileID: 1328207597}
@@ -69144,6 +69258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1ba9356dab4b143b4fa62ba75bda2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 10
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -69445,6 +69562,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1ba9356dab4b143b4fa62ba75bda2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 10
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -69551,6 +69671,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 9
+  <FireGun>k__BackingField: {fileID: 609745492}
+  <Gun>k__BackingField: {fileID: 1870846757}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 4b802f6636594164eb4acc4ff3f7c0a0, type: 2}
   _rig: {fileID: 1163130603}
@@ -70109,6 +70231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8069fad94412f488e32cd0c9b20fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 30
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -70214,6 +70339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 0
+  <FireGun>k__BackingField: {fileID: 192404632}
+  <Gun>k__BackingField: {fileID: 507966876}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: beb7c88bfd62c874c9f637da94846943, type: 2}
   _rig: {fileID: 1593245238}
@@ -70851,6 +70978,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 1
+  <FireGun>k__BackingField: {fileID: 850152995}
+  <Gun>k__BackingField: {fileID: 500190423}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 7aa64011616500544b54562f29cc4b07, type: 2}
   _rig: {fileID: 885110439}
@@ -70951,6 +71080,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8069fad94412f488e32cd0c9b20fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 30
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -71152,6 +71284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f099f8283518e4c8d73c68197c643b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 6
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -71173,6 +71308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 6
+  <FireGun>k__BackingField: {fileID: 922746236}
+  <Gun>k__BackingField: {fileID: 1328579476}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 64131313e5735a0428beea7696b645b8, type: 2}
   _rig: {fileID: 578793477}
@@ -71567,6 +71704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 10
+  <FireGun>k__BackingField: {fileID: 350897034}
+  <Gun>k__BackingField: {fileID: 586829718}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 1a2a76613eee26144b60a49371a7d557, type: 2}
   _rig: {fileID: 733129095}
@@ -71583,6 +71722,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8069fad94412f488e32cd0c9b20fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 30
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -72218,6 +72360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8069fad94412f488e32cd0c9b20fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countBullets: 30
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _layerMask:
     serializedVersion: 2
@@ -72239,6 +72384,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <id>k__BackingField: 3
+  <FireGun>k__BackingField: {fileID: 842019957}
+  <Gun>k__BackingField: {fileID: 1615159369}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 832f3174f84db1e4babaa0af2a9af6ba, type: 2}
   _rig: {fileID: 1453871858}

@@ -30,7 +30,8 @@ public class WeaponCatalog : MonoBehaviour
     }
     private void Start()
     {
-        AnimationManager.instance.SetGun(CurrentWeapon.GetComponent<Gun>());
+        AnimationManager.instance.SetGun(CurrentWeapon.Gun);
+        Player.instance.Gun = CurrentWeapon.FireGun;
     }
     public void SelectWeapon(int indexWeapon)
     {
@@ -42,6 +43,7 @@ public class WeaponCatalog : MonoBehaviour
             if (indexWeapon == i && weapon != null)
             {
                 CurrentWeapon = weapon;
+                Player.instance.Gun = CurrentWeapon.FireGun;
                 CurrentWeapon.RigOn();
             }
             if (indexWeapon != i && weapon != null)
@@ -60,7 +62,7 @@ public class WeaponCatalog : MonoBehaviour
     private void ShowWeapon()
     {
         CurrentWeapon.gameObject.SetActive(true);
-        AnimationManager.instance.SetGun(CurrentWeapon.GetComponent<Gun>());
+        AnimationManager.instance.SetGun(CurrentWeapon.Gun);
     }
     private void SwitchingWeaponShowAnim()
     {

@@ -22,7 +22,7 @@ public class SniperFire : FireGun
     }
     public override void Fire(Action callback)
     {
-        if (Input.GetMouseButtonDown(0) && !AnimationManager.instance.isReloadAnimShow())
+        if (Input.GetMouseButtonDown(0) && !AnimationManager.instance.isReloadAnimShow() && _countBulletsCurrent > 0)
         {
             AnimationManager.instance.ShowAimAnimation();
             // if (AnimationManager.instance.isAimAnimation())
@@ -54,6 +54,7 @@ public class SniperFire : FireGun
                     }
                 }
             }
+            base.Fire(callback);
         }
 
       

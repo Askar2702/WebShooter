@@ -21,7 +21,7 @@ public class AutomaticWeapon : FireGun
     }
     public override void Fire(Action callback)
     {
-        if (Input.GetMouseButton(0) && !AnimationManager.instance.isReloadAnimShow())
+        if (Input.GetMouseButton(0) && !AnimationManager.instance.isReloadAnimShow() && _countBulletsCurrent > 0)
         {
             AnimationManager.instance.ShowAimAnimation();
             if (AnimationManager.instance.isAimAnimation())
@@ -38,6 +38,7 @@ public class AutomaticWeapon : FireGun
 
                 }
             }
+            base.Fire(callback);
         }
     }
 

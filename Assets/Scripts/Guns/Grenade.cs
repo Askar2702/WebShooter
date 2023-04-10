@@ -38,6 +38,8 @@ public class Grenade : MonoBehaviour
             || collision.gameObject.layer == 12
             || collision.gameObject.CompareTag("Ground"))
         {
+            _rb.velocity = Vector3.zero;
+            _rb.angularVelocity = Vector3.zero;
             StartCoroutine(Explosion());
         }
     }

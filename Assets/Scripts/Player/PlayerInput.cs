@@ -21,7 +21,8 @@ public class PlayerInput : MonoBehaviour
 
     [Space(30)]
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AudioClip _reloadClip;
+    [SerializeField] private AudioClip _walkClip;
+    [SerializeField] private AudioClip _runClip;
 
     private void Start()
     {
@@ -34,8 +35,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            AnimationManager.instance.ReloadGun();
-            _audioSource.PlayOneShot(_reloadClip);
+            Player.instance.ReloadGun();
         }
        
         Rotate();
@@ -70,7 +70,18 @@ public class PlayerInput : MonoBehaviour
             _currentSpeed = _idleSpeed;
         }
 
-      
+        if (movementInput != Vector2.zero && CheckGround())
+        {
+            if (_currentSpeed == _runSpeed) _audioSource.clip = _runClip;
+
+            else _audioSource.clip = _walkClip;
+            if (!_audioSource.isPlaying)
+                _audioSource.Play();
+        }
+        else if (movementInput == Vector2.zero || !CheckGround())
+        {
+            _audioSource.Stop();
+        }
 
         if (CheckGround())
         {
