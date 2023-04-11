@@ -27,8 +27,7 @@ public class GunDamage : MonoBehaviour
             color = Color.red;
         }
         enemy.TakeDamage(damage , rb.CompareTag("HeadShot"));
-        //var dir = (transform.forward
-        //    + new Vector3(Random.Range(-transform.right.x, transform.right.x), transform.right.y, transform.right.z)) * _force;
+      
         var dir = (transform.forward
              * _force) + transform.up * (_force );
         rb.AddForce(dir, ForceMode.Impulse);

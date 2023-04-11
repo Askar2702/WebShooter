@@ -5,33 +5,31 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private Slider _slider;
     [SerializeField] private float _healthCount;
+    public float _currentHealthCount;
     [SerializeField] private GameObject _miniMap;
     public bool isAlive { get; private set; }
 
     private void Awake()
     {
-        _slider.maxValue = _healthCount;
-        _slider.value = _healthCount;
         isAlive = true;
+        _currentHealthCount = _healthCount;
     }
 
     public void TakeDamege(float amount)
     {
         if (!isAlive) return;
-        _healthCount -= amount;
-        if (_healthCount <= 0)
+        _currentHealthCount -= amount;
+        if (_currentHealthCount <= 0)
         {
-            _healthCount = 0;
+            _currentHealthCount = 0;
             isAlive = false;
             _miniMap.SetActive(false);
         }
-        _slider.value = _healthCount;
     }
 
     public float GetAmountDamageDealt()
     {
-        return _slider.maxValue - _healthCount;
+        return _healthCount - _currentHealthCount;
     }
 }

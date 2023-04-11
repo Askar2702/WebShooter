@@ -47,13 +47,14 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage , bool isHeadShot)
     {
-        if (isDrone || !IsAlive()) return;
+        if (!IsAlive()) return;
         isDamage = true;
         _health.TakeDamege(damage);
         if (!IsAlive())
         {
             MeshAgent.enabled = false;
-            _animator.enabled = false;
+            if (!isDrone)
+                _animator.enabled = false;
             foreach (var rb in _rbs) rb.isKinematic = false;
 
             ScoreManager.instance.AddScore(isHeadShot);
@@ -63,7 +64,6 @@ public class Enemy : MonoBehaviour
 
     public bool IsAlive()
     {
-        if (isDrone) return true;
         return _health.isAlive;
     }
 
