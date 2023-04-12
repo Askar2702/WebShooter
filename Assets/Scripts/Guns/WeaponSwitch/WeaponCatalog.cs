@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class WeaponCatalog : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class WeaponCatalog : MonoBehaviour
     private WeaponParent[] WeaponCurrentCatalog;
 
     [Space(30)]
-    [SerializeField] private WeaponParent[] WeaponCurrentCatalogIcons;
+    [SerializeField] private Image[] WeaponCurrentCatalogIcons;
     [field:SerializeField] public WeaponParent CurrentWeapon { get; private set; }
 
     [field: SerializeField] public PistolWeapon Pistol { get; private set; }
@@ -95,7 +96,9 @@ public class WeaponCatalog : MonoBehaviour
         for (int i = 0; i < WeaponHave.instance.GetWeapons().Count; i++)
         {
             WeaponCurrentCatalog[_baseCountWeapons + i] = weaponCatalogs[weapons[i].id];
-            WeaponCurrentCatalogIcons.FirstOrDefault(item => item.id == weapons[i].id).gameObject.SetActive(true);
+            WeaponCurrentCatalogIcons[i].GetComponent<Image>().sprite = weaponCatalogs[weapons[i].id].Icon;
+            WeaponCurrentCatalogIcons[i].transform.parent.gameObject.SetActive(true);
+            //  WeaponCurrentCatalogIcons.FirstOrDefault(item => item.id == weapons[i].id).gameObject.SetActive(true);
         }
     }
 }
