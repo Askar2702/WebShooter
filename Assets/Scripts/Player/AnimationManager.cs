@@ -30,7 +30,7 @@ public class AnimationManager : MonoBehaviour
         if (!instance) instance = this;
         _playerInput = GetComponent<PlayerInput>();
     }
-
+ 
     public void SetGun(Gun gun)
     {
         _gun = gun;
@@ -155,6 +155,7 @@ public class AnimationManager : MonoBehaviour
         yield return new WaitForSeconds(clip.averageDuration);
       
         AnimationState = AnimationState.AimPos;
+        print(AnimationState);
         AnimationStateEvent?.Invoke(AnimationState);
         _animator.SetInteger("PlayerState", (int)AnimationState);
       

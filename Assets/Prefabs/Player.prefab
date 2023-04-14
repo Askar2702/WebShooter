@@ -63300,6 +63300,8 @@ MonoBehaviour:
   <id>k__BackingField: 4
   <FireGun>k__BackingField: {fileID: 1789635169}
   <Gun>k__BackingField: {fileID: 1617299543}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 946911e1e9b1d3f4d8fdb7075ff03b2e,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 72f7ee3578b86a446a4fd3a95621f8ff, type: 2}
   _rig: {fileID: 862167756}
@@ -64345,6 +64347,8 @@ MonoBehaviour:
   <id>k__BackingField: 7
   <FireGun>k__BackingField: {fileID: 439130999}
   <Gun>k__BackingField: {fileID: 1794819182}
+  <Icon>k__BackingField: {fileID: 21300000, guid: e5c4af12b6973e342988d469ecce8db9,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: e55385694a2cb3b42ade36edc67cafdd, type: 2}
   _rig: {fileID: 558086371}
@@ -64560,6 +64564,7 @@ MonoBehaviour:
   <id>k__BackingField: 0
   <FireGun>k__BackingField: {fileID: 0}
   <Gun>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 0}
 --- !u!1001 &1060187263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64989,6 +64994,7 @@ MonoBehaviour:
   <id>k__BackingField: 0
   <FireGun>k__BackingField: {fileID: 696806484}
   <Gun>k__BackingField: {fileID: 1601457217}
+  <Icon>k__BackingField: {fileID: 0}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 8af7a033a48ca14448fd06a615dfd22f, type: 2}
   _rig: {fileID: 563170274}
@@ -65538,6 +65544,8 @@ MonoBehaviour:
   <id>k__BackingField: 2
   <FireGun>k__BackingField: {fileID: 1677791085}
   <Gun>k__BackingField: {fileID: 1467947679}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 76921b111765b394c877da4c822a217e,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 4f8cdd44afbea7542858b9202a49ab40, type: 2}
   _rig: {fileID: 580587481}
@@ -66432,6 +66440,8 @@ MonoBehaviour:
   <id>k__BackingField: 5
   <FireGun>k__BackingField: {fileID: 172469865}
   <Gun>k__BackingField: {fileID: 778526871}
+  <Icon>k__BackingField: {fileID: 21300000, guid: d534ca70fb9a3824ca7461db5dd7656b,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: e2e3ef31617abff43949d0fa48dd593f, type: 2}
   _rig: {fileID: 516066499}
@@ -68773,6 +68783,7 @@ MonoBehaviour:
   <id>k__BackingField: 0
   <FireGun>k__BackingField: {fileID: 0}
   <Gun>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 0}
   _grenade: {fileID: 2709476395064354958, guid: 6b65508c4da28554ca39cda54f65fcef,
     type: 3}
   _spawnPoint: {fileID: 3150269900774297693}
@@ -69158,6 +69169,8 @@ MonoBehaviour:
   <id>k__BackingField: 8
   <FireGun>k__BackingField: {fileID: 885739993}
   <Gun>k__BackingField: {fileID: 697522017}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 0d3ec901779959e45a164d539acc0250,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: b05d9c3ef994b074a822067e0a2d2e22, type: 2}
   _rig: {fileID: 1328207597}
@@ -69673,6 +69686,8 @@ MonoBehaviour:
   <id>k__BackingField: 9
   <FireGun>k__BackingField: {fileID: 609745492}
   <Gun>k__BackingField: {fileID: 1870846757}
+  <Icon>k__BackingField: {fileID: 21300000, guid: bf3724bc5906587408f237a8a61f4d71,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 4b802f6636594164eb4acc4ff3f7c0a0, type: 2}
   _rig: {fileID: 1163130603}
@@ -70341,6 +70356,8 @@ MonoBehaviour:
   <id>k__BackingField: 0
   <FireGun>k__BackingField: {fileID: 192404632}
   <Gun>k__BackingField: {fileID: 507966876}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 6fad912fb5a8fd843b4bf23f2dfeb124,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: beb7c88bfd62c874c9f637da94846943, type: 2}
   _rig: {fileID: 1593245238}
@@ -70980,6 +70997,8 @@ MonoBehaviour:
   <id>k__BackingField: 1
   <FireGun>k__BackingField: {fileID: 850152995}
   <Gun>k__BackingField: {fileID: 500190423}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 3f8d068f78191f741b7ada81a9664895,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 7aa64011616500544b54562f29cc4b07, type: 2}
   _rig: {fileID: 885110439}
@@ -71310,6 +71329,8 @@ MonoBehaviour:
   <id>k__BackingField: 6
   <FireGun>k__BackingField: {fileID: 922746236}
   <Gun>k__BackingField: {fileID: 1328579476}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 12050359827177a48a2cb1dd4a7d107d,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 64131313e5735a0428beea7696b645b8, type: 2}
   _rig: {fileID: 578793477}
@@ -71706,6 +71727,8 @@ MonoBehaviour:
   <id>k__BackingField: 10
   <FireGun>k__BackingField: {fileID: 350897034}
   <Gun>k__BackingField: {fileID: 586829718}
+  <Icon>k__BackingField: {fileID: 21300000, guid: f21cd12008f70f240b556684e6206f74,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 1a2a76613eee26144b60a49371a7d557, type: 2}
   _rig: {fileID: 733129095}
@@ -72386,6 +72409,8 @@ MonoBehaviour:
   <id>k__BackingField: 3
   <FireGun>k__BackingField: {fileID: 842019957}
   <Gun>k__BackingField: {fileID: 1615159369}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 6543495f516cc6a448a6a5dc826aec44,
+    type: 3}
   _baseAnimator: {fileID: 5866666020733396615}
   _animatorController: {fileID: 9100000, guid: 832f3174f84db1e4babaa0af2a9af6ba, type: 2}
   _rig: {fileID: 1453871858}

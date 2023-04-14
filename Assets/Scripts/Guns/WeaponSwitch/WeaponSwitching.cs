@@ -9,6 +9,14 @@ public class WeaponSwitching : MonoBehaviour
     [SerializeField] private WeaponCatalog _weaponCatalog;
     [SerializeField] private AudioSource _audio;
 
+    private void Start()
+    {
+        WeaponCatalog.instance.GrenadeRemove.AddListener(() => 
+        { 
+            _indexWeapon = 0;
+            SelectWeapon();
+        });
+    }
     private void Update()
     {
         _previousIndex = _indexWeapon;
@@ -36,7 +44,7 @@ public class WeaponSwitching : MonoBehaviour
     }
     private void SelectWeapon()
     {
-        _weaponCatalog.SelectWeapon(_indexWeapon);
-        _audio.Play();
+        if (_weaponCatalog.IndexCurrentWeapon == _indexWeapon) return;
+        _weaponCatalog.SelectWeapon(_indexWeapon , _audio);
     }
 }

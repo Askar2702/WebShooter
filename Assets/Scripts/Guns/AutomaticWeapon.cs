@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class AutomaticWeapon : FireGun
 {
-   
-
     [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask _layerMask;
 

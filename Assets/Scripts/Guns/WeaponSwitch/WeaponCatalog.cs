@@ -1,25 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using System.Linq;
 using UnityEngine.UI;
 
 public class WeaponCatalog : MonoBehaviour
 {
     public static WeaponCatalog instance;
-    public int WeaponsCount => WeaponCurrentCatalog.Length;
+    public UnityEvent GrenadeRemove;
+    public int WeaponsCount => WeaponCurrentCatalog.Count;
 
     [SerializeField] private WeaponParent[] weaponCatalogs;
 
-    private WeaponParent[] WeaponCurrentCatalog;
+    private List<WeaponParent> WeaponCurrentCatalog;
 
     [Space(30)]
     [SerializeField] private Image[] WeaponCurrentCatalogIcons;
+
+    [Space(10)]
+    [SerializeField] private List<Image> _backgroundIcon;
     [field:SerializeField] public WeaponParent CurrentWeapon { get; private set; }
 
     [field: SerializeField] public PistolWeapon Pistol { get; private set; }
     [field: SerializeField] public BombWeapon Bomb { get; private set; }
-    private int _baseCountWeapons = 2;
+    public int IndexCurrentWeapon = 0;
 
     private void Awake()
     {
@@ -33,19 +38,23 @@ public class WeaponCatalog : MonoBehaviour
     {
         AnimationManager.instance.SetGun(CurrentWeapon.Gun);
         Player.instance.Gun = CurrentWeapon.FireGun;
+        SelectIcon(0);
     }
-    public void SelectWeapon(int indexWeapon)
+    public void SelectWeapon(int indexWeapon , AudioSource audio)
     {
-        if (indexWeapon >= WeaponCurrentCatalog.Length) return;
+        if (indexWeapon >= WeaponCurrentCatalog.Count) return;
+
+        audio.Play();
         int i = 0;
+        SelectIcon(indexWeapon);
         foreach (var weapon in WeaponCurrentCatalog)
         {
-           
             if (indexWeapon == i && weapon != null)
             {
                 CurrentWeapon = weapon;
                 Player.instance.Gun = CurrentWeapon.FireGun;
                 CurrentWeapon.RigOn();
+                IndexCurrentWeapon = i;
             }
             if (indexWeapon != i && weapon != null)
             {
@@ -89,16 +98,34 @@ public class WeaponCatalog : MonoBehaviour
 
     private void WeaponInit()
     {
-        WeaponCurrentCatalog = new WeaponParent[WeaponHave.instance.GetWeapons().Count + _baseCountWeapons];
-        WeaponCurrentCatalog[0] = Pistol;
-        WeaponCurrentCatalog[1] = Bomb;
+        WeaponCurrentCatalog = new List<WeaponParent>();
+        WeaponCurrentCatalog.Add(Pistol);
+        WeaponCurrentCatalog.Add(Bomb);
+
         var weapons = WeaponHave.instance.GetWeapons();
         for (int i = 0; i < WeaponHave.instance.GetWeapons().Count; i++)
         {
-            WeaponCurrentCatalog[_baseCountWeapons + i] = weaponCatalogs[weapons[i].id];
+            WeaponCurrentCatalog.Add(weaponCatalogs[weapons[i].id]);
             WeaponCurrentCatalogIcons[i].GetComponent<Image>().sprite = weaponCatalogs[weapons[i].id].Icon;
             WeaponCurrentCatalogIcons[i].transform.parent.gameObject.SetActive(true);
-            //  WeaponCurrentCatalogIcons.FirstOrDefault(item => item.id == weapons[i].id).gameObject.SetActive(true);
         }
+    }
+
+    private void SelectIcon(int index)
+    {
+        for(int i = 0; i < _backgroundIcon.Count; i++)
+        {
+            _backgroundIcon[i].color = Color.white;
+        }
+        _backgroundIcon[index].color = Color.blue;
+    }
+
+    public void DeleteGrenade()
+    {
+        ///удаление 
+        GrenadeRemove?.Invoke();
+        WeaponCurrentCatalog.Remove(WeaponCurrentCatalog.FirstOrDefault(item => item == Bomb));
+        _backgroundIcon[1].gameObject.SetActive(false);
+        _backgroundIcon.Remove(_backgroundIcon[1]);
     }
 }

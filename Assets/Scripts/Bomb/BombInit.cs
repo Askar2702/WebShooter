@@ -2,14 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
+using TMPro;
 
 public class BombInit : WeaponParent
 {
     [SerializeField] private Bomb _grenade;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private float _force;
+    [SerializeField] private int _countGrenade = 1;
+
+
+    [Space(30)]
+    protected int _countGrenadeCurrent;
+    [SerializeField] protected TextMeshProUGUI _countBulletsText;
+    [SerializeField] protected TextMeshProUGUI _countBulletsTextCurrent;
+  
 
     private Bomb _currentGrenade;
+
+    private void Start()
+    {
+        _countGrenadeCurrent = _countGrenade;
+    }
+
 
     void Update()
     {
@@ -19,10 +34,13 @@ public class BombInit : WeaponParent
             && AnimationManager.instance.AnimationState == AnimationState.StartGrenade)
         {
 
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) && _countGrenadeCurrent > 0)
             {
                 AnimationManager.instance.BombThrow();
+                _countGrenadeCurrent--;
             }
+            _countBulletsText.text = _countGrenade.ToString();
+            _countBulletsTextCurrent.text = _countGrenadeCurrent.ToString();
         }
     }
 
@@ -36,10 +54,22 @@ public class BombInit : WeaponParent
         WeaponCatalog.instance.EnabledBomb(false);
     }
 
+    /// <summary>
+    /// без задержки риг обнулялся у пистолета
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator DelayPistolShow()
+    {
+        yield return new WaitForSeconds(0.5f);
+        WeaponCatalog.instance.DeleteGrenade();
+    }
+
     public void EndBombThrow()
     {
         AnimationManager.instance.StartGrenade();
-        StartCoroutine(ShowBomb());
+        if (_countGrenadeCurrent <= 0) StartCoroutine(DelayPistolShow());
+        else
+            StartCoroutine(ShowBomb());
     }
 
     IEnumerator ShowBomb()
@@ -50,4 +80,14 @@ public class BombInit : WeaponParent
            && AnimationManager.instance.AnimationState == AnimationState.StartGrenade)
             WeaponCatalog.instance.EnabledBomb(true);
     }
+
+
+   
+    
+  
+   
+
+   
+
+  
 }

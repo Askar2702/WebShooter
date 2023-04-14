@@ -15,10 +15,16 @@ public class PistolWeapon : WeaponParent
     public override void RigOn()
     {
         _baseAnimator.runtimeAnimatorController = _animatorController;
-        RigLayer rigLayer = new RigLayer(_rig);
+      
         _rig.weight = 1;
+        RigLayer rigLayer = new RigLayer(_rig);
         _rigBuilder.layers.Add(rigLayer);
         _rigBuilder.Build();
+    }
+
+    private void Update()
+    {
+        print(_rigBuilder.layers.FirstOrDefault(item => item.rig == _rig).rig.weight);
     }
 
     public override void RigOff()
