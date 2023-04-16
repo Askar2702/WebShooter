@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SettingGame : MonoBehaviour
@@ -17,6 +18,8 @@ public class SettingGame : MonoBehaviour
     [field: SerializeField] public float VolumeSound { get; private set; }
 
     [SerializeField] private List<AudioSource> _audioSources;
+
+    public UnityEvent<float> ChangeSpeed = new UnityEvent<float>();
     private void Awake()
     {
         if (!instance) instance = this;
@@ -39,6 +42,7 @@ public class SettingGame : MonoBehaviour
         });
         _speedCameraSlider.onValueChanged.AddListener(delegate {
             SpeedCamera = _speedCameraSlider.value;
+            ChangeSpeed?.Invoke(SpeedCamera);
             SaveSetting();
         });
     }

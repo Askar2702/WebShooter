@@ -4505,9 +4505,9 @@ GameObject:
   - component: {fileID: 7093060572040072477}
   - component: {fileID: 4857078147048124199}
   - component: {fileID: -3419095427194986486}
-  - component: {fileID: 1337905945705612282}
   - component: {fileID: 8474263589327566183}
   - component: {fileID: 7565864045266445561}
+  - component: {fileID: 1337905945705612282}
   m_Layer: 9
   m_Name: EnemyBaton
   m_TagString: Untagged
@@ -4606,6 +4606,92 @@ MonoBehaviour:
   _healthCount: 350
   _currentHealthCount: 0
   _miniMap: {fileID: 5638730456332105543}
+--- !u!114 &8474263589327566183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486436423611037536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0ba4e42dad9fb4da70805592363101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 5630445841217738854}
+  _skinneds:
+  - {fileID: 9053805209772134671}
+  - {fileID: 6001049477220437729}
+  - {fileID: 5680134640765344553}
+  - {fileID: 7098376555406451255}
+  - {fileID: 3994888720422117353}
+  - {fileID: 1819943273101710348}
+  - {fileID: 851410505494128791}
+  - {fileID: 195098260382559310}
+  - {fileID: 5766546195901947680}
+  - {fileID: 6233726426792330913}
+  - {fileID: 673839363322650238}
+  - {fileID: 6490874455707249527}
+  - {fileID: 6557783981125937671}
+  - {fileID: 8993729706692447295}
+  - {fileID: 8260919167878185354}
+  - {fileID: 1482655044538937221}
+  - {fileID: 7680480774912050873}
+  - {fileID: 1789211183672247853}
+  - {fileID: 1880536303925788481}
+  - {fileID: 848420102659527484}
+  - {fileID: 8382067508344942364}
+  - {fileID: 7769681774531008803}
+  - {fileID: 3172580928905455016}
+  - {fileID: 2547784339150529790}
+  - {fileID: 1489105905941746369}
+  - {fileID: 1869766314494406689}
+  - {fileID: 4973463155475097922}
+  - {fileID: 914795219278845791}
+  - {fileID: 2673258630883757160}
+  - {fileID: 2037068412844459871}
+  - {fileID: 6894597185834551082}
+  - {fileID: 6064689651961466737}
+  - {fileID: 6057627000315024746}
+  - {fileID: 5511374804269439720}
+  - {fileID: 8780544748362062739}
+  - {fileID: 4236284187105181488}
+  - {fileID: 5799671004255772944}
+  - {fileID: 2668533525858224697}
+  - {fileID: 243102138305550636}
+  - {fileID: 3997188280052242777}
+  - {fileID: 2720000974980870194}
+  - {fileID: 8484217813978347477}
+  - {fileID: 1109837430083392159}
+  - {fileID: 3262771391051203472}
+  - {fileID: 7831888204143907498}
+  - {fileID: 908851289508735156}
+  - {fileID: 6227933711064598569}
+  - {fileID: 2368617072504210057}
+  - {fileID: 3851367167277327145}
+--- !u!114 &7565864045266445561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486436423611037536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a22908aea49b194595513682778a45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterJoints:
+  - {fileID: 8059705818918761742}
+  - {fileID: 8059705817213501483}
+  - {fileID: 8059705817905499419}
+  - {fileID: 8059705818240810796}
+  - {fileID: 8059705818746147768}
+  - {fileID: 6128268317464203390}
+  - {fileID: 8059705818265627476}
+  - {fileID: 8059705818243046315}
+  - {fileID: 8059705818397244025}
+  - {fileID: 8059705817203419117}
 --- !u!82 &1337905945705612282
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4702,42 +4788,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8474263589327566183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2486436423611037536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b0ba4e42dad9fb4da70805592363101, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 5630445841217738854}
---- !u!114 &7565864045266445561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2486436423611037536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a22908aea49b194595513682778a45e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterJoints:
-  - {fileID: 8059705818918761742}
-  - {fileID: 8059705817213501483}
-  - {fileID: 8059705817905499419}
-  - {fileID: 8059705818240810796}
-  - {fileID: 8059705818746147768}
-  - {fileID: 6128268317464203390}
-  - {fileID: 8059705818265627476}
-  - {fileID: 8059705818243046315}
-  - {fileID: 8059705818397244025}
-  - {fileID: 8059705817203419117}
 --- !u!1 &2518232751689291509
 GameObject:
   m_ObjectHideFlags: 0
@@ -18883,7 +18933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7273431875572235383
 Transform:
   m_ObjectHideFlags: 0

@@ -30,13 +30,16 @@ public class PlayerInput : MonoBehaviour
         _speedCurrentRotate = _speedRotate;
         Cursor.visible = false;
         SettingGame.instance.SetSoundVolume();
-           
+        SettingGame.instance.ChangeSpeed.AddListener((float speed) =>
+        {
+            _speedRotate = speed;
+            AimingChungeSpeed(WeaponCatalog.instance.CurrentWeapon.Gun.isAiming);
+        });
         
     }
     void Update()
     {
-        _speedRotate = SettingGame.instance.SpeedCamera;
-        _speedCurrentRotate = _speedRotate;
+      
         if (Input.GetKeyDown(KeyCode.R))
         {
             Player.instance.ReloadGun();
@@ -130,7 +133,7 @@ public class PlayerInput : MonoBehaviour
 
     public void AimingChungeSpeed(bool isAim)
     {
-        if (isAim) _speedCurrentRotate /= 2;
+        if (isAim) _speedCurrentRotate  = _speedRotate / 2;
         else _speedCurrentRotate = _speedRotate;
     }
 }
