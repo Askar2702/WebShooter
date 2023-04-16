@@ -124,6 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7933386117137037532}
   - component: {fileID: 7117133200480461113}
+  - component: {fileID: 9168116444329856234}
   m_Layer: 11
   m_Name: Map
   m_TagString: Untagged
@@ -199,6 +200,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9168116444329856234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3299382715305232294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afdfacb6bec857d4fb8f98a40d0389e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minimapSize: 25
 --- !u!1 &7674856949905481942
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthCount: 10
+  _currentHealthCount: 0
   _miniMap: {fileID: 3299382715305232294}
 --- !u!1 &7674856950774115486
 GameObject:

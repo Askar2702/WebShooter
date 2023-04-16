@@ -6,11 +6,16 @@ public class WeaponHave : MonoBehaviour
 {
     public static WeaponHave instance { get; private set; }
     private List<WeaponParent> _weaponParents = new List<WeaponParent>();
+    [field:SerializeField] public AudioSource AudioMusic { get; private set; }
    
     private void Awake()
     {
        if(!instance) instance = this;
         DontDestroyOnLoad(this);
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            AudioMusic.volume = PlayerPrefs.GetFloat("musicVolume");
+        }
     }
     
 

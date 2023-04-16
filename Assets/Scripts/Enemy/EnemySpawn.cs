@@ -11,19 +11,20 @@ public class EnemySpawn : MonoBehaviour
     private void Awake()
     {
         if (!instance) instance = this;
+        StartCoroutine(SpawnEnemies());
     }
     void Start()
     {
-        StartCoroutine(SpawnEnemies());
+       
     }
 
  
 
     IEnumerator SpawnEnemies()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
-        
+        List<AudioSource> audioSources = new List<AudioSource>();
         for (int i = 0; i < _spawnDataList.EnemyLists.Length; i++)
         {
             for(int j = 0; j < _spawnDataList.EnemyLists[i].Count; j++)
@@ -32,10 +33,17 @@ public class EnemySpawn : MonoBehaviour
                 pos = new Vector3(Random.Range(pos.x - 5, pos.x + 5), pos.y, Random.Range(pos.z - 5, pos.z + 5));
                 var e = Instantiate(_spawnDataList.EnemyLists[i].Enemy, pos, Quaternion.identity);
                 if (e.GetComponent<EnemyRifle>()) _enemyRifles.Add(e.GetComponent<EnemyRifle>());
+
+                if(e.TryGetComponent(out AudioSource audio))
+                audioSources.Add(audio);
             }
             
         }
-      
+        if (SettingGame.instance)
+        {
+            SettingGame.instance.SetSoundVolume(audioSources.ToArray());
+        }
+
     }
 
     public List<EnemyRifle> GettingEnemyRifles()

@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform _pointSpawnUIDamage;
     private float _posSpawnRange = 100f;
 
+    private bool _previousStateAim;
     private void Awake()
     {
         if (!instance) instance = this;
@@ -19,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowAimTarget(bool activ)
     {
+        if (!_aimSprite.enabled && WeaponCatalog.instance.CurrentWeapon.Gun.isAiming && activ) return;
         _aimSprite.enabled = activ;
     }
 

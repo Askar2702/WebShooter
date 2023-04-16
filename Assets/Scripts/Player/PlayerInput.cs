@@ -29,10 +29,14 @@ public class PlayerInput : MonoBehaviour
         _currentSpeed = _idleSpeed;
         _speedCurrentRotate = _speedRotate;
         Cursor.visible = false;
+        SettingGame.instance.SetSoundVolume();
+           
+        
     }
     void Update()
     {
-
+        _speedRotate = SettingGame.instance.SpeedCamera;
+        _speedCurrentRotate = _speedRotate;
         if (Input.GetKeyDown(KeyCode.R))
         {
             Player.instance.ReloadGun();
@@ -42,11 +46,12 @@ public class PlayerInput : MonoBehaviour
         Move();
 
         if (transform.position.y < -10f) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
+       
     }
 
     private void Rotate()
     {
+        if (Time.timeScale == 0) return;
         _pitch -= _speedCurrentRotate * Input.GetAxis("Mouse Y");
         _yaw += _speedCurrentRotate * Input.GetAxis("Mouse X");
         _pitch = Mathf.Clamp(_pitch, -_angleX, _angleX);

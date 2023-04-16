@@ -37971,6 +37971,21 @@ MonoBehaviour:
   _audioSource: {fileID: 774830939}
   _walkClip: {fileID: 8300000, guid: 3519e1b49b777a34d8674238d3c71350, type: 3}
   _runClip: {fileID: 8300000, guid: 258857b6c358d0644a339892e0212203, type: 3}
+  _audioSources:
+  - {fileID: 529715973567623875}
+  - {fileID: 774830939}
+  - {fileID: 192404631}
+  - {fileID: 850152994}
+  - {fileID: 1010675709}
+  - {fileID: 842019956}
+  - {fileID: 1789635168}
+  - {fileID: 839362110}
+  - {fileID: 922746242}
+  - {fileID: 439130998}
+  - {fileID: 885739981}
+  - {fileID: 609745485}
+  - {fileID: 350897033}
+  - {fileID: 696806483}
 --- !u!114 &4644612743583374856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43150,8 +43165,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5623917426967069850}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.35, y: 0.45, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2844531621167528662}
@@ -43198,7 +43213,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 31023ea2632398f45afd330074324c51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a6ea925b4a78bc429e36d59a7c67c88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -68788,6 +68803,9 @@ MonoBehaviour:
     type: 3}
   _spawnPoint: {fileID: 3150269900774297693}
   _force: 1000
+  _countGrenade: 1
+  _countBulletsText: {fileID: 0}
+  _countBulletsTextCurrent: {fileID: 0}
 --- !u!114 &1615159371
 MonoBehaviour:
   m_ObjectHideFlags: 0

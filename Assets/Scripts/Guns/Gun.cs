@@ -61,14 +61,13 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         AnimationManager.instance.AnimationStateEvent.AddListener(CheckAnimation);
-       
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (isReady)
+        if (isReady && Time.timeScale!= 0)
         {
             Fire();
         }
@@ -77,11 +76,7 @@ public class Gun : MonoBehaviour
             AnimationManager.instance.ShowAimAnimation();
             Aiming();
         }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-
-        }
+       
     }
 
     private void Fire()

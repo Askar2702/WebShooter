@@ -4603,8 +4603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36cbcfad06c482a4da884345faa88a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 8146868625001700217}
   _healthCount: 350
+  _currentHealthCount: 0
   _miniMap: {fileID: 5638730456332105543}
 --- !u!82 &1337905945705612282
 AudioSource:
@@ -11768,6 +11768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7931721538608791354}
   - component: {fileID: 6252232694636335826}
+  - component: {fileID: 3301475516540683559}
   m_Layer: 11
   m_Name: miniMap
   m_TagString: Untagged
@@ -11843,6 +11844,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3301475516540683559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638730456332105543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afdfacb6bec857d4fb8f98a40d0389e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minimapSize: 25
 --- !u!1 &5685690147779899525
 GameObject:
   m_ObjectHideFlags: 0
