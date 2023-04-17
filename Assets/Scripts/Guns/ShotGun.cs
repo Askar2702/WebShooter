@@ -10,15 +10,8 @@ public class ShotGun : FireGun
     [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask _layerMask;
 
-    [SerializeField] private DestroyAfterTimeParticle _holeWallParticle;
-    [SerializeField] private ParticleSystem _hitWall;
-    private float _floatInfrontOfWall = 0.1f;
-    private GunDamage _gunDamage;
-
-    private void Awake()
-    {
-        _gunDamage = GetComponent<GunDamage>();
-    }
+  
+   
     public override void Fire(Action callback)
     {
         if (Input.GetMouseButtonDown(0) && !AnimationManager.instance.isReloadAnimShow() && _countBulletsCurrent > 0)
@@ -50,14 +43,5 @@ public class ShotGun : FireGun
 
 
 
-    private void SpawnEffectHitWall(RaycastHit hit)
-    {
-        if (hit.collider.gameObject.layer != 9)
-        {
-            var hitWall = Instantiate(_hitWall, hit.point, Quaternion.identity);
-            hitWall.transform.LookAt(transform.root.position);
-            if (hit.collider.gameObject.layer == 6)
-                Instantiate(_holeWallParticle, hit.point + hit.normal * _floatInfrontOfWall, Quaternion.LookRotation(hit.normal));
-        }
-    }
+    
 }

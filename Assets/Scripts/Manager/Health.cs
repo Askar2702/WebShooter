@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float _healthCount;
-    public float _currentHealthCount;
+    private float _currentHealthCount;
     [SerializeField] private GameObject _miniMap;
     public bool isAlive { get; private set; }
 

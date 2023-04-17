@@ -69,7 +69,6 @@ public class Enemy : MonoBehaviour
 
     public float GetAmountDamageDealt()
     {
-        if (isDrone) return 0;
         return _health.GetAmountDamageDealt();
     }
 

@@ -30,6 +30,8 @@ public class PlayerInput : MonoBehaviour
         _speedCurrentRotate = _speedRotate;
         Cursor.visible = false;
         SettingGame.instance.SetSoundVolume();
+        if (SettingGame.instance.SpeedCamera != 0)
+            _speedRotate = SettingGame.instance.SpeedCamera;
         SettingGame.instance.ChangeSpeed.AddListener((float speed) =>
         {
             _speedRotate = speed;

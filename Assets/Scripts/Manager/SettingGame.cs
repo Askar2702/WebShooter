@@ -23,6 +23,7 @@ public class SettingGame : MonoBehaviour
     private void Awake()
     {
         if (!instance) instance = this;
+        LoadData();
     }
     private void Start()
     {
@@ -30,7 +31,6 @@ public class SettingGame : MonoBehaviour
         var audioSources = FindObjectsOfType<AudioSource>(true);
         AddAudioSources(audioSources);
         
-            LoadData();
         _gameSoundSlider.onValueChanged.AddListener(delegate {
             VolumeSound = _gameSoundSlider.value;
             SetSoundVolume();

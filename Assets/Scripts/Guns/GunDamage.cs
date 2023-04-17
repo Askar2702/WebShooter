@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GunDamage : MonoBehaviour
 {
+    public float Damage => _damage;
     [SerializeField] private float _damage;
     [SerializeField] private float _force;
     public void ShootEnemy(Enemy e, Rigidbody rb)
@@ -11,7 +12,7 @@ public class GunDamage : MonoBehaviour
         if (!e.IsAlive()) return;
         var enemy = e;
         var damage = _damage;
-        var color = Color.white;
+        var color = Color.black;
         if (rb.CompareTag("MinDamage"))
         {
             damage /= 2; 
