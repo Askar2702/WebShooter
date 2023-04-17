@@ -24,17 +24,17 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private AudioClip _walkClip;
     [SerializeField] private AudioClip _runClip;
 
+
+   
     private void Start()
     {
         _currentSpeed = _idleSpeed;
         _speedCurrentRotate = _speedRotate;
         Cursor.visible = false;
         SettingGame.instance.SetSoundVolume();
-        if (SettingGame.instance.SpeedCamera != 0)
-            _speedRotate = SettingGame.instance.SpeedCamera;
         SettingGame.instance.ChangeSpeed.AddListener((float speed) =>
         {
-            _speedRotate = speed;
+            SetRotateCamera(speed);
             AimingChungeSpeed(WeaponCatalog.instance.CurrentWeapon.Gun.isAiming);
         });
         
@@ -137,5 +137,11 @@ public class PlayerInput : MonoBehaviour
     {
         if (isAim) _speedCurrentRotate  = _speedRotate / 2;
         else _speedCurrentRotate = _speedRotate;
+    }
+
+    public void SetRotateCamera(float speed)
+    {
+        _speedRotate = speed;
+        _speedCurrentRotate = speed;
     }
 }

@@ -22,10 +22,7 @@ public class PistolWeapon : WeaponParent
         _rigBuilder.Build();
     }
 
-    private void Update()
-    {
-        print(_rigBuilder.layers.FirstOrDefault(item => item.rig == _rig).rig.weight);
-    }
+   
 
     public override void RigOff()
     {

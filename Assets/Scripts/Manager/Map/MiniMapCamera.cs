@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class MiniMapCamera : MonoBehaviour
 {
-    [SerializeField] private PlayerInput _player;
     private void LateUpdate()
     {
-        var newPos = _player.transform.position;
+        var newPos = Player.instance.transform.position;
         newPos.y = transform.position.y;
         transform.position = newPos;
 
-        transform.rotation = Quaternion.Euler(90f, _player.transform.eulerAngles.y, 0f);
+        transform.rotation = Quaternion.Euler(90f, Player.instance.transform.eulerAngles.y, 0f);
     }
 }

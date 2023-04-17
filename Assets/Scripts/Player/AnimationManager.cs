@@ -18,7 +18,6 @@ public class AnimationManager : MonoBehaviour
     private readonly string _aimGunAnimation = "AimPosRifle";
     private readonly string _GrenadeThrowAnimation = "GrenadeThrow";
     private readonly string _HoldTheGnarataAnimation = "HoldTheGnarata";
-    private PlayerInput _playerInput;
 
     public AnimationState AnimationState { get; private set; }
     private AnimationState _currentState;
@@ -28,7 +27,6 @@ public class AnimationManager : MonoBehaviour
     private void Awake()
     {
         if (!instance) instance = this;
-        _playerInput = GetComponent<PlayerInput>();
     }
  
     public void SetGun(Gun gun)
@@ -50,7 +48,7 @@ public class AnimationManager : MonoBehaviour
     {
         if (CheckBaseAnimation())
         {
-            if (directionMagnitude >= 1f && _playerInput.CheckGround())
+            if (directionMagnitude >= 1f && Player.instance.playerInput.CheckGround())
             {
                 if (currentSpeed > idleSpeed)
                     AnimationState = AnimationState.Run;
@@ -61,7 +59,7 @@ public class AnimationManager : MonoBehaviour
                 _animator.SetInteger("PlayerState", (int)AnimationState);
                 _animator.SetFloat("MaxSpeed", directionMagnitude);
             }
-            else if (directionMagnitude <= 1f && _playerInput.CheckGround() || !_playerInput.CheckGround())
+            else if (directionMagnitude <= 1f && Player.instance.playerInput.CheckGround() || !Player.instance.playerInput.CheckGround())
             {
                 ShowAimAnimation();
             }

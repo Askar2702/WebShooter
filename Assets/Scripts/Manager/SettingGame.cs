@@ -23,11 +23,12 @@ public class SettingGame : MonoBehaviour
     private void Awake()
     {
         if (!instance) instance = this;
-        LoadData();
     }
     private void Start()
     {
+        print(WeaponHave.instance.AudioMusic);
         _musicAudio = WeaponHave.instance.AudioMusic;
+        LoadData();
         var audioSources = FindObjectsOfType<AudioSource>(true);
         AddAudioSources(audioSources);
         
@@ -110,6 +111,7 @@ public class SettingGame : MonoBehaviour
         {
             SpeedCamera = PlayerPrefs.GetFloat("speedCamera");
             _speedCameraSlider.value = SpeedCamera;
+            Player.instance.playerInput.SetRotateCamera(SpeedCamera);
         }
         else SpeedCamera = _speedCameraSlider.value;
         if (PlayerPrefs.HasKey("musicVolume"))
@@ -124,4 +126,6 @@ public class SettingGame : MonoBehaviour
         PlayerPrefs.SetFloat("musicVolume", _gameMusicSlider.value);
         PlayerPrefs.SetFloat("speedCamera", SpeedCamera);
     }
+
+    
 }

@@ -25,7 +25,7 @@ public class PlayerBullet : MonoBehaviour
     }
 
     
-    }
+}
 
    
 
