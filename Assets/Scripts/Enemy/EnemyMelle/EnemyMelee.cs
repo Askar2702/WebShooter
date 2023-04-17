@@ -7,6 +7,9 @@ public class EnemyMelee : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private SkinnedMeshRenderer[] _skinneds;
+    [Space(30)]
+
+    [SerializeField] private ParticleSystem _startTeleport;
     private Enemy _enemy;
     private float _reactionDistance = 20f;
     private float _attackDistance = 3f;
@@ -87,11 +90,13 @@ public class EnemyMelee : MonoBehaviour
                 }
 
                 Vector3 teleportPosition = GetTeleportPosition(segmentPosition);
+               
                 _enemy.MeshAgent.Warp(teleportPosition);
                 lastSegmentPosition = teleportPosition;
             }
-
+            _startTeleport.Play();
             _enemy.MeshAgent.SetDestination(lastSegmentPosition);
+           
         }
         else
         {
