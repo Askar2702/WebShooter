@@ -34,17 +34,20 @@ public class SettingGame : MonoBehaviour
         
         _gameSoundSlider.onValueChanged.AddListener(delegate {
             VolumeSound = _gameSoundSlider.value;
+            Game.instance.SoundVolume = VolumeSound;
             SetSoundVolume();
-            SaveSetting();
+           // SaveSetting();
         });
         _gameMusicSlider.onValueChanged.AddListener(delegate {
-            SetSound();
-            SaveSetting();
+            _musicAudio.volume = _gameMusicSlider.value;
+            Game.instance.MusicVolume = _gameMusicSlider.value;
+            //  SaveSetting();
         });
         _speedCameraSlider.onValueChanged.AddListener(delegate {
             SpeedCamera = _speedCameraSlider.value;
+            Game.instance.SpeedCamera = SpeedCamera;
             ChangeSpeed?.Invoke(SpeedCamera);
-            SaveSetting();
+          //  SaveSetting();
         });
     }
     private void Update()
@@ -86,7 +89,8 @@ public class SettingGame : MonoBehaviour
         {
             if (a != _musicAudio)
             {
-                a.volume = VolumeSound;
+              //  a.volume = VolumeSound;
+                a.volume = Game.instance.SoundVolume; 
             }
         }
     }
@@ -101,31 +105,36 @@ public class SettingGame : MonoBehaviour
     }
     private void LoadData()
     {
-        if (PlayerPrefs.HasKey("soundVolume"))
-        {
-            VolumeSound = PlayerPrefs.GetFloat("soundVolume");
-            _gameSoundSlider.value = VolumeSound;
-        }
-        else VolumeSound = _gameSoundSlider.value;
-        if (PlayerPrefs.HasKey("speedCamera"))
-        {
-            SpeedCamera = PlayerPrefs.GetFloat("speedCamera");
-            _speedCameraSlider.value = SpeedCamera;
-            Player.instance.playerInput.SetRotateCamera(SpeedCamera);
-        }
-        else SpeedCamera = _speedCameraSlider.value;
-        if (PlayerPrefs.HasKey("musicVolume"))
-        {
-            _gameMusicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-            SetSound();
-        }
+        _gameSoundSlider.value = Game.instance.SoundVolume;
+        _speedCameraSlider.value = Game.instance.SpeedCamera;
+        Player.instance.playerInput.SetRotateCamera(Game.instance.SpeedCamera);
+        _gameMusicSlider.value = Game.instance.MusicVolume;
+
+        //if (PlayerPrefs.HasKey("soundVolume"))
+        //{
+        //    VolumeSound = PlayerPrefs.GetFloat("soundVolume");
+        //    _gameSoundSlider.value = VolumeSound;
+        //}
+        //else VolumeSound = _gameSoundSlider.value;
+        //if (PlayerPrefs.HasKey("speedCamera"))
+        //{
+        //    SpeedCamera = PlayerPrefs.GetFloat("speedCamera");
+        //    _speedCameraSlider.value = SpeedCamera;
+        //    Player.instance.playerInput.SetRotateCamera(SpeedCamera);
+        //}
+        //else SpeedCamera = _speedCameraSlider.value;
+        //if (PlayerPrefs.HasKey("musicVolume"))
+        //{
+        //    _gameMusicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        //    SetSound();
+        //}
     }
-    private void SaveSetting()
-    {
-        PlayerPrefs.SetFloat("soundVolume", VolumeSound);
-        PlayerPrefs.SetFloat("musicVolume", _gameMusicSlider.value);
-        PlayerPrefs.SetFloat("speedCamera", SpeedCamera);
-    }
+    //private void SaveSetting()
+    //{
+    //    PlayerPrefs.SetFloat("soundVolume", VolumeSound);
+    //    PlayerPrefs.SetFloat("musicVolume", _gameMusicSlider.value);
+    //    PlayerPrefs.SetFloat("speedCamera", SpeedCamera);
+    //}
 
     
 }
