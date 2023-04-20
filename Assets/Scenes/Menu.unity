@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7e6b86cc0e99a48a48b55987012594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lvlNumber: {fileID: 995734160}
 --- !u!1001 &72810256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3801,7 +3802,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &995734160
 MonoBehaviour:
@@ -3823,7 +3824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play
+  m_text: Play #0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 01b0176a7fa16a64b82ae889dc8a4497, type: 2}
   m_sharedMaterial: {fileID: -786553646252267070, guid: 01b0176a7fa16a64b82ae889dc8a4497,
@@ -3851,7 +3852,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 71.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

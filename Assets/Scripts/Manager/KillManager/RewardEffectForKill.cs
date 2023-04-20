@@ -30,9 +30,16 @@ public class RewardEffectForKill : MonoBehaviour
     [SerializeField] private string _rampageText;
 
     [Space(30)]
-    [SerializeField] private float _waitingTime = 0.5f;
+    [SerializeField] private float _waitingTime = 1f;
     [SerializeField] private KillEffectsText _killEffects;
     [SerializeField] private RectTransform _spawnText;
+
+  
+    private FinishParametrs _finishParametrs;
+    private void Start()
+    {
+        _finishParametrs = new FinishParametrs();
+    }
 
     private int _currentCount;
     public void CalculateEffect(bool isHeadShot)
@@ -43,12 +50,13 @@ public class RewardEffectForKill : MonoBehaviour
             _audioSource.PlayOneShot(_headShotSound);
             var icon = Instantiate(_iconHeadShot, _spawmPosHeadShot.position, Quaternion.identity);
             icon.transform.parent = _spawmPosHeadShot.transform;
+            _finishParametrs.HeadShotCount++;
            
         }
-        StartCoroutine(Expectation(isHeadShot));
+        StartCoroutine(Expectation());
     }
 
-    private IEnumerator Expectation(bool isHeadShot)
+    private IEnumerator Expectation()
     {
         yield return new WaitForSeconds(_waitingTime);
         var effectT = Instantiate(_killEffects, _spawnText.position, Quaternion.identity);
@@ -60,22 +68,31 @@ public class RewardEffectForKill : MonoBehaviour
             case 2:
                 _audioSource.PlayOneShot(_doubleKillSound);
                 effectText = _doubleKillText;
+                _finishParametrs.DoubleKillCount++;
                 break;
             case 3:
                 _audioSource.PlayOneShot(_tripleKillSound);
                 effectText = _tripleKillText;
+                _finishParametrs.TripleKillCount++;
                 break;
             case 4:
                 _audioSource.PlayOneShot(_monsterKillSound);
                 effectText = _monsterKillText;
+                _finishParametrs.MonsterKillCount++;
                 break;
         }
         if (_currentCount >= 5)
         {
             _audioSource.PlayOneShot(_rampageSound);
+            _finishParametrs.RampageCount++;
             effectText = _rampageText;
         }
         effectT.Init(effectText);
         _currentCount = 0;
+    }
+
+    public FinishParametrs GetFinishParametrs()
+    {
+        return _finishParametrs;
     }
 }

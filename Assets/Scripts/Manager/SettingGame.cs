@@ -26,7 +26,6 @@ public class SettingGame : MonoBehaviour
     }
     private void Start()
     {
-        print(WeaponHave.instance.AudioMusic);
         _musicAudio = WeaponHave.instance.AudioMusic;
         LoadData();
         var audioSources = FindObjectsOfType<AudioSource>(true);
@@ -76,10 +75,7 @@ public class SettingGame : MonoBehaviour
             Cursor.visible = false;
         }
     }
-    private void SetSound()
-    {
-        _musicAudio.volume = _gameMusicSlider.value;
-    }
+   
 
     public void SetSoundVolume(AudioSource[] audioSources = null)
     {
@@ -89,7 +85,6 @@ public class SettingGame : MonoBehaviour
         {
             if (a != _musicAudio)
             {
-              //  a.volume = VolumeSound;
                 a.volume = Game.instance.SoundVolume; 
             }
         }
@@ -109,32 +104,6 @@ public class SettingGame : MonoBehaviour
         _speedCameraSlider.value = Game.instance.SpeedCamera;
         Player.instance.playerInput.SetRotateCamera(Game.instance.SpeedCamera);
         _gameMusicSlider.value = Game.instance.MusicVolume;
-
-        //if (PlayerPrefs.HasKey("soundVolume"))
-        //{
-        //    VolumeSound = PlayerPrefs.GetFloat("soundVolume");
-        //    _gameSoundSlider.value = VolumeSound;
-        //}
-        //else VolumeSound = _gameSoundSlider.value;
-        //if (PlayerPrefs.HasKey("speedCamera"))
-        //{
-        //    SpeedCamera = PlayerPrefs.GetFloat("speedCamera");
-        //    _speedCameraSlider.value = SpeedCamera;
-        //    Player.instance.playerInput.SetRotateCamera(SpeedCamera);
-        //}
-        //else SpeedCamera = _speedCameraSlider.value;
-        //if (PlayerPrefs.HasKey("musicVolume"))
-        //{
-        //    _gameMusicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        //    SetSound();
-        //}
     }
-    //private void SaveSetting()
-    //{
-    //    PlayerPrefs.SetFloat("soundVolume", VolumeSound);
-    //    PlayerPrefs.SetFloat("musicVolume", _gameMusicSlider.value);
-    //    PlayerPrefs.SetFloat("speedCamera", SpeedCamera);
-    //}
-
     
 }

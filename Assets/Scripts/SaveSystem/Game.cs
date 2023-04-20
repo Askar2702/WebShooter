@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class Game : MonoBehaviour
@@ -9,8 +10,8 @@ public class Game : MonoBehaviour
     private float _musicVolume = 0.3f;
     private float _soundVolume = 1f;
     private float _speedCamera = 1.2f;
-    private int _level;
-
+    private int _level = 1;
+    [SerializeField] private TextMeshProUGUI _lvlNumber;
     public float MusicVolume
     {
         get
@@ -74,6 +75,8 @@ public class Game : MonoBehaviour
         if (!instance) instance = this;
          print(Application.persistentDataPath);
         LoadData();
+        print(_level);
+        _lvlNumber.text = $"play #{_level}";
     }
 
     [System.Obsolete]

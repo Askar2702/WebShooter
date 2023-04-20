@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     public static Player instance;
+    public UnityEvent PlayerDead;
     private HealthPlayer _healthPlayer;
     [field:SerializeField] public PlayerInput playerInput { get; private set; }
     [SerializeField] private AudioSource _audioSource;
@@ -19,7 +21,8 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        _healthPlayer.TakeDamage(amount);
+        if (!_healthPlayer.IsAlive) return;
+        _healthPlayer.TakeDamage(amount , PlayerDead);
     }
 
     public void ReloadGun()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
@@ -11,7 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     [Space(30)]
     [SerializeField] private RewardEffectForKill _rewardEffectForKill;
-
+    public UnityEvent<FinishParametrs> Finished = new UnityEvent<FinishParametrs>();
 
     private int _deadEnemyCount;
 
@@ -30,5 +31,9 @@ public class ScoreManager : MonoBehaviour
         _deadEnemyCount++;
         _deadEnemyCountText.text = _deadEnemyCount.ToString();
         _rewardEffectForKill.CalculateEffect(isHeadShot);
+        if(_deadEnemyCount >= EnemySpawn.instance.CountEnemy())
+        {
+            Finished?.Invoke(_rewardEffectForKill.GetFinishParametrs());
+        }
     }
 }
