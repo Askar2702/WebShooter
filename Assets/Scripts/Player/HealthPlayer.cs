@@ -7,35 +7,28 @@ using TMPro;
 
 public class HealthPlayer : MonoBehaviour
 {
-    [SerializeField] private Slider _slider;
     [SerializeField] private float _health;
     [SerializeField] private Image _uiSignalDamage;
-    [SerializeField] private TextMeshProUGUI am;
-    [SerializeField] private RectTransform _sl;
+    [SerializeField] private TextMeshProUGUI _healthBar;
     public bool IsAlive { get; private set; }
     private void Awake()
     {
-        _slider.maxValue = _health;
-        _slider.value = _health;
+        _healthBar.text = _health.ToString();
         IsAlive = true;
     }
 
-    private void Update()
-    {
-        am.text = _sl.transform.position.ToString();
-    }
+   
     public void TakeDamage(float amount , UnityEvent eventHealth)
     {
         _health -= amount;
-        am.text = _slider.value.ToString();
         if (_health <= 0)
         {
             _health = 0;
             IsAlive = false;
             eventHealth?.Invoke();
         }
-        _slider.value = _health;
-       
+        _healthBar.text = _health.ToString();
+
         _uiSignalDamage.color = new Color(255, 0, 0, 150);
         StartCoroutine(RestartSignal());
     }

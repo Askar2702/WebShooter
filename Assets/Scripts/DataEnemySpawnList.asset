@@ -18,4 +18,4 @@ MonoBehaviour:
   - Enemy: {fileID: 4857078147048124199, guid: e936ed5512758db42860876af0108f78, type: 3}
     Count: 25
   - Enemy: {fileID: 7674856949905481951, guid: f7db4889c7b6bfe45b5d08551f3c559d, type: 3}
-    Count: 1
+    Count: 5

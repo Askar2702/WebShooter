@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
@@ -12,8 +13,7 @@ public class Enemy : MonoBehaviour
     private Health _health;
     [HideInInspector]
     public bool isDamage;
-    [SerializeField] private bool isDrone;
-  
+    [SerializeField] private ShieldDroneEnemy Drone;
     public Player Player { get; private set; }
   
  
@@ -47,13 +47,14 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage , bool isHeadShot)
     {
-        if (!IsAlive()) return;
+        if (!IsAlive() || Drone && Drone.Shield.CurrentHealthCount > 0) return;
+       
         isDamage = true;
         _health.TakeDamege(damage);
         if (!IsAlive())
         {
             MeshAgent.enabled = false;
-            if (!isDrone)
+            if (!Drone)
                 _animator.enabled = false;
             foreach (var rb in _rbs) rb.isKinematic = false;
 

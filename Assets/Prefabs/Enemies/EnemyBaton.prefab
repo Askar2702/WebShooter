@@ -4591,7 +4591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 5630445841217738854}
   isDamage: 0
-  isDrone: 0
+  Drone: {fileID: 0}
 --- !u!114 &-3419095427194986486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4671,6 +4671,7 @@ MonoBehaviour:
   - {fileID: 2368617072504210057}
   - {fileID: 3851367167277327145}
   _startTeleport: {fileID: 1666556568214885413}
+  _audio: {fileID: 1337905945705612282}
 --- !u!114 &7565864045266445561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4704,7 +4705,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 736a6ee94d8a94aef925851d18125a0c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 669b583daf72d1a49bd1f06e2a2cd66b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

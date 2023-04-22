@@ -32,6 +32,7 @@ public class GunDamage : MonoBehaviour
         var dir = (transform.forward
              * _force) + transform.up * (_force );
         rb.AddForce(dir, ForceMode.Impulse);
-        UIManager.instance.ShowAmountDamage(enemy.GetAmountDamageDealt() , color);
+        if (enemy.GetAmountDamageDealt() > 0)
+            UIManager.instance.ShowAmountDamage(enemy.GetAmountDamageDealt(), color);
     }
 }

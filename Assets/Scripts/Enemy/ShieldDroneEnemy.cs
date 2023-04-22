@@ -8,8 +8,10 @@ public class ShieldDroneEnemy : MonoBehaviour
     [SerializeField] private Enemy _enemy;
     [SerializeField] private float _reactDistance;
     [SerializeField] private float _reactDistancePlayer;
+    [field:SerializeField] public Shield Shield { get; private set; }
     private Vector3 _targetPos;
     private bool isProtected;
+  [field: SerializeField]  public EnemyRifle EnemyRifle { get; private set; }
     void Start()
     {
         _targetPos = PointsManager.instance.GetRandomPos().position;
@@ -35,7 +37,8 @@ public class ShieldDroneEnemy : MonoBehaviour
                 if (FindClosestRifle() && FindClosestRifle().isPlayerTarget
                && Vector3.Distance(FindClosestRifle().transform.position, transform.position) <= _reactDistance)
                 {
-                    _targetPos = FindClosestRifle().transform.position + (FindClosestRifle().transform.forward * 5);
+                    EnemyRifle = FindClosestRifle();
+                    _targetPos = EnemyRifle.transform.position + (EnemyRifle.transform.forward * 5);
                     Debug.DrawRay(transform.position, FindClosestRifle().transform.position, Color.green);
                     isProtected = true;
                     print("protected");
@@ -47,6 +50,7 @@ public class ShieldDroneEnemy : MonoBehaviour
                 if (isProtected)
                 {
                     isProtected = false;
+                    EnemyRifle = null;
                     _targetPos = PointsManager.instance.GetRandomPos().position;
                     print("Notprotected");
                 }
@@ -65,18 +69,32 @@ public class ShieldDroneEnemy : MonoBehaviour
 
     private EnemyRifle FindClosestRifle()
     {
-        EnemyRifle rifleEnemy = null;
+        EnemyRifle enemyRifle = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = transform.position;
         foreach (var e in EnemySpawn.instance.GettingEnemyRifles())
         {
-            float dist = Vector3.Distance(e.transform.position, currentPos);
-            if (dist < minDist)
+            bool isEnemy = true;
+            foreach(var shield in EnemySpawn.instance.GetShieldDroneEnemies())
             {
-                rifleEnemy = e;
+                if(shield !=this && shield.EnemyRifle == e)
+                {
+                    isEnemy = false;
+                    break;
+                }
+            }
+            float dist = Vector3.Distance(e.transform.position, currentPos);
+            if (dist < minDist && isEnemy)
+            {
+                enemyRifle = e;
                 minDist = dist;
             }
         }
-        return rifleEnemy;
+        return enemyRifle;
+    }
+
+    private void OnDestroy()
+    {
+        EnemySpawn.instance.DeleteShield(this);
     }
 }

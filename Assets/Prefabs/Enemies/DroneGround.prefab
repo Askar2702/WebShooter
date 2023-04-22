@@ -355,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
   isDamage: 0
-  isDrone: 1
+  Drone: {fileID: 7674856949905481948}
 --- !u!114 &7674856949905481948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +371,7 @@ MonoBehaviour:
   _enemy: {fileID: 7674856949905481951}
   _reactDistance: 20
   _reactDistancePlayer: 25
+  <Shield>k__BackingField: {fileID: 572229618375825521}
 --- !u!114 &5047561983867139851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36cbcfad06c482a4da884345faa88a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthCount: 10000
+  _healthCount: 100
+  _currentHealthCount: 0
   _miniMap: {fileID: 3299382715305232294}
 --- !u!54 &3037402396971523494
 Rigidbody:
@@ -519,6 +521,7 @@ MonoBehaviour:
   _mesh: {fileID: 7674856950774115480}
   _collider: {fileID: 7674856950774115481}
   _colorShield: {r: 1.4980392, g: 0.29803923, b: 0, a: 1}
+  <CurrentHealthCount>k__BackingField: 0
 --- !u!111 &2564614819767011801
 Animation:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerInput : MonoBehaviour
@@ -23,7 +22,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _walkClip;
     [SerializeField] private AudioClip _runClip;
-
+    private float Y = 0.8f;
 
    
     private void Start()
@@ -41,7 +40,8 @@ public class PlayerInput : MonoBehaviour
     }
     void Update()
     {
-      
+
+        if (transform.position.y < 0) transform.position = new Vector3(transform.position.x, Y, transform.position.z);
         if (Input.GetKeyDown(KeyCode.R))
         {
             Player.instance.ReloadGun();
@@ -49,9 +49,6 @@ public class PlayerInput : MonoBehaviour
        
         Rotate();
         Move();
-
-        if (transform.position.y < -10f) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-       
     }
 
     private void Rotate()

@@ -8,6 +8,7 @@ public class EnemySpawn : MonoBehaviour
    
     [SerializeField] private EnemySpawnList _spawnDataList;
     private List<EnemyRifle> _enemyRifles = new List<EnemyRifle>();
+    private List<ShieldDroneEnemy> _shieldDrones = new List<ShieldDroneEnemy>();
     private void Awake()
     {
         if (!instance) instance = this;
@@ -33,6 +34,7 @@ public class EnemySpawn : MonoBehaviour
                 pos = new Vector3(Random.Range(pos.x - 5, pos.x + 5), pos.y, Random.Range(pos.z - 5, pos.z + 5));
                 var e = Instantiate(_spawnDataList.EnemyLists[i].Enemy, pos, Quaternion.identity);
                 if (e.GetComponent<EnemyRifle>()) _enemyRifles.Add(e.GetComponent<EnemyRifle>());
+                if (e.TryGetComponent(out ShieldDroneEnemy shieldDrone)) _shieldDrones.Add(shieldDrone);
 
                 if(e.TryGetComponent(out AudioSource audio))
                 audioSources.Add(audio);
@@ -51,7 +53,16 @@ public class EnemySpawn : MonoBehaviour
         return _enemyRifles;
     }
 
-    internal void DeletelSelf(EnemyRifle enemyRifle)
+    public List<ShieldDroneEnemy> GetShieldDroneEnemies()
+    {
+        return _shieldDrones;
+    }
+
+    public void DeleteShield(ShieldDroneEnemy shieldDrone)
+    {
+        _shieldDrones.Remove(shieldDrone);
+    }
+    public void DeletelSelf(EnemyRifle enemyRifle)
     {
         _enemyRifles.Remove(enemyRifle);
     }

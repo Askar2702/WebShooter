@@ -16,6 +16,8 @@ public class EnemyMelee : MonoBehaviour
     private bool isPlayerTarget;
     private Transform _target;
     private float _teleportDistance = 10f;
+    [SerializeField] private AudioSource _audio;
+    
     private void Awake()
     {
         _enemy = GetComponent<Enemy>();
@@ -41,7 +43,11 @@ public class EnemyMelee : MonoBehaviour
                 if (_target != _enemy.Player.transform) _target = _enemy.Player.transform;
                 isPlayerTarget = true;
                 if (DistancePlayer() <= _attackDistance)
+                {
                     _animator.SetInteger("AnimState", 2);
+                    if (!_audio.isPlaying)
+                        _audio.Play();
+                }
                 else _animator.SetInteger("AnimState", 1);
                 WrapEnemy();
 
@@ -50,7 +56,7 @@ public class EnemyMelee : MonoBehaviour
             {
                 isPlayerTarget = false;
                 if (_target == _enemy.Player.transform) _target = PointsManager.instance.GetRandomPos();
-                if (Vector3.Distance(transform.position, _target.position) < 0.5f && !isPlayerTarget)
+                if (Vector3.Distance(transform.position, _target.position) < 1f && !isPlayerTarget)
                 {
                     _target = PointsManager.instance.GetRandomPos();
                     _animator.SetInteger("AnimState", 0);
@@ -69,6 +75,7 @@ public class EnemyMelee : MonoBehaviour
 
     private void WrapEnemy()
     {
+        _target = Player.instance.transform;
         float distanceToTarget = Vector3.Distance(transform.position, _target.position);
 
         if (distanceToTarget > _teleportDistance)
@@ -119,12 +126,14 @@ public class EnemyMelee : MonoBehaviour
             randomPosition = targetPosition + randomDirection * 5;
             distanceToPlayer = Vector3.Distance(_enemy.Player.transform.position, randomPosition);
         }
-
+       
         // ищем ближайшую доступную точку на навигационной сетке для новой позиции
         if (NavMesh.SamplePosition(randomPosition, out hit, 3f, NavMesh.AllAreas))
         {
             return hit.position;
         }
+
+        
 
         // если не удалось найти доступную точку, возвращаем исходную позицию
         return transform.position;

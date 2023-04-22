@@ -13,7 +13,7 @@ public class Shield : MonoBehaviour
     [SerializeField] private Collider _collider;
     [ColorUsage(true, true)]
     [SerializeField] private Color _colorShield;
-    private float _currentHealthCount;
+   [field: SerializeField] public float CurrentHealthCount { get; private set; }
     public bool isAlive { get; private set; }
 
     private void Awake()
@@ -24,14 +24,14 @@ public class Shield : MonoBehaviour
     public void TakeDamege(float amount)
     {
         if (!isAlive) return;
-        _currentHealthCount -= amount;
-        if(_currentHealthCount <= _healthCount / 1.5 && !_animation.isPlaying)
+        CurrentHealthCount -= amount;
+        if(CurrentHealthCount <= _healthCount / 1.5 && !_animation.isPlaying)
         {
             _animation.Play();
         }
-        if (_currentHealthCount <= 0)
+        if (CurrentHealthCount <= 0)
         {
-            _currentHealthCount = 0;
+            CurrentHealthCount = 0;
             isAlive = false;
             StartCoroutine(RestartShield());
         }
@@ -52,7 +52,7 @@ public class Shield : MonoBehaviour
     {
         if (!_baseHealth.isAlive) return;
         isAlive = true;
-        _currentHealthCount = _healthCount;
+        CurrentHealthCount = _healthCount;
         _shielMat.color = _colorShield;
         _mesh.enabled = true;
         _collider.enabled = true;
