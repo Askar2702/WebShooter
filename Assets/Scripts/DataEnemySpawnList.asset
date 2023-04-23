@@ -9,13 +9,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f74ce25552d52c4692c00824ae30b10, type: 3}
+  m_Script: {fileID: 11500000, guid: a569241121c8c4e41829321be3577396, type: 3}
   m_Name: DataEnemySpawnList
   m_EditorClassIdentifier: 
-  EnemyLists:
-  - Enemy: {fileID: 4857078147048124199, guid: 8e1d6bfe6b59d204c8d703c3c58fe28b, type: 3}
-    Count: 15
-  - Enemy: {fileID: 4857078147048124199, guid: e936ed5512758db42860876af0108f78, type: 3}
-    Count: 25
-  - Enemy: {fileID: 7674856949905481951, guid: f7db4889c7b6bfe45b5d08551f3c559d, type: 3}
-    Count: 5
+  EnemyCellLists:
+  - EnemyCell:
+    - Enemy: {fileID: 4857078147048124199, guid: 8e1d6bfe6b59d204c8d703c3c58fe28b,
+        type: 3}
+      Count: 15
+    - Enemy: {fileID: 4857078147048124199, guid: e936ed5512758db42860876af0108f78,
+        type: 3}
+      Count: 25
+    - Enemy: {fileID: 7674856949905481951, guid: f7db4889c7b6bfe45b5d08551f3c559d,
+        type: 3}
+      Count: 5
+  - EnemyCell:
+    - Enemy: {fileID: 4857078147048124199, guid: 8e1d6bfe6b59d204c8d703c3c58fe28b,
+        type: 3}
+      Count: 20
+    - Enemy: {fileID: 4857078147048124199, guid: e936ed5512758db42860876af0108f78,
+        type: 3}
+      Count: 30
+    - Enemy: {fileID: 7674856949905481951, guid: f7db4889c7b6bfe45b5d08551f3c559d,
+        type: 3}
+      Count: 10
+  - EnemyCell:
+    - Enemy: {fileID: 4857078147048124199, guid: 8e1d6bfe6b59d204c8d703c3c58fe28b,
+        type: 3}
+      Count: 25
+    - Enemy: {fileID: 4857078147048124199, guid: e936ed5512758db42860876af0108f78,
+        type: 3}
+      Count: 35
+    - Enemy: {fileID: 7674856949905481951, guid: f7db4889c7b6bfe45b5d08551f3c559d,
+        type: 3}
+      Count: 15

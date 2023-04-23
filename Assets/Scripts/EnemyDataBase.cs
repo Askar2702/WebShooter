@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DataEnemySpawnList", menuName = "SpawnTypeEnemy")]
-public class EnemySpawnList : ScriptableObject
+
+public class EnemyDataBase : ScriptableObject
 {
-    public EnemyList[] EnemyLists;
+    public EnemyCellList[] EnemyCellLists;
+}
+[System.Serializable]
+public class EnemyCellList
+{
+    public EnemyCell[] EnemyCell;
 
     public int Count()
     {
         int count = 0;
-        for(int i = 0; i < EnemyLists.Length; i++)
+        for (int i = 0; i < EnemyCell.Length; i++)
         {
-            count += EnemyLists[i].Count;
+            count += EnemyCell[i].Count;
         }
         return count;
     }
@@ -20,7 +26,7 @@ public class EnemySpawnList : ScriptableObject
 
 
 [System.Serializable]
-public class EnemyList
+public class EnemyCell
 {
     public Enemy Enemy;
     public int Count;

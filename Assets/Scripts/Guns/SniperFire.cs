@@ -10,23 +10,29 @@ public class SniperFire : FireGun
 
    
     [SerializeField] private bool isAcross;
+    [SerializeField] private Gun _gun;
+    private Vector3 _spreadVector = new Vector3(20f, 20f, 20f);
 
 
-
-   
     public override void Fire(Action callback)
     {
+        Vector3 direction = _camera.transform.forward * 100;
+        direction += new Vector3(UnityEngine.Random.Range(-_spreadVector.x, _spreadVector.x),
+            UnityEngine.Random.Range(-_spreadVector.y, _spreadVector.y),
+            UnityEngine.Random.Range(-_spreadVector.z, _spreadVector.z));
+        direction.Normalize();
+
         if (Input.GetMouseButtonDown(0) && !AnimationManager.instance.isReloadAnimShow() && _countBulletsCurrent > 0)
         {
             AnimationManager.instance.ShowAimAnimation();
-            // if (AnimationManager.instance.isAimAnimation())
             {
                 callback?.Invoke();
-                Ray ray = _camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+               
                 if (isAcross)
                 {
                     RaycastHit[] hit;
-                    hit = Physics.RaycastAll(ray, Mathf.Infinity, _layerMask);
+                    if (_gun.isAiming) direction = _camera.transform.forward * 100;
+                     hit = Physics.RaycastAll(_camera.transform.position, direction, Mathf.Infinity, _layerMask);
                     foreach (var h in hit)
                     {
                         SpawnEffectHitWall(h);
@@ -38,7 +44,8 @@ public class SniperFire : FireGun
                 else
                 {
                     RaycastHit hit;
-                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask))
+                    if(_gun.isAiming)  direction = _camera.transform.forward * 100;
+                    if (Physics.Raycast(_camera.transform.position , direction, out hit, Mathf.Infinity, _layerMask))
                     {
                         SpawnEffectHitWall(hit);
 

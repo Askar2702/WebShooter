@@ -188,7 +188,9 @@ public class EnemyRifle : MonoBehaviour
     }
     #endregion
 
-    private void OnDisable()
+   
+
+    private void OnDestroy()
     {
         EnemySpawn.instance.DeletelSelf(this);
     }

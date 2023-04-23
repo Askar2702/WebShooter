@@ -37983,9 +37983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0303354bfa0878045bc4ed128632e303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 0}
   _health: 500
   _uiSignalDamage: {fileID: 0}
+  _healthBar: {fileID: 0}
 --- !u!114 &4546978685399444028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37998,11 +37998,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c747adfbfede6f4880d1c4e9c5f48f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerDead:
+    m_PersistentCalls:
+      m_Calls: []
   <playerInput>k__BackingField: {fileID: 2844531621167528664}
   _audioSource: {fileID: 529715973567623875}
   _reloadClip: {fileID: 8300000, guid: d85099fefd84d429788e09001413207b, type: 3}
   Gun: {fileID: 0}
-  _weaponMesh: []
 --- !u!114 &1326598631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63416,14 +63418,14 @@ MonoBehaviour:
   _countBullets: 30
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
 --- !u!4 &5679678662241606435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5679678662243627826, guid: e59fe41cdd642644d89924458332f3a2,
@@ -64386,14 +64388,14 @@ MonoBehaviour:
   _countBullets: 200
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
 --- !u!114 &1794819180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65048,14 +65050,14 @@ MonoBehaviour:
   _countBullets: 10
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
 --- !u!114 &1601457216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65811,6 +65813,8 @@ MonoBehaviour:
   _countBullets: 6
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
+  _holeWallParticle: {fileID: 0}
+  _hitWall: {fileID: 0}
   _camera: {fileID: 2844531621935463625}
   _firePoint: {fileID: 1358934497}
   _grenade: {fileID: 2447672062585516493, guid: 072731f78b12d4241af651dcfa4e5741,
@@ -66599,14 +66603,14 @@ MonoBehaviour:
   _countBullets: 30
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
 --- !u!114 &778526869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69493,11 +69497,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 2844531621935463626}
   recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
+  recoilAmount_x_non: -15
+  recoilAmount_y_non: 5
   recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
+  recoilAmount_x_: -5
+  recoilAmount_y_: 2.5
   _snappiness: 6
   _returnSpeed: 3
 --- !u!114 &697522017
@@ -69542,8 +69546,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bodyParent: {fileID: 543450652393012477}
   recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
+  recoilAmount_x_non: -1.5
+  recoilAmount_y_non: 5
   recoilAmount_z_: 0.001
   recoilAmount_x_: -0.01
   recoilAmount_y_: 0.05
@@ -69578,15 +69582,16 @@ MonoBehaviour:
   _countBullets: 10
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
   isAcross: 0
+  _gun: {fileID: 697522017}
 --- !u!1 &7894201992958946554 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7894201994222038985, guid: 17eb81f5e4bc6d64d90344e9239f19fc,
@@ -69907,15 +69912,16 @@ MonoBehaviour:
   _countBullets: 10
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
   isAcross: 1
+  _gun: {fileID: 1870846757}
 --- !u!114 &1870846755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69944,8 +69950,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bodyParent: {fileID: 543450652393012477}
   recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -0.35
-  recoilAmount_y_non: 1
+  recoilAmount_x_non: -1.5
+  recoilAmount_y_non: 5
   recoilAmount_z_: 0.001
   recoilAmount_x_: -0.01
   recoilAmount_y_: 0.05
@@ -69993,11 +69999,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 2844531621935463626}
   recoilAmount_z_non: 0.35
-  recoilAmount_x_non: -2
-  recoilAmount_y_non: 1
+  recoilAmount_x_non: -15
+  recoilAmount_y_non: 5
   recoilAmount_z_: 0.5
-  recoilAmount_x_: -1
-  recoilAmount_y_: 0.5
+  recoilAmount_x_: -5
+  recoilAmount_y_: 2.5
   _snappiness: 6
   _returnSpeed: 3
 --- !u!114 &1870846759
@@ -70583,14 +70589,14 @@ MonoBehaviour:
   _countBullets: 30
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
 --- !u!114 &507966875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71441,14 +71447,14 @@ MonoBehaviour:
   _countBullets: 30
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
 --- !u!1001 &2095666852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71655,14 +71661,14 @@ MonoBehaviour:
   _countBullets: 6
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
 --- !u!114 &1328579474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72117,14 +72123,14 @@ MonoBehaviour:
   _countBullets: 30
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
 --- !u!114 &586829716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72780,14 +72786,14 @@ MonoBehaviour:
   _countBullets: 30
   _countBulletsText: {fileID: 0}
   _countBulletsTextCurrent: {fileID: 0}
-  _camera: {fileID: 2844531621935463625}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 4672
   _holeWallParticle: {fileID: 114821125757560434, guid: ef5229528b086d34391163d0d42dec52,
     type: 3}
   _hitWall: {fileID: 2674755954411247646, guid: cdeed4d9aadd9e74e907546eb95744ac,
     type: 3}
+  _camera: {fileID: 2844531621935463625}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4672
 --- !u!114 &1615159366
 MonoBehaviour:
   m_ObjectHideFlags: 0

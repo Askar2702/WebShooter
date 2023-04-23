@@ -21,9 +21,11 @@ public class ScoreManager : MonoBehaviour
         if (!instance) instance = this;
     }
 
-    private void Start()
+    
+
+    public void ShowCountEnemy(int count)
     {
-        _AllEnemyCountText.text = EnemySpawn.instance.CountEnemy().ToString();
+        _AllEnemyCountText.text = count.ToString();
     }
 
     public void AddScore(bool isHeadShot)

@@ -139,5 +139,8 @@ public class EnemyMelee : MonoBehaviour
         return transform.position;
     }
 
-
+    private void OnDestroy()
+    {
+        EnemySpawn.instance.DeleteMelle(this);
+    }
 }
