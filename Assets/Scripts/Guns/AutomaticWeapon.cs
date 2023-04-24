@@ -23,9 +23,7 @@ public class AutomaticWeapon : FireGun
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask))
                 {
                     SpawnEffectHitWall(hit);
-
-                    if (hit.transform.root.TryGetComponent(out Enemy enemy) && hit.transform.GetComponent<Rigidbody>())
-                        _gunDamage.ShootEnemy(enemy, hit.transform.GetComponent<Rigidbody>());
+                    _gunDamage.ShootEnemy(hit);
 
                 }
             }

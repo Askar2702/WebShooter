@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage , bool isHeadShot)
     {
-        if (!IsAlive() || Drone && Drone.Shield.CurrentHealthCount > 0) return;
+        if (!IsAlive()) return;
        
         isDamage = true;
         _health.TakeDamege(damage);

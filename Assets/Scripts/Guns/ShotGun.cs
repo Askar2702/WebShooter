@@ -32,8 +32,7 @@ public class ShotGun : FireGun
                     if (Physics.Raycast(_camera.transform.position, direction, out hit, Mathf.Infinity, _layerMask))
                     {
                         SpawnEffectHitWall(hit);
-                        if (hit.transform.root.TryGetComponent(out Enemy enemy) && hit.transform.GetComponent<Rigidbody>())
-                            _gunDamage.ShootEnemy(enemy, hit.transform.GetComponent<Rigidbody>());
+                        _gunDamage.ShootEnemy(hit);
                     }
                 }
             }

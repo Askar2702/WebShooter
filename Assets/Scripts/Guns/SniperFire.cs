@@ -36,9 +36,7 @@ public class SniperFire : FireGun
                     foreach (var h in hit)
                     {
                         SpawnEffectHitWall(h);
-
-                        if (h.transform.root.TryGetComponent(out Enemy enemy) && h.transform.GetComponent<Rigidbody>())
-                            _gunDamage.ShootEnemy(enemy, h.transform.GetComponent<Rigidbody>());
+                        _gunDamage.ShootEnemy(h);
                     }
                 }
                 else
@@ -48,9 +46,7 @@ public class SniperFire : FireGun
                     if (Physics.Raycast(_camera.transform.position , direction, out hit, Mathf.Infinity, _layerMask))
                     {
                         SpawnEffectHitWall(hit);
-
-                        if (hit.transform.root.TryGetComponent(out Enemy enemy) && hit.transform.GetComponent<Rigidbody>())
-                            _gunDamage.ShootEnemy(enemy, hit.transform.GetComponent<Rigidbody>());
+                        _gunDamage.ShootEnemy(hit);
 
                     }
                 }

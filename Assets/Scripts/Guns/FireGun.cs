@@ -56,11 +56,6 @@ public class FireGun : MonoBehaviour
         {
             var hitWall = Instantiate(_hitWall, hit.point, Quaternion.identity);
             hitWall.transform.LookAt(transform.root.position);
-            if (hit.collider.TryGetComponent(out Shield shield))
-            {
-                shield.TakeDamege(_gunDamage.Damage / 2);
-            }
-
             if (hit.collider.gameObject.layer == 6)
                 Instantiate(_holeWallParticle, hit.point + hit.normal * _floatInfrontOfWall, Quaternion.LookRotation(hit.normal));
         }
