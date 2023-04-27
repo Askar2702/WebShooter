@@ -1,6 +1,7 @@
 using GamePush;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class GameScoreAdsManager : MonoBehaviour
 {
@@ -45,4 +46,6 @@ public class GameScoreAdsManager : MonoBehaviour
     {
         WeaponShop.instance.BuyWeapon(int.Parse(message));
     }
+
+   
 }

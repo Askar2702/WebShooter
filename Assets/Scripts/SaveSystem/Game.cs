@@ -11,6 +11,7 @@ public class Game : MonoBehaviour
     private float _soundVolume = 1f;
     private float _speedCamera = 1.2f;
     private int _level;
+    private int _localizationIndex;
     [SerializeField] private TextMeshProUGUI _lvlNumber;
     public float MusicVolume
     {
@@ -68,6 +69,22 @@ public class Game : MonoBehaviour
             }
         }
     }
+    
+    public int LocalizationIndex
+    {
+        get
+        { return _localizationIndex; }
+        set
+        {
+            if (_localizationIndex != value)
+            {
+                _localizationIndex = value;
+                if (_localizationIndex > 2) _localizationIndex = 2;
+                if (_localizationIndex < 0) _localizationIndex = 0;
+                SaveData();
+            }
+        }
+    }
 
 
     private void Awake()
@@ -92,6 +109,7 @@ public class Game : MonoBehaviour
         _soundVolume = data.SoundVolume;
         _speedCamera = data.SpeedCamera;
         _level = data.Level;
+        _localizationIndex = data.LocalizationIndex;
     }
 
     

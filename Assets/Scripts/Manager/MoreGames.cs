@@ -8,4 +8,6 @@ public class MoreGames : MonoBehaviour
     {
         Application.OpenURL("https://yandex.ru/games/developer?name=Askar-Developer");
     }
+
+    
 }
