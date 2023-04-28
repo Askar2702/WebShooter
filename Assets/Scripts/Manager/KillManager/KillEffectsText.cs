@@ -8,9 +8,10 @@ public class KillEffectsText : MonoBehaviour
 {
     [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private TextMeshProUGUI _text;
-    public void Init(string t)
+    public void Init(string t , TMP_FontAsset asset)
     {
         _text.text = t;
+        _text.font = asset;
         StartCoroutine(UpdateProcess());
         transform.DOScale(2f, 0.5f).SetEase(Ease.OutBack);
         Destroy(gameObject, 3f);

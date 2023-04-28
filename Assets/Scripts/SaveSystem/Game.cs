@@ -92,8 +92,12 @@ public class Game : MonoBehaviour
         if (!instance) instance = this;
          print(Application.persistentDataPath);
         LoadData();
-        print(_level);
-        _lvlNumber.text = $"play #{_level + 1}";
+    }
+
+    public void ChangePlayButton(string text , TMP_FontAsset asset)
+    {
+        _lvlNumber.text = $"{text} #{_level + 1}";
+        _lvlNumber.font = asset;
     }
 
     [System.Obsolete]

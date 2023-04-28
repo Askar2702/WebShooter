@@ -5116,6 +5116,8 @@ MonoBehaviour:
   - {fileID: 335499390}
   - {fileID: 930410271}
   - {fileID: 1637726751}
+  _turkish: {fileID: 11400000, guid: c0109f7c4e7320141ae8474f2004712d, type: 2}
+  _molot: {fileID: 11400000, guid: 01b0176a7fa16a64b82ae889dc8a4497, type: 2}
 --- !u!4 &1357612559
 Transform:
   m_ObjectHideFlags: 0

@@ -87,7 +87,12 @@ public class RewardEffectForKill : MonoBehaviour
             _finishParametrs.RampageCount++;
             effectText = _rampageText;
         }
-        effectT.Init(effectText);
+        if (_currentCount >= 2)
+        {
+            effectText = LocalizationText.instance.GetText(_currentCount).Item1;
+            var font = LocalizationText.instance.GetText(_currentCount).Item2;
+            effectT.Init(effectText, font);
+        }
         _currentCount = 0;
     }
 
