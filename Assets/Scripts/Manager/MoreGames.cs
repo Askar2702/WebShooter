@@ -6,7 +6,9 @@ public class MoreGames : MonoBehaviour
 {
     public void OpenGamesStore()
     {
-        Application.OpenURL("https://yandex.ru/games/developer?name=Askar-Developer");
+        if (Application.systemLanguage == SystemLanguage.Russian)
+            Application.OpenURL("https://yandex.ru/games/developer?name=Askar-Developer");
+        else Application.OpenURL("https://yandex.com/games/developer?name=Askar-Developer");
     }
 
     

@@ -12,10 +12,6 @@ public class WeaponHave : MonoBehaviour
     {
        if(!instance) instance = this;
         DontDestroyOnLoad(this);
-        //if (PlayerPrefs.HasKey("musicVolume"))
-        //{
-        //    AudioMusic.volume = PlayerPrefs.GetFloat("musicVolume");
-        //}
     }
 
     private void Start()

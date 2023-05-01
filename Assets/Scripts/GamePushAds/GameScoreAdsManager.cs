@@ -2,6 +2,7 @@ using GamePush;
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System;
 
 public class GameScoreAdsManager : MonoBehaviour
 {
@@ -20,7 +21,20 @@ public class GameScoreAdsManager : MonoBehaviour
     {
         GP_SDK.OnReady += OnSDKReady;
         GP_Ads.OnRewardedReward += OnRewarded;
+        GP_Ads.OnRewardedStart += OffSound;
+        GP_Ads.OnRewardedClose += OnSound;
     }
+
+    private void OnSound(bool arg0)
+    {
+        AudioListener.volume = 1;
+    }
+
+    private void OffSound()
+    {
+        AudioListener.volume = 0;
+    }
+
     private void Start()
     {
         GP_Ads.ShowSticky();
