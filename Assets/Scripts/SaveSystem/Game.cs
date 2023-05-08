@@ -11,7 +11,7 @@ public class Game : MonoBehaviour
     private float _soundVolume = 1f;
     private float _speedCamera = 1.2f;
     private int _level;
-    private int _localizationIndex;
+    private int _localizationIndex = 1;
     [SerializeField] private TextMeshProUGUI _lvlNumber;
     public float MusicVolume
     {
