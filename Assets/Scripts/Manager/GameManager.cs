@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using TMPro;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance { get; private set; }
     [SerializeField] private GameObject _finishPanel;
     [SerializeField] private GameObject _losePanel;
     #region Result text
@@ -20,10 +23,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource _audio;
     [SerializeField] private AudioClip _finishClip;
     [SerializeField] private AudioClip _loseClip;
+
+    public UnityEvent OffEnemySound = new UnityEvent();
+    public UnityEvent OnEnemySound = new UnityEvent();
     private void Awake()
     {
         Time.timeScale = 1;
         if (!WeaponHave.instance.AudioMusic.isPlaying) WeaponHave.instance.AudioMusic.Play();
+        if (!instance) instance = this;
     }
     private void Start()
     {
@@ -32,9 +39,10 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame()
     {
+        DOTween.KillAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
+   
     public void ExitGame()
     {
         Destroy(WeaponHave.instance.gameObject);
@@ -60,6 +68,7 @@ public class GameManager : MonoBehaviour
     IEnumerator DelayShowfinish(FinishParametrs parametrs)
     {
         yield return new WaitForSeconds(2f);
+        OffEnemySound?.Invoke();
         WeaponHave.instance.AudioMusic.Stop();
         _audio.clip = _finishClip;
         _audio.Play();
@@ -78,11 +87,11 @@ public class GameManager : MonoBehaviour
 
     IEnumerator DelayShowLose()
     {
-        yield return new WaitForSeconds(2f);
+        OffEnemySound?.Invoke();
         WeaponHave.instance.AudioMusic.Stop();
-        _audio.clip = _loseClip;
+        _audio.clip = _loseClip; 
         _audio.Play();
-
+        yield return new WaitForSeconds(2f);
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
         Cursor.visible = true;

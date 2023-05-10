@@ -27,11 +27,15 @@ public class Player : MonoBehaviour
 
     public void ReloadGun()
     {
+        if (!_healthPlayer.IsAlive) return;
         if (_isReload || WeaponCatalog.instance.CurrentWeapon.FireGun.IsFullBullets()) return;
         _isReload = true;
         StartCoroutine(Reload());
     }
-
+    public bool Alive()
+    {
+        return _healthPlayer.IsAlive;
+    }
     IEnumerator Reload()
     {
         AnimationManager.instance.ReloadGun();

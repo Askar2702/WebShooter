@@ -31,7 +31,8 @@ public class BombInit : WeaponParent
         // print(AnimationManager.instance.AnimationState);
         if (WeaponCatalog.instance.CurrentWeapon
             && WeaponCatalog.instance.CurrentWeapon.GetType() == typeof(BombWeapon)
-            && AnimationManager.instance.AnimationState == AnimationState.StartGrenade)
+            && AnimationManager.instance.AnimationState == AnimationState.StartGrenade && Time.timeScale == 1 &&
+             Player.instance.Alive())
         {
 
             if (Input.GetMouseButtonUp(0) && _countGrenadeCurrent > 0)

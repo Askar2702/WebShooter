@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public bool isDamage;
     [SerializeField] private ShieldDroneEnemy Drone;
+    [SerializeField] private AudioSource _audioSource;
     public Player Player { get; private set; }
   
  
@@ -32,6 +33,14 @@ public class Enemy : MonoBehaviour
         _rbs = GetComponentsInChildren<Rigidbody>();
         _health = GetComponent<Health>();
         DisableRb();
+        GameManager.instance.OffEnemySound.AddListener(() => { 
+            if(_audioSource!=null)
+                _audioSource.volume = 0; 
+        });
+        GameManager.instance.OnEnemySound.AddListener(() => { 
+            if(_audioSource!=null)
+                _audioSource.volume = 1; 
+        });
     }
 
 

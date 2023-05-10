@@ -67,7 +67,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isReady && Time.timeScale!= 0)
+        if (isReady && Time.timeScale!= 0 && Player.instance.Alive())
         {
             Fire();
         }
@@ -151,10 +151,9 @@ public class Gun : MonoBehaviour
     
 
 
-
-
     private void OnDisable()
     {
+        if (!this.gameObject.scene.isLoaded) return;
         MoveAimPos(_startPos, false);
     }
 }

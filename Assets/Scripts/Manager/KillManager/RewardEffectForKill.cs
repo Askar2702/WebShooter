@@ -48,8 +48,9 @@ public class RewardEffectForKill : MonoBehaviour
         if (isHeadShot)
         {
             _audioSource.PlayOneShot(_headShotSound);
-            var icon = Instantiate(_iconHeadShot, _spawmPosHeadShot.position, Quaternion.identity);
-            icon.transform.parent = _spawmPosHeadShot.transform;
+            var icon = Instantiate(_iconHeadShot, _spawmPosHeadShot.position, _spawmPosHeadShot.rotation);
+            icon.transform.parent = _spawmPosHeadShot.parent;
+            icon.Init();
             _finishParametrs.HeadShotCount++;
            
         }

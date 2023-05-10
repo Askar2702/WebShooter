@@ -35,33 +35,32 @@ public class SettingGame : MonoBehaviour
             VolumeSound = _gameSoundSlider.value;
             Game.instance.SoundVolume = VolumeSound;
             SetSoundVolume();
-           // SaveSetting();
         });
         _gameMusicSlider.onValueChanged.AddListener(delegate {
             _musicAudio.volume = _gameMusicSlider.value;
             Game.instance.MusicVolume = _gameMusicSlider.value;
-            //  SaveSetting();
         });
         _speedCameraSlider.onValueChanged.AddListener(delegate {
             SpeedCamera = _speedCameraSlider.value;
             Game.instance.SpeedCamera = SpeedCamera;
             ChangeSpeed?.Invoke(SpeedCamera);
-          //  SaveSetting();
         });
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            ClosePanel(true);
+            ClosePanel();
         }
     }
 
-    public void ClosePanel(bool activ)
+    public void ClosePanel()
     {
+        bool activ = !_panelSettings.activeSelf;
         _panelSettings.SetActive(activ);
         if (activ)
         {
+            GameManager.instance.OffEnemySound?.Invoke();
             UIManager.instance.ShowAimTarget(false);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
@@ -69,6 +68,7 @@ public class SettingGame : MonoBehaviour
         }
         else
         {
+            GameManager.instance.OnEnemySound?.Invoke();
             UIManager.instance.ShowAimTarget(true);
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;

@@ -19,6 +19,7 @@ public class WeaponSwitching : MonoBehaviour
     }
     private void Update()
     {
+        if (Time.timeScale == 0 || !Player.instance.Alive()) return;
         _previousIndex = _indexWeapon;
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {

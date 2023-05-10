@@ -10,11 +10,20 @@ public class HealthPlayer : MonoBehaviour
     [SerializeField] private float _health;
     [SerializeField] private Image _uiSignalDamage;
     [SerializeField] private TextMeshProUGUI _healthBar;
+    [SerializeField] private Slider _sliderHealt;
+    [SerializeField] private Image _fill;
+    [SerializeField] private Color _health100;
+    [SerializeField] private Color _health50;
+    [SerializeField] private Color _health25;
     public bool IsAlive { get; private set; }
     private void Awake()
     {
-        _healthBar.text = _health.ToString();
+     //   _healthBar.text = _health.ToString();
         IsAlive = true;
+        _sliderHealt.maxValue = _health;
+        _sliderHealt.value = _health;
+        if (_sliderHealt.value == _sliderHealt.maxValue)
+            _fill.color = _health100;
     }
 
    
@@ -27,7 +36,12 @@ public class HealthPlayer : MonoBehaviour
             IsAlive = false;
             eventHealth?.Invoke();
         }
-        _healthBar.text = _health.ToString();
+      //  _healthBar.text = _health.ToString();
+        _sliderHealt.value = _health;
+        if (_sliderHealt.value <= (_sliderHealt.maxValue / 2) && _sliderHealt.value > (_sliderHealt.maxValue / 3))
+            _fill.color = _health50;
+        if (_sliderHealt.value <= (_sliderHealt.maxValue / 3))
+            _fill.color = _health25;
 
         _uiSignalDamage.color = new Color(255, 0, 0, 150);
         StartCoroutine(RestartSignal());

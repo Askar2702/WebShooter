@@ -96,6 +96,7 @@ public class Game : MonoBehaviour
 
     public void ChangePlayButton(string text , TMP_FontAsset asset)
     {
+        if (!_lvlNumber) return;
         _lvlNumber.text = $"{text} #{_level + 1}";
         _lvlNumber.font = asset;
     }

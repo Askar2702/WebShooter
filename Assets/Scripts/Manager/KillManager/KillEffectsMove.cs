@@ -7,9 +7,8 @@ using UnityEngine.UI;
 public class KillEffectsMove : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private Image _image;
-    void Start()
+    public void Init()
     {
         StartCoroutine(UpdateProcess());
         transform.DOScale(2f, 0.5f).SetEase(Ease.OutBack);

@@ -20,7 +20,8 @@ public class UIManager : MonoBehaviour
 
     public void ShowAimTarget(bool activ)
     {
-        if (!_aimSprite.enabled && WeaponCatalog.instance.CurrentWeapon.Gun.isAiming && activ) return;
+        if (!_aimSprite.enabled && WeaponCatalog.instance.CurrentWeapon.Gun
+            && WeaponCatalog.instance.CurrentWeapon.Gun.isAiming && activ) return;
         _aimSprite.enabled = activ;
     }
 

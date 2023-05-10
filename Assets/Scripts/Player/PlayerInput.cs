@@ -22,7 +22,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _walkClip;
     [SerializeField] private AudioClip _runClip;
-    private float Y = 0.8f;
+    private float Y = 2.8f;
 
    
     private void Start()
@@ -41,7 +41,13 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
 
-        if (transform.position.y < 0) transform.position = new Vector3(transform.position.x, Y, transform.position.z);
+        if (transform.position.y < 0)
+        {
+            _characterController.enabled = false;
+            transform.position = new Vector3(transform.position.x, Y, transform.position.z);
+            _characterController.enabled = true;
+            Debug.Log("Pada");
+        }
         if (Input.GetKeyDown(KeyCode.R))
         {
             Player.instance.ReloadGun();

@@ -21,6 +21,7 @@ public class LocalizationText : MonoBehaviour
     private void Start()
     {
         StartSceneSetLanguage(Game.instance.LocalizationIndex);
+        Debug.Log(Game.instance + "GameInstance");
     }
     public void StartSceneSetLanguage(int langIndex)
     {
