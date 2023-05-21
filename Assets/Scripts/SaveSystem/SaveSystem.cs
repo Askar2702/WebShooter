@@ -11,7 +11,7 @@ public static class SaveSystem
     {
           BinaryFormatter formatter = new BinaryFormatter();
 //#if UNITY_EDITOR
-        string path = Application.persistentDataPath + "/GameDataShooter.txt";
+        string path = Application.persistentDataPath + "/GameDataShooter.dat";
 //#elif UNITY_WEBGL
 //        if (!Directory.Exists(savePathName))
 //        {
@@ -27,7 +27,7 @@ public static class SaveSystem
 
     public static GameData LoadData()
     {
-        string path = Application.persistentDataPath + "/GameDataShooter.txt";
+        string path = Application.persistentDataPath + "/GameDataShooter.dat";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
