@@ -10,6 +10,7 @@ public class GameData
     public float SpeedCamera;
     public int Level;
     public int LocalizationIndex;
+    public bool IsReview;
     public GameData(Game data)
     {
         MusicVolume = data.MusicVolume;
@@ -17,6 +18,7 @@ public class GameData
         SpeedCamera = data.SpeedCamera;
         Level = data.Level;
         LocalizationIndex = data.LocalizationIndex;
+        IsReview = data.IsReview;
     }
 
 

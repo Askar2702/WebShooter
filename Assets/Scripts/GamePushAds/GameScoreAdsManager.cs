@@ -21,8 +21,14 @@ public class GameScoreAdsManager : MonoBehaviour
     {
         GP_SDK.OnReady += OnSDKReady;
         GP_Ads.OnRewardedReward += OnRewarded;
+        GP_Ads.OnAdsStart += OffSound;
+        GP_Ads.OnAdsClose += OnSound;
+        GP_Ads.OnPreloaderStart += OffSound;
+        GP_Ads.OnPreloaderClose += OnSound;
         GP_Ads.OnRewardedStart += OffSound;
         GP_Ads.OnRewardedClose += OnSound;
+        GP_Ads.OnFullscreenStart += OffSound;
+        GP_Ads.OnFullscreenClose += OnSound;
     }
 
     private void OnSound(bool arg0)

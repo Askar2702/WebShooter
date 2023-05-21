@@ -79,7 +79,8 @@ public class SettingGame : MonoBehaviour
 
     public void SetSoundVolume(AudioSource[] audioSources = null)
     {
-        AddAudioSources(audioSources);
+        if (audioSources != null)
+            AddAudioSources(audioSources);
         var audios = _audioSources;
         foreach (var a in audios)
         {
@@ -97,6 +98,11 @@ public class SettingGame : MonoBehaviour
         {
             if (!_audioSources.Contains(a)) _audioSources.Add(a);
         }
+    }
+
+    public void DeleteSelfAudio(AudioSource audioSource)
+    {
+        if (_audioSources.Contains(audioSource)) _audioSources.Remove(audioSource);
     }
     private void LoadData()
     {

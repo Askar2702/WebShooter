@@ -37985,7 +37985,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 500
   _uiSignalDamage: {fileID: 0}
-  _healthBar: {fileID: 0}
+  _sliderHealt: {fileID: 0}
+  _fill: {fileID: 0}
+  _health100: {r: 0, g: 1, b: 0.30980393, a: 1}
+  _health50: {r: 1, g: 0.9708301, b: 0, a: 1}
+  _health25: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &4546978685399444028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43153,7 +43157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5623917426967069850}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 35, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []

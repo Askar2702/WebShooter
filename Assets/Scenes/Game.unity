@@ -1014,7 +1014,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1615159364}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 0.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -8128,66 +8128,6 @@ PrefabInstance:
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 1555117021}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health25.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health25.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health25.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health25.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health50.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health50.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health50.g
-      value: 0.9708301
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health50.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health100.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health100.b
-      value: 0.30980393
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health100.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
-        type: 3}
-      propertyPath: _health100.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4644612743583374856, guid: f021a90afa9cf27409da8669d6080627,
         type: 3}
       propertyPath: _sliderHealt

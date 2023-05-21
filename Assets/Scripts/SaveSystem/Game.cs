@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     private float _speedCamera = 1.2f;
     private int _level;
     private int _localizationIndex = 1;
+    private bool _isReview;
     [SerializeField] private TextMeshProUGUI _lvlNumber;
     public float MusicVolume
     {
@@ -85,7 +86,19 @@ public class Game : MonoBehaviour
             }
         }
     }
-
+    public bool IsReview
+    {
+        get
+        { return _isReview; }
+        set
+        {
+            if (_isReview != value)
+            {
+                _isReview = value;
+                SaveData();
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -115,6 +128,7 @@ public class Game : MonoBehaviour
         _speedCamera = data.SpeedCamera;
         _level = data.Level;
         _localizationIndex = data.LocalizationIndex;
+        _isReview = data.IsReview;
     }
 
     

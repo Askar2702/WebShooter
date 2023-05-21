@@ -33,13 +33,19 @@ public class Enemy : MonoBehaviour
         _rbs = GetComponentsInChildren<Rigidbody>();
         _health = GetComponent<Health>();
         DisableRb();
-        GameManager.instance.OffEnemySound.AddListener(() => { 
-            if(_audioSource!=null)
-                _audioSource.volume = 0; 
+        GameManager.instance.OffEnemySound.AddListener(() => {
+            if (_audioSource != null)
+            {
+                _audioSource.enabled = false;
+                _audioSource.volume = 0;
+            }
         });
-        GameManager.instance.OnEnemySound.AddListener(() => { 
-            if(_audioSource!=null)
-                _audioSource.volume = 1; 
+        GameManager.instance.OnEnemySound.AddListener(() => {
+            if (_audioSource != null)
+            {
+                _audioSource.enabled = true;
+                _audioSource.volume = Game.instance.SoundVolume;
+            }
         });
     }
 
@@ -82,7 +88,11 @@ public class Enemy : MonoBehaviour
         return _health.GetAmountDamageDealt();
     }
 
-   
+    private void OnDestroy()
+    {
+        if (_audioSource != null)
+            SettingGame.instance.DeleteSelfAudio(_audioSource);
+    }
 
-  
+
 }

@@ -41,7 +41,7 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
 
-        if (transform.position.y < 0)
+        if (transform.position.y < -3 && !CheckGround())
         {
             _characterController.enabled = false;
             transform.position = new Vector3(transform.position.x, Y, transform.position.z);
