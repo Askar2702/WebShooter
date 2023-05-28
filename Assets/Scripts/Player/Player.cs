@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _reloadClip;
     [HideInInspector] public FireGun Gun;
-    private bool _isReload;
+    public bool IsReload { get; private set; }
     private void Awake()
     {
         _healthPlayer = GetComponent<HealthPlayer>();
@@ -28,8 +28,8 @@ public class Player : MonoBehaviour
     public void ReloadGun()
     {
         if (!_healthPlayer.IsAlive) return;
-        if (_isReload || WeaponCatalog.instance.CurrentWeapon.FireGun.IsFullBullets()) return;
-        _isReload = true;
+        if (IsReload || WeaponCatalog.instance.CurrentWeapon.FireGun.IsFullBullets()) return;
+        IsReload = true;
         StartCoroutine(Reload());
     }
     public bool Alive()
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         AnimationManager.instance.ReloadGun();
         _audioSource.PlayOneShot(_reloadClip);
         yield return StartCoroutine(Gun.ReloadGun()); 
-        _isReload = false;
+        IsReload = false;
     }
     
 }

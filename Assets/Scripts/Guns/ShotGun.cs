@@ -5,7 +5,7 @@ using System;
 
 public class ShotGun : FireGun
 {
-    private Vector3 _spreadVector = new Vector3(0.5f, 0.5f, 0.5f);
+    private Vector3 _spreadVector = new Vector3(0.25f, 0.25f, 0.25f);
     private int _spreadCount = 5;
     [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask _layerMask;

@@ -22,18 +22,10 @@ public class HealthPlayer : MonoBehaviour
         IsAlive = true;
         _sliderHealt.maxValue = _health;
         _sliderHealt.value = _health;
-       // StartCoroutine(UpdateHealth());
+        StartCoroutine(UpdateHealth());
     }
 
-    private void Update()
-    {
-        if (!_isDamage)
-        {
-            _health += Time.deltaTime * 10;
-            _sliderHealt.value = _health;
-            SetColorHealthBr();
-        }
-    }
+   
     public void TakeDamage(float amount , UnityEvent eventHealth)
     {
         _isDamage = true;
@@ -70,12 +62,12 @@ public class HealthPlayer : MonoBehaviour
     {
         while (true)
         {
-            //if (!_isDamage)
-            //{
-            //    _health += Time.deltaTime * 10;
-            //    _sliderHealt.value = _health;
-            //    SetColorHealthBr();
-            //}
+            if (!_isDamage && _health < _sliderHealt.maxValue)
+            {
+                _health += Time.deltaTime * 10;
+                _sliderHealt.value = _health;
+                SetColorHealthBr();
+            }
             yield return null;
         }
     }

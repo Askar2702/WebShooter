@@ -67,11 +67,11 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isReady && Time.timeScale!= 0 && Player.instance.Alive())
+        if (isReady && Time.timeScale!= 0 && Player.instance.Alive() && !Player.instance.IsReload)
         {
             Fire();
         }
-        if (Input.GetMouseButtonDown(1) && !AnimationManager.instance.isReloadAnimShow())
+        if (Input.GetMouseButtonDown(1) && !Player.instance.IsReload)
         {
             AnimationManager.instance.ShowAimAnimation();
             Aiming();

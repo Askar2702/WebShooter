@@ -30,6 +30,12 @@ public class MoreGames : MonoBehaviour
         Debug.Log("show");
         _panelReview.SetActive(false);
         Game.instance.IsReview = true;
+        if (GP_App.Url().Contains(".ru"))
+            Application.OpenURL("https://yandex.ru/games/?utm_source=game_header_logo#app=231498");
+        if (GP_App.Url().Contains(".com"))
+            Application.OpenURL("https://yandex.com/games/?utm_source=game_header_logo#app=231498");
+        if (GP_App.Url().Contains(".com.tr"))
+            Application.OpenURL("https://yandex.com.tr/games/?utm_source=game_header_logo#app=231498");
     }
 
 

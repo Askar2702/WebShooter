@@ -24,6 +24,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private AudioClip _runClip;
     private float Y = 2.8f;
 
+
    
     private void Start()
     {
@@ -40,7 +41,6 @@ public class PlayerInput : MonoBehaviour
     }
     void Update()
     {
-
         if (transform.position.y < -3 && !CheckGround())
         {
             _characterController.enabled = false;
@@ -57,6 +57,7 @@ public class PlayerInput : MonoBehaviour
         Move();
     }
 
+   
     private void Rotate()
     {
         if (Time.timeScale == 0) return;
