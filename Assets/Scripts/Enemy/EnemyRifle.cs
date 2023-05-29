@@ -21,6 +21,7 @@ public class EnemyRifle : MonoBehaviour
     [SerializeField] private AudioSource _fireSound;
     [SerializeField] private float _interval;
     [SerializeField] private LayerMask _layerMask;
+
     public bool isPlayerTarget { get; private set; }
     #endregion
     private Enemy _enemy;
@@ -31,7 +32,7 @@ public class EnemyRifle : MonoBehaviour
         EnemyAnim = GetComponent<RifleEnemAnimation>();
     }
     private bool isReady;
-
+    
     private void Start()
     {
         isReady = true;

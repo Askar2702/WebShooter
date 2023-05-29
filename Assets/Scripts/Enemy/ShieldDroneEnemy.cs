@@ -11,7 +11,9 @@ public class ShieldDroneEnemy : MonoBehaviour
     [field:SerializeField] public Shield Shield { get; private set; }
     private Vector3 _targetPos;
     private bool isProtected;
-  [field: SerializeField]  public EnemyRifle EnemyRifle { get; private set; }
+    public EnemyRifle EnemyRifle { get; private set; }
+
+  
     void Start()
     {
         _targetPos = PointsManager.instance.GetRandomPos().position;

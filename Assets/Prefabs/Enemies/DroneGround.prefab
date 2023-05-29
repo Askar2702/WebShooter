@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 7674856949905481948}
   - component: {fileID: 5047561983867139851}
   - component: {fileID: 3037402396971523494}
+  - component: {fileID: 8606211174005698291}
   m_Layer: 9
   m_Name: DroneGround
   m_TagString: MinDamage
@@ -373,7 +374,8 @@ MonoBehaviour:
   _reactDistance: 20
   _reactDistancePlayer: 25
   <Shield>k__BackingField: {fileID: 572229618375825521}
-  <EnemyRifle>k__BackingField: {fileID: 0}
+  _GPUInstancingEnabler: {fileID: 8606211174005698291}
+  _meshRenderer: {fileID: 7674856950774115480}
 --- !u!114 &5047561983867139851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +407,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8606211174005698291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7674856949905481942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c7a63447a34054386f27d95ec399de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7674856950774115486
 GameObject:
   m_ObjectHideFlags: 0

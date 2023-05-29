@@ -4508,6 +4508,7 @@ GameObject:
   - component: {fileID: 8474263589327566183}
   - component: {fileID: 7565864045266445561}
   - component: {fileID: 1337905945705612282}
+  - component: {fileID: 2874152499515652821}
   m_Layer: 9
   m_Name: EnemyBaton
   m_TagString: Untagged
@@ -4673,6 +4674,7 @@ MonoBehaviour:
   - {fileID: 3851367167277327145}
   _startTeleport: {fileID: 1666556568214885413}
   _audio: {fileID: 1337905945705612282}
+  _GPUInstancingEnabler: {fileID: 2874152499515652821}
 --- !u!114 &7565864045266445561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4792,6 +4794,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2874152499515652821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486436423611037536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c7a63447a34054386f27d95ec399de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2518232751689291509
 GameObject:
   m_ObjectHideFlags: 0

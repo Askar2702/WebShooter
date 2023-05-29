@@ -17,11 +17,13 @@ public class EnemyMelee : MonoBehaviour
     private Transform _target;
     private float _teleportDistance = 10f;
     [SerializeField] private AudioSource _audio;
+    private SkinnedMeshRenderer CurrentSkinnedMeshRenderer;
     
     private void Awake()
     {
         _enemy = GetComponent<Enemy>();
-        _skinneds[Random.Range(0, _skinneds.Length)].gameObject.SetActive(true);
+        CurrentSkinnedMeshRenderer = _skinneds[Random.Range(0, _skinneds.Length)];
+        CurrentSkinnedMeshRenderer.gameObject.SetActive(true);
     }
 
     private void Start()

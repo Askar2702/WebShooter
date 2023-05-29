@@ -4540,6 +4540,7 @@ GameObject:
   - component: {fileID: 7625890249782143862}
   - component: {fileID: 1337905945705612282}
   - component: {fileID: 998720711582765231}
+  - component: {fileID: 2189832806072551040}
   m_Layer: 9
   m_Name: man_actionhero
   m_TagString: Untagged
@@ -4675,6 +4676,8 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 320
+  _skinnedMeshRenderer: {fileID: 1349365078141783885}
+  _GPUInstancingEnabler: {fileID: 2189832806072551040}
 --- !u!82 &1337905945705612282
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4794,6 +4797,18 @@ MonoBehaviour:
   - {fileID: 8059705818243046315}
   - {fileID: 8059705818397244025}
   - {fileID: 8059705817203419117}
+--- !u!114 &2189832806072551040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486436423611037536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c7a63447a34054386f27d95ec399de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2518232751689291509
 GameObject:
   m_ObjectHideFlags: 0
